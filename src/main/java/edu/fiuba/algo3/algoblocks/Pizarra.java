@@ -1,4 +1,59 @@
 package edu.fiuba.algo3.algoblocks;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pizarra {
+
+    private ArrayList<Celda> listaDeCeldas;
+    private int base;
+    private int altura;
+
+    /*
+    * Puedo implementar la listaDeCeldas con una matriz.
+    * */
+    public Pizarra(int nuevaBase, int nuevaAltura){
+
+        listaDeCeldas = new ArrayList<Celda>();
+        Celda estaCelda;
+        this.base = nuevaBase;
+        this.altura = nuevaAltura;
+
+        for(int h = 0; h < this.altura; h++){
+            for(int b = 0; b < this.base; b++){
+                estaCelda = new Celda(b, h);
+
+                listaDeCeldas.add(estaCelda);
+
+            }
+
+        }
+
+    }
+
+    private int funcionCoordenadasAPosicionEnListaDeCeldas(int x, int y){
+
+        return (this.base * y + x);
+
+    }
+
+    public Celda obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(int coordenadaX, int coordenadaY, DireccionDeMovimiento
+                                                             direccionDeCeldaContigua){
+
+        int[] nuevasCoordenadas = direccionDeCeldaContigua.aplicarDesplazamiento(coordenadaX, coordenadaY);
+        int posicionDeCeldaContigua = this.funcionCoordenadasAPosicionEnListaDeCeldas(nuevasCoordenadas[0], nuevasCoordenadas[1]);
+
+        return listaDeCeldas.get(posicionDeCeldaContigua);
+
+    }
+
+    public Celda obtenerCeldaCentral(){
+
+        int posicionDeCeldaContigua = this.funcionCoordenadasAPosicionEnListaDeCeldas(
+                this.base / 2,
+                this.altura / 2);
+
+        return listaDeCeldas.get(posicionDeCeldaContigua);
+    }
+
 }
