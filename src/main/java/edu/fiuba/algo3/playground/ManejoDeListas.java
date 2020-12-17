@@ -1,3 +1,5 @@
+package edu.fiuba.algo3.playground;/* Author: firmapaz ;created on 15/12/20*/
+
 import java.util.ArrayList;
 
 public class ManejoDeListas {
@@ -43,16 +45,6 @@ public class ManejoDeListas {
         this.espacioDeTrabajo.get(posicionDeSucesionEnEspacioDeTrabajo).add(posicionDentroDeLaSucesion, esteEntero);
 
     }
-
-
-
-
-  /*  public void eliminarBloquesDeLaSecuenciaDeEjecucionDesdePosicion(int posicion){
-
-        this.manito.agarrarSucesionDeObjetosDe(this.secuenciaDeEjecucion, posicion);
-        this.manito.soltarSucesionDeObjetosEnLaBasura();
-
-    } */
 
     public void arrojarBloquesALaBasura(){
 

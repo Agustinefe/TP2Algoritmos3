@@ -1,7 +1,10 @@
-import java.util.ArrayList;
+package edu.fiuba.algo3.playground;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PruebasManejoDeListas {
@@ -23,7 +26,7 @@ public class PruebasManejoDeListas {
     }
 
     @Test
-    public void test01(){
+    public void test01BorrandoSiempreLaPosicionCeroVaciaLaLista(){
 
         ArrayList<Integer> miLista = new ArrayList<Integer>();
 
@@ -43,7 +46,7 @@ public class PruebasManejoDeListas {
     }
 
     @Test
-    public void test02(){
+    public void test02aniadoUnalistaAOtraListaEnCiertaPosicion(){
 
         ArrayList<Integer> miLista1 = new ArrayList<Integer>();
         ArrayList<Integer> miLista2 = new ArrayList<Integer>();
@@ -58,8 +61,17 @@ public class PruebasManejoDeListas {
 
         miLista1.addAll(2, miLista2);
 
-        assertEquals(1, miLista1.get(0));
-        assertEquals(2, miLista1.get(1));
+        Integer entero = miLista1.remove(1);
+        miLista1.add(0, entero);
+
+        System.out.println(miLista1.get(0));
+        System.out.println(miLista1.get(1));
+        System.out.println(miLista1.get(2));
+        System.out.println(miLista1.get(3));
+        System.out.println(miLista1.get(4));
+        System.out.println(miLista1.get(5));
+        assertEquals(2, miLista1.get(0));
+        assertEquals(1, miLista1.get(1));
         assertEquals(3, miLista1.get(2));
         assertEquals(4, miLista1.get(3));
         assertEquals(5, miLista1.get(4));
@@ -67,7 +79,7 @@ public class PruebasManejoDeListas {
     }
 
     @Test
-    public void test03(){
+    public void test03LaSecuenciaDeEjecucionSeAgreganCorrectamente(){
 
         ArrayList<Integer> miLista1= miManejador.obtenerSecuenciaDeEjecucion();
 
@@ -80,7 +92,7 @@ public class PruebasManejoDeListas {
     }
 
     @Test
-    public void test04(){
+    public void test04AgarroUnaSucesionDeBloquesDeLaSecuenciaDeEjecucionYLoSueltoEnOtraPosicion(){
 
         try {
 
@@ -106,13 +118,7 @@ public class PruebasManejoDeListas {
     }
 
     @Test
-    public void test05(){
-
-        miManejador.aniadirBloqueASecuenciaDeEjecucion(1);
-        miManejador.aniadirBloqueASecuenciaDeEjecucion(2);
-        miManejador.aniadirBloqueASecuenciaDeEjecucion(3);
-        miManejador.aniadirBloqueASecuenciaDeEjecucion(4);
-        miManejador.aniadirBloqueASecuenciaDeEjecucion(5);
+    public void test05AgarroUnaSucesionDeLaSecuenciaDeEjecucionYLaSueltoEnElEspacioDeTrabajo(){
 
         try {
 
@@ -136,7 +142,7 @@ public class PruebasManejoDeListas {
     }
 
     @Test
-    public void test06(){
+    public void test06aniaoUnBloqueEnUnaPosicionAlAzar(){
 
         miManejador.aniadirBloqueASecuenciaDeEjecucion(6, 3);
 
@@ -152,7 +158,7 @@ public class PruebasManejoDeListas {
     }
 
     @Test
-    public void test07(){
+    public void test07AgarroYEliminoUnaSucesionDeBloques(){
 
         try {
 
@@ -174,11 +180,51 @@ public class PruebasManejoDeListas {
     }
 
     @Test
-
-    public void test08(){
+    public void test08NoPuedoAgarrarUnaSecuenciaConElOrganizadorOcupado(){
 
         assertDoesNotThrow(() -> miManejador.agarrarSucesionDeBloquesDeLaSecuenciaDeEjecucionDesdePosicion(3));
         assertThrows(OrganizadorOcupadoException.class, () -> miManejador.agarrarSucesionDeBloquesDeLaSecuenciaDeEjecucionDesdePosicion(1));
+
+    }
+
+    @Test
+    public void test09ArrojoUnaSucesionAlEspacioDeTrabajoYLuegoLaIncorporoALaSucesionDeBloques() throws OrganizadorOcupadoException{
+
+
+        this.miManejador.agarrarSucesionDeBloquesDeLaSecuenciaDeEjecucionDesdePosicion(3);
+        this.miManejador.soltarSucesionDeBloquesLibresEnEspacioDeTrabajo();
+        this.miManejador.agarrarSucesionDeBloquesDeOtraSucesionDelEspacioDeTrabajoEnPosicion(0, 1);
+        this.miManejador.soltarSucesionDeBloquesEnLaSecuenciaDeEjecucionEnPosicion(3);
+
+        ArrayList<Integer> miLista1 = miManejador.obtenerSecuenciaDeEjecucion();
+
+        assertEquals(1, miLista1.get(0));
+        assertEquals(2, miLista1.get(1));
+        assertEquals(3, miLista1.get(2));
+        assertEquals(5, miLista1.get(3));
+
+
+
+    }
+
+    @Test
+    public void test10() throws OrganizadorOcupadoException{
+
+        ArrayList<Integer> miLista1;
+        this.miManejador.agarrarSucesionDeBloquesDeLaSecuenciaDeEjecucionDesdePosicion(3);
+        this.miManejador.soltarSucesionDeBloquesLibresEnEspacioDeTrabajo();
+        this.miManejador.agarrarSucesionDeBloquesDeOtraSucesionDelEspacioDeTrabajoEnPosicion(0, 1);
+        this.miManejador.soltarSucesionDeBloquesEnOtraSucesionDelEspacioDeTrabajoEnPosicion(0, 0);
+        this.miManejador.agarrarSucesionDeBloquesLibresDeEspacioDeTrabajo(0);
+        this.miManejador.soltarSucesionDeBloquesEnLaSecuenciaDeEjecucionEnPosicion(3);
+
+        miLista1 = miManejador.obtenerSecuenciaDeEjecucion();
+
+        assertEquals(1, miLista1.get(0));
+        assertEquals(2, miLista1.get(1));
+        assertEquals(3, miLista1.get(2));
+        assertEquals(5, miLista1.get(3));
+        assertEquals(4, miLista1.get(4));
 
     }
 

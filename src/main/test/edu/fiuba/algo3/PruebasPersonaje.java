@@ -1,9 +1,12 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3;/* Author: firmapaz ;created on 12/12/20*/
 
-import edu.fiuba.algo3.algoblocks.Celda;
-import edu.fiuba.algo3.algoblocks.Izquierda;
-import edu.fiuba.algo3.algoblocks.Personaje;
-import edu.fiuba.algo3.algoblocks.Pizarra;
+import edu.fiuba.algo3.algoblocks.*;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -25,6 +28,8 @@ public class PruebasPersonaje {
 
     @Test
     public void test01TimmyComienzaConElLapizLevantadoYNoDibujaAlMoverse(){
+
+
 
         this.timmy.moversePorLaPizarraHacia(pizarraDeTimmy, new Izquierda());
 
@@ -52,6 +57,8 @@ public class PruebasPersonaje {
         assertFalse(this.celdaInicial.seEncuentraDibujada());
 
     }
+
+
 
 
 }

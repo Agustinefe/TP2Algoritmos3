@@ -1,3 +1,5 @@
+package edu.fiuba.algo3.playground;/* Author: firmapaz ;created on 15/12/20*/
+
 import java.util.ArrayList;
 
 public class OrganizadorDeObjetos<T> {
