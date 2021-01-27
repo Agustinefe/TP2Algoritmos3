@@ -41,6 +41,7 @@ public class Pizarra {
                                                              direccionDeCeldaContigua){
 
         int[] nuevasCoordenadas = direccionDeCeldaContigua.aplicarDesplazamiento(coordenadaX, coordenadaY);
+        this.comprobarQueLasCoordenadasEstanDentroDeLaPizarra(nuevasCoordenadas);
         int posicionDeCeldaContigua = this.funcionCoordenadasAPosicionEnListaDeCeldas(nuevasCoordenadas[0], nuevasCoordenadas[1]);
 
         return listaDeCeldas.get(posicionDeCeldaContigua);
@@ -54,6 +55,14 @@ public class Pizarra {
                 this.altura / 2);
 
         return listaDeCeldas.get(posicionDeCeldaContigua);
+    }
+
+    private void comprobarQueLasCoordenadasEstanDentroDeLaPizarra(int[] coordenadas){
+
+        if(coordenadas[0] >= this.base || coordenadas[1] >= this.altura){
+            //Tira error de pizarra fuera de rango
+        }
+
     }
 
 }

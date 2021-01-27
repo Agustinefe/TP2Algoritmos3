@@ -18,4 +18,16 @@ public class SectorDibujo {
 
     }
 
+    public void ejecutarSucesionDeBloques(SecuenciaDeBloques algoritmoAEjecutar){
+
+        algoritmoAEjecutar.ejecutar(this.pizarraDeDibujo, this.dibujante);
+
+    }
+
+    public boolean elPersonajeSeEncuentraEn(Celda celdaEstimada){
+
+        return this.dibujante.seEncuentraEn(celdaEstimada);
+
+    }
+
 }

@@ -4,6 +4,8 @@ public interface DireccionDeMovimiento {
 
     public abstract int[] aplicarDesplazamiento(int x, int y);
 
+    public abstract String nombre();
+
 
 
 }

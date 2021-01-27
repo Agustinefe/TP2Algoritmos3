@@ -3,6 +3,9 @@ package edu.fiuba.algo3;/* Author: firmapaz ;created on 12/12/20*/
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PruebasCelda {
@@ -42,5 +45,28 @@ public class PruebasCelda {
 
     }
 
-    /*Pensar mas pruebas*/
+    @Test
+    public void test03SeMueveDerechaArribaArribaIzquierda(){
+
+        ArrayList<DireccionDeMovimiento> listaDeMovimientos = new ArrayList<DireccionDeMovimiento>();
+
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Arriba());
+        listaDeMovimientos.add(new Arriba());
+        listaDeMovimientos.add(new Izquierda());
+
+        Celda celdaActual = this.celdaCentral;
+
+        Celda celdaFinalEstimada = new Celda(3, 5);
+
+        for(int i = 0; i < listaDeMovimientos.size(); i++){
+
+            celdaActual = celdaActual.obtenerCeldaQueEstaALa(listaDeMovimientos.get(i), this.miPizarra);
+
+        }
+
+        assertTrue(celdaActual.esIgualA(celdaFinalEstimada));
+
+    }
+
 }

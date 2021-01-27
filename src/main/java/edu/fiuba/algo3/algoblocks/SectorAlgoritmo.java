@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 14/12/20*/
 
 import edu.fiuba.algo3.playground.OrganizadorDeObjetos;
-import edu.fiuba.algo3.playground.OrganizadorOcupadoException;
+import edu.fiuba.algo3.excepciones.OrganizadorOcupadoException;
 
 import java.util.ArrayList;
 

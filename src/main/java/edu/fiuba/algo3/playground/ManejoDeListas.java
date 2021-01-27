@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.playground;/* Author: firmapaz ;created on 15/12/20*/
 
+import edu.fiuba.algo3.excepciones.OrganizadorOcupadoException;
+
 import java.util.ArrayList;
 
 public class ManejoDeListas {
@@ -54,7 +56,7 @@ public class ManejoDeListas {
 
 
     public void agarrarSucesionDeBloquesDeLaSecuenciaDeEjecucionDesdePosicion(int posicion)
-            throws OrganizadorOcupadoException{
+            throws OrganizadorOcupadoException {
 
         this.manito.agarrarSucesionDeObjetosDe(this.secuenciaDeEjecucion, posicion);
 

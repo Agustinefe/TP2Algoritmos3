@@ -21,4 +21,6 @@ public class Izquierda implements DireccionDeMovimiento{
 
     }
 
+    public String nombre(){ return "Izquierda"; }
+
 }

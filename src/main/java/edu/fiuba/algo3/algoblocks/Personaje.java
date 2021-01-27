@@ -34,6 +34,14 @@ public class Personaje {
 
     }
 
+    public boolean seEncuentraEn(Celda estaCelda){
+
+        return this.celdaActual.esIgualA(estaCelda);
+
+    }
+
+
+
 
 }
 

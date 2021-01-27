@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.playground;
 
+import edu.fiuba.algo3.excepciones.OrganizadorOcupadoException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

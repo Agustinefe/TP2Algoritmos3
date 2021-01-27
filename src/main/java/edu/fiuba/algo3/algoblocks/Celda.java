@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
-public class Celda {
+public class Celda implements ICelda{
 
     private int x;
     private int y;
@@ -40,7 +40,16 @@ public class Celda {
     //DOUBLE DISPAAAAAAAAAAAAAAAAAAAAAAAAAAATCH
     public boolean esIgualA(Celda otraCelda){
 
-        return otraCelda.sonLasMismasCoordenadas(this.x, this.y);
+        boolean mismasCoordenadas = otraCelda.sonLasMismasCoordenadas(this.x, this.y);
+        boolean ambasDibujadas = otraCelda.seEncuentranAmbasDibujadas(this.dibujado);
+
+        return (mismasCoordenadas && ambasDibujadas);
+
+    }
+
+    private boolean seEncuentranAmbasDibujadas(boolean estadoDeOtraCelda){
+
+        return (this.dibujado == estadoDeOtraCelda);
 
     }
 

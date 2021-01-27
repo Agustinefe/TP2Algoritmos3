@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.playground;/* Author: firmapaz ;created on 15/12/20*/
 
+import edu.fiuba.algo3.excepciones.OrganizadorOcupadoException;
+
 import java.util.ArrayList;
 
 public class OrganizadorDeObjetos<T> {
@@ -12,7 +14,7 @@ public class OrganizadorDeObjetos<T> {
 
     }
 
-    public void agarrarSucesionDeObjetosDe(ArrayList<T> listaDeBloques, int posicion) throws OrganizadorOcupadoException{
+    public void agarrarSucesionDeObjetosDe(ArrayList<T> listaDeBloques, int posicion) throws OrganizadorOcupadoException {
 
         if(!manoAdministradora.isEmpty()){
 

@@ -21,4 +21,6 @@ public class Abajo implements DireccionDeMovimiento{
 
     }
 
+    public String nombre(){ return "Abajo"; }
+
 }

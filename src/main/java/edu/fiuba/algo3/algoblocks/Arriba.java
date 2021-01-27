@@ -21,4 +21,6 @@ public class Arriba implements DireccionDeMovimiento{
 
     }
 
+    public String nombre(){ return "Arriba"; }
+
 }
