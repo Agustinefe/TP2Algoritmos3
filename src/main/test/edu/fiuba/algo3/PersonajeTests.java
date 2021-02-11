@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PruebasPersonaje {
+public class PersonajeTests {
 
     private Personaje timmy;
     private Pizarra pizarraDeTimmy;

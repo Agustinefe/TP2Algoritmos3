@@ -5,7 +5,7 @@ import edu.fiuba.algo3.algoblocks.Lapiz;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PruebasLapiz {
+public class LapizTests {
 
     @Test
     public void test01ElLapizSeInicializaArriba(){

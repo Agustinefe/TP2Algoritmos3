@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PruebasCelda {
+public class CeldaTests {
 
     private Pizarra miPizarra;
     private Celda celdaCentral;

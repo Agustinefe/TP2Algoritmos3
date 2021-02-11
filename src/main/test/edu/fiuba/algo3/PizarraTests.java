@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PruebasPizarra {
+public class PizarraTests {
 
     private Pizarra miPizarra;
     private Celda celdaCentro;

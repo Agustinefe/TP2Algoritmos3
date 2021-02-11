@@ -18,26 +18,5 @@ public class BloqueBajarLapiz implements Bloque{
 
     }
 
-    @Override
-    public void aniadirBloqueAdelante(Bloque nuevoBloque){
-
-        this.bloqueSiguiente = nuevoBloque;
-
-    }
-
-    @Override
-    public Bloque obtenerBloqueFinal(){
-
-        return this.obtenerBloqueFinal(this);
-
-    }
-
-    private Bloque obtenerBloqueFinal(Bloque siMismo){
-
-        return bloqueSiguiente.obtenerBloqueFinal(bloqueSiguiente);
-
-    }
-
-    private void cambiarSiguienteDelFinal(Bloque bloqueA){}
 
 }

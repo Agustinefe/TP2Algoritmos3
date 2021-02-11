@@ -2,8 +2,6 @@ package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
 public class BloqueMovimiento implements Bloque {
 
-    private Bloque bloqueSiguiente
-
     private DireccionDeMovimiento direccion;
 
     public BloqueMovimiento(DireccionDeMovimiento nuevaDireccion){
@@ -21,10 +19,4 @@ public class BloqueMovimiento implements Bloque {
     }
 
 
-    @Override
-    public void aniadirBloqueAdelante(Bloque nuevoBloque){
-
-        this.bloqueSiguiente = nuevoBloque;
-
-    }
 }

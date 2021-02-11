@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PruebasBloque {
+public class BloqueTests {
 
     private Personaje dibujante;
     private Celda celdaDeInicio;
@@ -88,11 +88,25 @@ public class PruebasBloque {
     @Test
     public void test07BloqueRepeticion(){
 
+        BloqueRepeticion iterativo = new BloqueRepeticion();
+
+        iterativo.establecerNuevaCantidadDeIteraciones(2);
+        iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
+        iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);
+        iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 2);
+        iterativo.aniadirBloqueEnPosicion(new BloqueBajarLapiz(), 3);
+        iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 4);
+
+        iterativo.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+
+        Celda celdaActualEstimada = new Celda(6, 6);
+        celdaActualEstimada.dibujar();
+        assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
 
 
     }
 
-    @Test
+    /*@Test
     public void test08aniadirBloqueAdelante(){
 
         BloqueMovimiento derecha = new BloqueMovimiento(new Derecha());
@@ -112,5 +126,5 @@ public class PruebasBloque {
         Celda celdaActualEstimada = new Celda(4, 3);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
 
-    }
+    }*/
 }

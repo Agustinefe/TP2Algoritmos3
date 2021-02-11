@@ -17,7 +17,7 @@ public class BloqueRepeticion implements Bloque{
     @Override
     public String ejecutarComportamientoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
 
-        for (int i = 0; i < (this.cantidadDeIteraciones + 1); i++){
+        for (int i = 0; i < (this.cantidadDeIteraciones); i++){
 
             secuenciaAIterar.ejecutar(pizarraDeDibujo, estePersonaje);
 
@@ -28,6 +28,18 @@ public class BloqueRepeticion implements Bloque{
     public void establecerNuevaCantidadDeIteraciones(int nuevaCantidadDeIteraciones){
 
         this.cantidadDeIteraciones = nuevaCantidadDeIteraciones;
+
+    }
+
+    public void aniadirBloqueEnPosicion(Bloque nuevoBloque, int posicion){
+
+       this.secuenciaAIterar.insertar(nuevoBloque, posicion);
+
+    }
+
+    public SecuenciaDeBloques removerBloquesEnPosicion(int posicion){
+
+       return this.secuenciaAIterar.separar(posicion);
 
     }
 

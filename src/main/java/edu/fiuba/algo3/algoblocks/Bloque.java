@@ -4,10 +4,10 @@ public interface Bloque {
 
     public abstract String ejecutarComportamientoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje);
 
-    public abstract Bloque obtenerBloqueFinal();
+    //public abstract Bloque obtenerBloqueFinal();
 
-    public abstract void aniadirBloqueAdelante(Bloque nuevoBloqueQueVaAdelante);
+    //public abstract void aniadirBloqueAdelante(Bloque nuevoBloqueQueVaAdelante);
 
-    private abstract Bloque obtenerBloqueFinal(Bloque elMismoBloque);
+    //private abstract Bloque obtenerBloqueFinal(Bloque elMismoBloque);
 }
 
