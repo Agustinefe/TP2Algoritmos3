@@ -7,17 +7,20 @@ import javafx.scene.control.Button;
 public class MyButtonEventHandler implements EventHandler<ActionEvent> {
 
     private Button miBoton;
+    private NombreMyButtonEventHandler proximoNombre;
 
     public MyButtonEventHandler (Button miBoton){
 
         this.miBoton = miBoton;
+        miBoton.setText("Ejecutar");
+        this.proximoNombre = new NombreMyButtonEventHandler();
 
     }
 
     @Override
     public void handle(ActionEvent actionEvent){
 
-        String textoClickeado = "Me han clickeado";
+        String textoClickeado = this.proximoNombre.actualizarNombreBoton();
         System.out.println(textoClickeado);
         this.miBoton.setText(textoClickeado);
 
