@@ -76,6 +76,12 @@ public class SecuenciaDeBloques {
 
     }
 
+    public void ejecutarComportamientoInverso(Pizarra zonaDeDibujo, Personaje dibujante){
+
+        this.laSecuencia.stream().forEach(bloque -> {bloque.ejecutarComportamientoInversoSobrePizarraEn(zonaDeDibujo, dibujante);});
+
+    }
+
 
 
 

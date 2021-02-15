@@ -106,25 +106,67 @@ public class BloqueTests {
 
     }
 
-    /*@Test
-    public void test08aniadirBloqueAdelante(){
+    @Test
+    public void test08BloqueInvertirComportamiento(){
 
-        BloqueMovimiento derecha = new BloqueMovimiento(new Derecha());
-        BloqueMovimiento izquierda = new BloqueMovimiento(new Izquierda());
-        BloqueMovimiento arriba = new BloqueMovimiento(new Arriba());
-        BloqueMovimiento abajo = new BloqueMovimiento(new Abajo());
-        BloqueTerminal terminal = new BloqueTerminal();
-        derecha.aniadirBloqueAdelante(izquierda);
-        izquierda.aniadirBloqueAdelante(arriba);
-        arriba.aniadirBloqueAdelante(abajo);
-        abajo.aniadirBloqueAdelante(terminal);
+        BloqueInvertirComportamiento inverso = new BloqueInvertirComportamiento();
 
-        Bloque bloqueAEjecutar = derecha.obtenerBloqueFinal();
+        inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
+        inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);
+        inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 2);
+        inverso.aniadirBloqueEnPosicion(new BloqueSubirLapiz(), 3);
+        inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 4);
 
-        bloqueAEjecutar.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        inverso.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(4, 3);
+        Celda celdaActualEstimada = new Celda(3, 3);
+        celdaActualEstimada.dibujar();
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
 
-    }*/
+    }
+
+    @Test
+    public void test09InviertoElComportamientoDeUnBloqueRepeticion(){
+
+        BloqueRepeticion iterativo = new BloqueRepeticion();
+
+        iterativo.establecerNuevaCantidadDeIteraciones(2);
+        iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
+        iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);
+        iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 2);
+        iterativo.aniadirBloqueEnPosicion(new BloqueBajarLapiz(), 3);
+        iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 4);
+
+        BloqueInvertirComportamiento inverso = new BloqueInvertirComportamiento();
+        inverso.aniadirBloqueEnPosicion(iterativo, 0);
+
+        inverso.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+
+        Celda celdaActualEstimada = new Celda(2, 2);
+        assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
+
+    }
+
+    @Test
+    public void test10InvertirElComportamientoDeUnBloqueDeComportamientoInvertidoEjecutaUnComportamientoNormal(){
+
+        BloqueInvertirComportamiento inverso = new BloqueInvertirComportamiento();
+        BloqueInvertirComportamiento inversoDelInverso = new BloqueInvertirComportamiento();
+
+        inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
+        inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);
+        inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 2);
+        inverso.aniadirBloqueEnPosicion(new BloqueSubirLapiz(), 3);
+        inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 4);
+
+        inversoDelInverso.aniadirBloqueEnPosicion(inverso, 0);
+
+        inversoDelInverso.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+
+        Celda celdaActualEstimada = new Celda(5, 5);
+        assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
+
+    }
+
+
 }

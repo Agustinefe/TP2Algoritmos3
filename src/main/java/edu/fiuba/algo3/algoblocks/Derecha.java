@@ -21,6 +21,8 @@ public class Derecha implements DireccionDeMovimiento{
 
     }
 
-    public String nombre(){ return "Derecha"; }
-
+    @Override
+    public DireccionDeMovimiento direccionOpuesta() {
+        return new Izquierda();
+    }
 }

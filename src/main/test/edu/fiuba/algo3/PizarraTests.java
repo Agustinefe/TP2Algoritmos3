@@ -14,16 +14,15 @@ public class PizarraTests {
 
     public void setUp(){
 
-        this.miPizarra = new Pizarra(5, 5);
-       celdaCentro = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(2, 3, new Derecha());
-
+        this.miPizarra = new Pizarra(9, 9);
+        celdaCentro = miPizarra.obtenerCeldaCentral();
     }
 
     @Test
     public void test01ObtengoLaMismaCeldaYendoDerechaYArriba(){
 
-        Celda celdaDerecha = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(2, 3, new Derecha());
-        Celda celdaArriba = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(3, 2, new Arriba());
+        Celda celdaDerecha = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(4, 5, new Derecha());
+        Celda celdaArriba = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(5, 4, new Arriba());
 
         assertTrue(celdaDerecha.esIgualA(celdaArriba));
 
@@ -32,8 +31,8 @@ public class PizarraTests {
     @Test
     public void test02ObtengoLaMismaCeldaYendoIzquierdaAbajoYAbajoIzquierda(){
 
-        Celda celdaAbajo= miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(1,2, new Abajo());
-        Celda celdaIzquierda = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(2,1, new Izquierda());
+        Celda celdaAbajo= miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(3,4, new Abajo());
+        Celda celdaIzquierda = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(4,3, new Izquierda());
 
         assertTrue(celdaAbajo.esIgualA(celdaIzquierda));
 
@@ -42,7 +41,7 @@ public class PizarraTests {
     @Test
     public void test03ObtengoCorrectamenteLaCeldaCentral(){
 
-        Celda celdaConMismasCoordenadasQueLaCentral = new Celda(2, 2);
+        Celda celdaConMismasCoordenadasQueLaCentral = new Celda(4, 4);
 
         assertTrue(celdaConMismasCoordenadasQueLaCentral.esIgualA(miPizarra.obtenerCeldaCentral()));
 

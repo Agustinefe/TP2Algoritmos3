@@ -112,7 +112,7 @@ public class Entrega2Tests {
             assertTrue(this.jimmy.seEncuentraEn(pasoEstimadoDePersonaje.get(cont)));
 
         }
-        
+
     }
 
 }

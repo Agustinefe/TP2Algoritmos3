@@ -24,7 +24,7 @@ public class Personaje {
 
     }
 
-    public void moversePorLaPizarraHacia(Pizarra estaPizarra,DireccionDeMovimiento estaDireccion){
+    public void moversePorLaPizarraHacia(Pizarra estaPizarra, DireccionDeMovimiento estaDireccion){
 
         Celda celdaContigua = celdaActual.obtenerCeldaQueEstaALa(estaDireccion, estaPizarra);
 
@@ -39,6 +39,12 @@ public class Personaje {
         return this.celdaActual.esIgualA(estaCelda);
 
     }
+
+   /* public void imprimirCoordenadas(){
+
+        this.celdaActual.imprimirCoordenadas();
+
+    }*/
 
 
 

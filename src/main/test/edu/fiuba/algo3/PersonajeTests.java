@@ -2,11 +2,7 @@ package edu.fiuba.algo3;/* Author: firmapaz ;created on 12/12/20*/
 
 import edu.fiuba.algo3.algoblocks.*;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.never;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -23,7 +19,7 @@ public class PersonajeTests {
     @BeforeEach
     public void setUp(){
 
-        this.pizarraDeTimmy = new Pizarra(5, 5);
+        this.pizarraDeTimmy = new Pizarra(9, 9);
         this.celdaInicial = pizarraDeTimmy.obtenerCeldaCentral();
         this.timmy = new Personaje(this.celdaInicial);
 
@@ -72,12 +68,12 @@ public class PersonajeTests {
         listaDeMovimientos.add(new Arriba());
         listaDeMovimientos.add(new Izquierda());
         listaDeMovimientos.add(new Abajo());
-
-        registroDePasoEstimado.add(new Celda(3, 2));
-        registroDePasoEstimado.add(new Celda(3, 3));
-        registroDePasoEstimado.add(new Celda(3, 4));
-        registroDePasoEstimado.add(new Celda(2, 4));
-        registroDePasoEstimado.add(new Celda(2, 3));
+        //4, 4
+        registroDePasoEstimado.add(new Celda(5, 4));
+        registroDePasoEstimado.add(new Celda(5, 5));
+        registroDePasoEstimado.add(new Celda(5, 6));
+        registroDePasoEstimado.add(new Celda(4, 6));
+        registroDePasoEstimado.add(new Celda(4, 5));
 
         for(int i = 0; i < listaDeMovimientos.size(); i++){
 
@@ -101,12 +97,12 @@ public class PersonajeTests {
         listaDeMovimientos.add(new Arriba());
         listaDeMovimientos.add(new Izquierda());
 
-        registroDePasoEstimado.add(new Celda(2, 1));
-        registroDePasoEstimado.add(new Celda(3, 1));
-        registroDePasoEstimado.add(new Celda(4, 1));
-        registroDePasoEstimado.add(new Celda(4, 2));
         registroDePasoEstimado.add(new Celda(4, 3));
-        registroDePasoEstimado.add(new Celda(3, 3));
+        registroDePasoEstimado.add(new Celda(5, 3));
+        registroDePasoEstimado.add(new Celda(6, 3));
+        registroDePasoEstimado.add(new Celda(6, 4));
+        registroDePasoEstimado.add(new Celda(6, 5));
+        registroDePasoEstimado.add(new Celda(5, 5));
         registroDePasoEstimado.get(0).dibujar();
         registroDePasoEstimado.get(1).dibujar();
         registroDePasoEstimado.get(2).dibujar();

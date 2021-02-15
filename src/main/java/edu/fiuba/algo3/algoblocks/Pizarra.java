@@ -65,4 +65,10 @@ public class Pizarra {
 
     }
 
+    public void blanquearTodo(){
+
+        this.listaDeCeldas.stream().forEach(celda -> {celda.blanquear();});
+        
+    }
+
 }

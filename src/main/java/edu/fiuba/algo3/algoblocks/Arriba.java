@@ -21,6 +21,8 @@ public class Arriba implements DireccionDeMovimiento{
 
     }
 
-    public String nombre(){ return "Arriba"; }
-
+    @Override
+    public DireccionDeMovimiento direccionOpuesta() {
+        return new Abajo();
+    }
 }

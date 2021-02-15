@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
-public class Celda implements ICelda{
+public class Celda{
 
     private int x;
     private int y;
@@ -59,5 +59,17 @@ public class Celda implements ICelda{
 
     }
 
+    public void blanquear(){
+
+        this.dibujado = false;
+
+    }
+
+   /* public void imprimirCoordenadas(){
+
+        System.out.println(this.x);
+        System.out.println(this.y);
+
+    }*/
 
 }

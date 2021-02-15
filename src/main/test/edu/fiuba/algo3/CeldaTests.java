@@ -17,7 +17,7 @@ public class CeldaTests {
 
     public void setUp(){
 
-       this.miPizarra = new Pizarra(7, 7);
+       this.miPizarra = new Pizarra(9, 9);
        this.celdaCentral = miPizarra.obtenerCeldaCentral();
 
     }
@@ -57,7 +57,7 @@ public class CeldaTests {
 
         Celda celdaActual = this.celdaCentral;
 
-        Celda celdaFinalEstimada = new Celda(3, 5);
+        Celda celdaFinalEstimada = new Celda(4, 6);
 
         for(int i = 0; i < listaDeMovimientos.size(); i++){
 
