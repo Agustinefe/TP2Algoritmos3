@@ -8,14 +8,14 @@ public class BloqueBajarLapiz implements Bloque{
     }
 
     @Override
-    public void ejecutarComportamientoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
+    public void ejecutarComportamientoSobrePizarraEn(Personaje estePersonaje) {
 
         estePersonaje.bajarLapiz();
 
     }
 
     @Override
-    public void ejecutarComportamientoInversoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
+    public void ejecutarComportamientoInversoSobrePizarraEn(Personaje estePersonaje) {
 
         estePersonaje.subirLapiz();
 

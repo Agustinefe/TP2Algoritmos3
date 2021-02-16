@@ -11,16 +11,16 @@ public class BloqueInvertirComportamiento implements Bloque{
     }
 
     @Override
-    public void ejecutarComportamientoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
+    public void ejecutarComportamientoSobrePizarraEn(Personaje estePersonaje) {
 
-        secuenciaAInvertir.ejecutarComportamientoInverso(pizarraDeDibujo, estePersonaje);
+        secuenciaAInvertir.ejecutarComportamientoInverso(estePersonaje);
 
     }
 
     @Override
-    public void ejecutarComportamientoInversoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
+    public void ejecutarComportamientoInversoSobrePizarraEn(Personaje estePersonaje) {
 
-        secuenciaAInvertir.ejecutar(pizarraDeDibujo, estePersonaje);
+        secuenciaAInvertir.ejecutar(estePersonaje);
 
     }
 

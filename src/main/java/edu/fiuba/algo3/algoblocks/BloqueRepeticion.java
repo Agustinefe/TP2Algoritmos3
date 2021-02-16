@@ -15,22 +15,22 @@ public class BloqueRepeticion implements Bloque{
    }
 
     @Override
-    public void ejecutarComportamientoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
+    public void ejecutarComportamientoSobrePizarraEn(Personaje estePersonaje) {
 
         for (int i = 0; i < (this.cantidadDeIteraciones); i++){
 
-            secuenciaAIterar.ejecutar(pizarraDeDibujo, estePersonaje);
+            secuenciaAIterar.ejecutar(estePersonaje);
 
         }
 
     }
 
     @Override
-    public void ejecutarComportamientoInversoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
+    public void ejecutarComportamientoInversoSobrePizarraEn(Personaje estePersonaje) {
 
         for (int i = 0; i < (this.cantidadDeIteraciones); i++){
 
-            secuenciaAIterar.ejecutarComportamientoInverso(pizarraDeDibujo, estePersonaje);
+            secuenciaAIterar.ejecutarComportamientoInverso(estePersonaje);
 
         }
 

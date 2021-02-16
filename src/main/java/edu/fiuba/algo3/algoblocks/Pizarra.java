@@ -1,10 +1,10 @@
 package edu.fiuba.algo3.algoblocks;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Pizarra {
 
+    private static Pizarra INSTANCIA = new Pizarra(9, 9);
     private ArrayList<Celda> listaDeCeldas;
     private int base;
     private int altura;
@@ -12,7 +12,7 @@ public class Pizarra {
     /*
     * Puedo implementar la listaDeCeldas con una matriz.
     * */
-    public Pizarra(int nuevaBase, int nuevaAltura){
+    private Pizarra(int nuevaBase, int nuevaAltura){
 
         listaDeCeldas = new ArrayList<Celda>();
         Celda estaCelda;
@@ -28,6 +28,12 @@ public class Pizarra {
             }
 
         }
+
+    }
+
+    public static Pizarra getInstance(){
+
+        return INSTANCIA;
 
     }
 

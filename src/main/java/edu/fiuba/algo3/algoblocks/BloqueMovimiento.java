@@ -11,16 +11,16 @@ public class BloqueMovimiento implements Bloque {
     }
 
     @Override
-    public void ejecutarComportamientoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
+    public void ejecutarComportamientoSobrePizarraEn(Personaje estePersonaje) {
 
-        estePersonaje.moversePorLaPizarraHacia(pizarraDeDibujo, this.direccion);
+        estePersonaje.moversePorLaPizarraHacia(this.direccion);
 
     }
 
     @Override
-    public void ejecutarComportamientoInversoSobrePizarraEn(Pizarra pizarraDeDibujo, Personaje estePersonaje) {
+    public void ejecutarComportamientoInversoSobrePizarraEn(Personaje estePersonaje) {
 
-        estePersonaje.moversePorLaPizarraHacia(pizarraDeDibujo, this.direccion.direccionOpuesta());
+        estePersonaje.moversePorLaPizarraHacia(this.direccion.direccionOpuesta());
 
     }
 

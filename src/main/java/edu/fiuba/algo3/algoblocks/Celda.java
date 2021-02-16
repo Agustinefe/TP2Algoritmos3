@@ -15,9 +15,9 @@ public class Celda{
 
     }
 
-    public Celda obtenerCeldaQueEstaALa(DireccionDeMovimiento direccionALaQueSeMueveElPersonaje, Pizarra estaPizarra){
+    public Celda obtenerCeldaQueEstaALa(DireccionDeMovimiento direccionALaQueSeMueveElPersonaje){
 
-        return estaPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(this.x, this.y, direccionALaQueSeMueveElPersonaje);
+        return Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(this.x, this.y, direccionALaQueSeMueveElPersonaje);
 
     }
 
@@ -25,7 +25,7 @@ public class Celda{
 
         this.dibujado = true;
 
-        return this.dibujado;
+        return true;
 
     }
 

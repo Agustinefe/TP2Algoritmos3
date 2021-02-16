@@ -7,22 +7,22 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PizarraTests {
 
-    private Pizarra miPizarra;
+    //private Pizarra miPizarra;
     private Celda celdaCentro;
 
     @BeforeEach
 
     public void setUp(){
 
-        this.miPizarra = new Pizarra(9, 9);
-        celdaCentro = miPizarra.obtenerCeldaCentral();
+        //this.miPizarra = new Pizarra(9, 9);
+        celdaCentro = Pizarra.getInstance().obtenerCeldaCentral();
     }
 
     @Test
     public void test01ObtengoLaMismaCeldaYendoDerechaYArriba(){
 
-        Celda celdaDerecha = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(4, 5, new Derecha());
-        Celda celdaArriba = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(5, 4, new Arriba());
+        Celda celdaDerecha = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(4, 5, new Derecha());
+        Celda celdaArriba = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(5, 4, new Arriba());
 
         assertTrue(celdaDerecha.esIgualA(celdaArriba));
 
@@ -31,8 +31,8 @@ public class PizarraTests {
     @Test
     public void test02ObtengoLaMismaCeldaYendoIzquierdaAbajoYAbajoIzquierda(){
 
-        Celda celdaAbajo= miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(3,4, new Abajo());
-        Celda celdaIzquierda = miPizarra.obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(4,3, new Izquierda());
+        Celda celdaAbajo= Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(3,4, new Abajo());
+        Celda celdaIzquierda = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(4,3, new Izquierda());
 
         assertTrue(celdaAbajo.esIgualA(celdaIzquierda));
 
@@ -43,7 +43,7 @@ public class PizarraTests {
 
         Celda celdaConMismasCoordenadasQueLaCentral = new Celda(4, 4);
 
-        assertTrue(celdaConMismasCoordenadasQueLaCentral.esIgualA(miPizarra.obtenerCeldaCentral()));
+        assertTrue(celdaConMismasCoordenadasQueLaCentral.esIgualA(Pizarra.getInstance().obtenerCeldaCentral()));
 
     }
 

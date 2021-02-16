@@ -2,10 +2,10 @@ package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
 public interface EstadoDeLapiz {
 
-    public abstract LapizArriba subirLapiz();
+    LapizArriba subirLapiz();
 
-    public abstract LapizAbajo bajarLapiz();
+    LapizAbajo bajarLapiz();
 
-    public abstract boolean dibujar(Celda celdaDeInicio, Celda celdaDeLlegada);
+    boolean dibujar(Celda celdaDeInicio, Celda celdaDeLlegada);
 
 }

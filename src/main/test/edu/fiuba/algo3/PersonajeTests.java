@@ -13,14 +13,14 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonajeTests {
 
     private Personaje timmy;
-    private Pizarra pizarraDeTimmy;
+    //private Pizarra pizarraDeTimmy;
     private Celda celdaInicial;
 
     @BeforeEach
     public void setUp(){
 
-        this.pizarraDeTimmy = new Pizarra(9, 9);
-        this.celdaInicial = pizarraDeTimmy.obtenerCeldaCentral();
+        //this.pizarraDeTimmy = new Pizarra(9, 9);
+        this.celdaInicial = Pizarra.getInstance().obtenerCeldaCentral();
         this.timmy = new Personaje(this.celdaInicial);
 
     }
@@ -30,7 +30,7 @@ public class PersonajeTests {
 
 
 
-        this.timmy.moversePorLaPizarraHacia(pizarraDeTimmy, new Izquierda());
+        this.timmy.moversePorLaPizarraHacia(new Izquierda());
 
         assertFalse(this.celdaInicial.seEncuentraDibujada());
 
@@ -40,7 +40,7 @@ public class PersonajeTests {
     public void test02TimmyBajaElLapizYDibujaAlMoverse(){
 
         this.timmy.bajarLapiz();
-        this.timmy.moversePorLaPizarraHacia(pizarraDeTimmy, new Izquierda());
+        this.timmy.moversePorLaPizarraHacia(new Izquierda());
 
         assertTrue(this.celdaInicial.seEncuentraDibujada());
 
@@ -51,7 +51,7 @@ public class PersonajeTests {
 
         this.timmy.bajarLapiz();
         this.timmy.subirLapiz();
-        this.timmy.moversePorLaPizarraHacia(pizarraDeTimmy, new Izquierda());
+        this.timmy.moversePorLaPizarraHacia(new Izquierda());
 
         assertFalse(this.celdaInicial.seEncuentraDibujada());
 
@@ -77,7 +77,7 @@ public class PersonajeTests {
 
         for(int i = 0; i < listaDeMovimientos.size(); i++){
 
-            this.timmy.moversePorLaPizarraHacia(this.pizarraDeTimmy, listaDeMovimientos.get(i));
+            this.timmy.moversePorLaPizarraHacia(listaDeMovimientos.get(i));
             assertTrue(this.timmy.seEncuentraEn(registroDePasoEstimado.get(i)));
 
         }
@@ -114,7 +114,7 @@ public class PersonajeTests {
 
         for(i = 0; i < listaDeMovimientos.size() - 2; i++){
 
-            this.timmy.moversePorLaPizarraHacia(this.pizarraDeTimmy, listaDeMovimientos.get(i));
+            this.timmy.moversePorLaPizarraHacia(listaDeMovimientos.get(i));
             assertTrue(this.timmy.seEncuentraEn(registroDePasoEstimado.get(i)));
 
         }
@@ -123,7 +123,7 @@ public class PersonajeTests {
 
         for(i = listaDeMovimientos.size() - 2; i < listaDeMovimientos.size(); i++){
 
-            this.timmy.moversePorLaPizarraHacia(this.pizarraDeTimmy, listaDeMovimientos.get(i));
+            this.timmy.moversePorLaPizarraHacia(listaDeMovimientos.get(i));
             assertTrue(this.timmy.seEncuentraEn(registroDePasoEstimado.get(i)));
 
         }

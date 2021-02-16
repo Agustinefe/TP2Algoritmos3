@@ -10,14 +10,14 @@ public class BloqueTests {
 
     private Personaje dibujante;
     private Celda celdaDeInicio;
-    private Pizarra zonaDeDibujo;
+    //private Pizarra zonaDeDibujo;
 
     @BeforeEach
 
     public void setUp(){
 
-        this.zonaDeDibujo = new Pizarra(9, 9);
-        this.celdaDeInicio = this.zonaDeDibujo.obtenerCeldaCentral();
+        //this.zonaDeDibujo = new Pizarra(9, 9);
+        this.celdaDeInicio = Pizarra.getInstance().obtenerCeldaCentral();
         this.dibujante = new Personaje(this.celdaDeInicio);
 
     }
@@ -26,12 +26,12 @@ public class BloqueTests {
     @Test
     public void test01BloqueBajarLapiz(){
 
-        (new BloqueBajarLapiz()).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        (new BloqueBajarLapiz()).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaInicialEstimada = new Celda(4, 4);
         assertTrue(this.celdaDeInicio.esIgualA(celdaInicialEstimada));
 
-        (new BloqueMovimiento(new Izquierda())).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        (new BloqueMovimiento(new Izquierda())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
         celdaInicialEstimada.dibujar();
         assertTrue(this.celdaDeInicio.esIgualA(celdaInicialEstimada));
 
@@ -41,9 +41,9 @@ public class BloqueTests {
     @Test
     public void test02BloqueSubirLapiz(){
 
-        (new BloqueBajarLapiz()).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
-        (new BloqueSubirLapiz()).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
-        (new BloqueMovimiento(new Derecha())).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        (new BloqueBajarLapiz()).ejecutarComportamientoSobrePizarraEn(this.dibujante);
+        (new BloqueSubirLapiz()).ejecutarComportamientoSobrePizarraEn(this.dibujante);
+        (new BloqueMovimiento(new Derecha())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaInicialEstimada = new Celda(4, 4);
         assertTrue(this.celdaDeInicio.esIgualA(celdaInicialEstimada));
@@ -52,7 +52,7 @@ public class BloqueTests {
     @Test
     public void test03BloqueMovimientoDerecha(){
 
-        (new BloqueMovimiento(new Derecha())).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        (new BloqueMovimiento(new Derecha())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaActualEstimada = new Celda(5, 4);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
@@ -61,7 +61,7 @@ public class BloqueTests {
     @Test
     public void test04BloqueMovimientoIzquierda(){
 
-        (new BloqueMovimiento(new Izquierda())).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        (new BloqueMovimiento(new Izquierda())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaActualEstimada = new Celda(3, 4);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
@@ -70,7 +70,7 @@ public class BloqueTests {
     @Test
     public void test05BloqueMovimientoArriba(){
 
-        (new BloqueMovimiento(new Arriba())).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        (new BloqueMovimiento(new Arriba())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaActualEstimada = new Celda(4, 5);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
@@ -79,7 +79,7 @@ public class BloqueTests {
     @Test
     public void test06BloqueMovimientoAbajo(){
 
-        (new BloqueMovimiento(new Abajo())).ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        (new BloqueMovimiento(new Abajo())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaActualEstimada = new Celda(4, 3);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
@@ -97,7 +97,7 @@ public class BloqueTests {
         iterativo.aniadirBloqueEnPosicion(new BloqueBajarLapiz(), 3);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 4);
 
-        iterativo.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        iterativo.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaActualEstimada = new Celda(6, 6);
         celdaActualEstimada.dibujar();
@@ -117,7 +117,7 @@ public class BloqueTests {
         inverso.aniadirBloqueEnPosicion(new BloqueSubirLapiz(), 3);
         inverso.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 4);
 
-        inverso.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        inverso.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaActualEstimada = new Celda(3, 3);
         celdaActualEstimada.dibujar();
@@ -140,7 +140,7 @@ public class BloqueTests {
         BloqueInvertirComportamiento inverso = new BloqueInvertirComportamiento();
         inverso.aniadirBloqueEnPosicion(iterativo, 0);
 
-        inverso.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        inverso.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaActualEstimada = new Celda(2, 2);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
@@ -161,7 +161,7 @@ public class BloqueTests {
 
         inversoDelInverso.aniadirBloqueEnPosicion(inverso, 0);
 
-        inversoDelInverso.ejecutarComportamientoSobrePizarraEn(this.zonaDeDibujo, this.dibujante);
+        inversoDelInverso.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
         Celda celdaActualEstimada = new Celda(5, 5);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));

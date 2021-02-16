@@ -10,15 +10,15 @@ public class SecuenciaDeBloquesTests {
 
     private SecuenciaDeBloques miSecuencia;
     private SecuenciaDeBloques miSecuencia2;
-    private Pizarra nuevaPizarra;
+    //private Pizarra nuevaPizarra;
     private Personaje dibujante;
 
     @BeforeEach
 
     public void setUp() {
 
-        this.nuevaPizarra = new Pizarra(9, 9);
-        this.dibujante = new Personaje(nuevaPizarra.obtenerCeldaCentral());
+        //this.nuevaPizarra = new Pizarra(9, 9);
+        this.dibujante = new Personaje(Pizarra.getInstance().obtenerCeldaCentral());
 
         Derecha derecha = new Derecha();
         Izquierda izquierda = new Izquierda();
@@ -47,12 +47,12 @@ public class SecuenciaDeBloquesTests {
     @Test
     public void test00elSetUpFueHechoCorrectamente() {
 
-        this.miSecuencia.ejecutar(this.nuevaPizarra, this.dibujante);
+        this.miSecuencia.ejecutar(this.dibujante);
         Celda celdaFinalSecuencia1 = new Celda(5, 5);
         celdaFinalSecuencia1.dibujar();
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia1));
 
-        this.miSecuencia2.ejecutar(this.nuevaPizarra, this.dibujante);
+        this.miSecuencia2.ejecutar(this.dibujante);
         Celda celdaFinalSecuencia2 = new Celda(4, 3);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia2));
 
@@ -62,7 +62,7 @@ public class SecuenciaDeBloquesTests {
     public void test01insertoUnBloqueAlFinalDeLaSecuencia() {
 
         this.miSecuencia.insertar(new BloqueMovimiento(new Arriba()));
-        this.miSecuencia.ejecutar(this.nuevaPizarra, this.dibujante);
+        this.miSecuencia.ejecutar(this.dibujante);
 
         Celda celdaFinalSecuencia = new Celda(5, 6);
         celdaFinalSecuencia.dibujar();
@@ -75,7 +75,7 @@ public class SecuenciaDeBloquesTests {
     public void test02InsertoUnBloqueEnDeterminadaPosicion() {
 
         this.miSecuencia.insertar(new BloqueSubirLapiz(), 4);
-        this.miSecuencia.ejecutar(this.nuevaPizarra, this.dibujante);
+        this.miSecuencia.ejecutar(this.dibujante);
 
         Celda celdaFinalSecuencia = new Celda(5, 5);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia));
@@ -86,7 +86,7 @@ public class SecuenciaDeBloquesTests {
     public void test03JuntoDosSecuenciasEnLasPuntas() {
 
         this.miSecuencia.juntar(this.miSecuencia2);
-        this.miSecuencia.ejecutar(this.nuevaPizarra, this.dibujante);
+        this.miSecuencia.ejecutar(this.dibujante);
 
         Celda celdaFinalSecuencia = new Celda(4, 3);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia));
@@ -97,7 +97,7 @@ public class SecuenciaDeBloquesTests {
     public void test04SeparoUnaSecuencia() {
 
         SecuenciaDeBloques pedacito = this.miSecuencia.separar(2);
-        pedacito.ejecutar(this.nuevaPizarra, this.dibujante);
+        pedacito.ejecutar(this.dibujante);
 
         Celda celdaFinalSecuencia = new Celda(3, 5);
         celdaFinalSecuencia.dibujar();
@@ -110,7 +110,7 @@ public class SecuenciaDeBloquesTests {
 
         SecuenciaDeBloques pedacito = this.miSecuencia2.separar(2);
         this.miSecuencia.juntar(pedacito, 3);
-        this.miSecuencia.ejecutar(this.nuevaPizarra, this.dibujante);
+        this.miSecuencia.ejecutar(this.dibujante);
 
         Celda celdaFinalSecuencia = new Celda(4, 4);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia));

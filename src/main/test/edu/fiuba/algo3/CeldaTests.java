@@ -10,15 +10,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CeldaTests {
 
-    private Pizarra miPizarra;
+    //private Pizarra miPizarra;
     private Celda celdaCentral;
 
     @BeforeEach
 
     public void setUp(){
 
-       this.miPizarra = new Pizarra(9, 9);
-       this.celdaCentral = miPizarra.obtenerCeldaCentral();
+       //this.miPizarra = new Pizarra(9, 9);
+       this.celdaCentral = Pizarra.getInstance().obtenerCeldaCentral();
 
     }
 
@@ -33,13 +33,13 @@ public class CeldaTests {
     @Test
     public void test02LlegoALaCeldaDiagonalArribaDerechaPorCaminosDistintos(){
 
-        Celda celdaArribaDeLaCentral = this.celdaCentral.obtenerCeldaQueEstaALa(new Arriba(), this.miPizarra);
-        Celda celdaDerechaDeLaCentral = this.celdaCentral.obtenerCeldaQueEstaALa(new Derecha(), this.miPizarra);
+        Celda celdaArribaDeLaCentral = this.celdaCentral.obtenerCeldaQueEstaALa(new Arriba());
+        Celda celdaDerechaDeLaCentral = this.celdaCentral.obtenerCeldaQueEstaALa(new Derecha());
 
         assertFalse(celdaArribaDeLaCentral.esIgualA(celdaDerechaDeLaCentral));
 
-        Celda derechaDeLaCeldaArriba = celdaArribaDeLaCentral.obtenerCeldaQueEstaALa(new Derecha(), this.miPizarra);
-        Celda arribaDeLaCeldaDerecha = celdaDerechaDeLaCentral.obtenerCeldaQueEstaALa(new Arriba(), this.miPizarra);
+        Celda derechaDeLaCeldaArriba = celdaArribaDeLaCentral.obtenerCeldaQueEstaALa(new Derecha());
+        Celda arribaDeLaCeldaDerecha = celdaDerechaDeLaCentral.obtenerCeldaQueEstaALa(new Arriba());
 
         assertTrue(derechaDeLaCeldaArriba.esIgualA(arribaDeLaCeldaDerecha));
 
@@ -61,7 +61,7 @@ public class CeldaTests {
 
         for(int i = 0; i < listaDeMovimientos.size(); i++){
 
-            celdaActual = celdaActual.obtenerCeldaQueEstaALa(listaDeMovimientos.get(i), this.miPizarra);
+            celdaActual = celdaActual.obtenerCeldaQueEstaALa(listaDeMovimientos.get(i));
 
         }
 

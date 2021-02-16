@@ -24,9 +24,9 @@ public class Personaje {
 
     }
 
-    public void moversePorLaPizarraHacia(Pizarra estaPizarra, DireccionDeMovimiento estaDireccion){
+    public void moversePorLaPizarraHacia(DireccionDeMovimiento estaDireccion){
 
-        Celda celdaContigua = celdaActual.obtenerCeldaQueEstaALa(estaDireccion, estaPizarra);
+        Celda celdaContigua = celdaActual.obtenerCeldaQueEstaALa(estaDireccion);
 
         suLapiz.dibujar(this.celdaActual, celdaContigua);
 

@@ -70,15 +70,15 @@ public class SecuenciaDeBloques {
 
     }
 
-    public void ejecutar(Pizarra zonaDeDibujo, Personaje dibujante){
+    public void ejecutar(Personaje dibujante){
 
-        this.laSecuencia.stream().forEach(bloque -> {bloque.ejecutarComportamientoSobrePizarraEn(zonaDeDibujo, dibujante);});
+        this.laSecuencia.stream().forEach(bloque -> {bloque.ejecutarComportamientoSobrePizarraEn(dibujante);});
 
     }
 
-    public void ejecutarComportamientoInverso(Pizarra zonaDeDibujo, Personaje dibujante){
+    public void ejecutarComportamientoInverso(Personaje dibujante){
 
-        this.laSecuencia.stream().forEach(bloque -> {bloque.ejecutarComportamientoInversoSobrePizarraEn(zonaDeDibujo, dibujante);});
+        this.laSecuencia.stream().forEach(bloque -> {bloque.ejecutarComportamientoInversoSobrePizarraEn(dibujante);});
 
     }
 
