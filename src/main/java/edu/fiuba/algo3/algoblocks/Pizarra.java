@@ -43,12 +43,12 @@ public class Pizarra {
 
     }
 
-    public Celda obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(int coordenadaX, int coordenadaY, DireccionDeMovimiento
+    public Celda obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(Coordenadas estasCoordenadas, DireccionDeMovimiento
                                                              direccionDeCeldaContigua){
 
-        int[] nuevasCoordenadas = direccionDeCeldaContigua.aplicarDesplazamiento(coordenadaX, coordenadaY);
+        Coordenadas nuevasCoordenadas = estasCoordenadas.generarCoordenadasAdyacentes(direccionDeCeldaContigua);
         this.comprobarQueLasCoordenadasEstanDentroDeLaPizarra(nuevasCoordenadas);
-        int posicionDeCeldaContigua = this.funcionCoordenadasAPosicionEnListaDeCeldas(nuevasCoordenadas[0], nuevasCoordenadas[1]);
+        int posicionDeCeldaContigua = nuevasCoordenadas.posicionEnLaMatriz(this.base);
 
         return listaDeCeldas.get(posicionDeCeldaContigua);
 
@@ -63,9 +63,9 @@ public class Pizarra {
         return listaDeCeldas.get(posicionDeCeldaContigua);
     }
 
-    private void comprobarQueLasCoordenadasEstanDentroDeLaPizarra(int[] coordenadas){
+    private void comprobarQueLasCoordenadasEstanDentroDeLaPizarra(Coordenadas coordenadasAVerificar){
 
-        if(coordenadas[0] >= this.base || coordenadas[1] >= this.altura){
+        if(coordenadasAVerificar.seEncuentraDentroDeLoslimites(this.base, this.altura)){
             //Tira error de pizarra fuera de rango
         }
 

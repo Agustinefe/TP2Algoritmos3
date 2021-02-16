@@ -16,8 +16,6 @@ public class Entrega2Tests {
     private BloqueMovimiento abajo;
     private BloqueMovimiento derecha;
     private BloqueMovimiento izquierda;
-    private BloqueSubirLapiz subirLapiz;
-    private BloqueBajarLapiz bajarLapiz;
 
     @BeforeEach
     public void setUp(){
@@ -29,8 +27,6 @@ public class Entrega2Tests {
         this.arriba = new BloqueMovimiento(new Arriba());
         this.izquierda = new BloqueMovimiento(new Izquierda());
         this.derecha = new BloqueMovimiento(new Derecha());
-        this.subirLapiz = new BloqueSubirLapiz();
-        this.bajarLapiz = new BloqueBajarLapiz();
 
     }
 

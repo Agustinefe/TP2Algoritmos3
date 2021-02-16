@@ -20,8 +20,8 @@ public class PizarraTests {
     @Test
     public void test01ObtengoLaMismaCeldaYendoDerechaYArriba(){
 
-        Celda celdaDerecha = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(4, 5, new Derecha());
-        Celda celdaArriba = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(5, 4, new Arriba());
+        Celda celdaDerecha = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(new Coordenadas(4, 5), new Derecha());
+        Celda celdaArriba = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(new Coordenadas(5, 4), new Arriba());
 
         assertTrue(celdaDerecha.esIgualA(celdaArriba));
 
@@ -30,8 +30,8 @@ public class PizarraTests {
     @Test
     public void test02ObtengoLaMismaCeldaYendoIzquierdaAbajoYAbajoIzquierda(){
 
-        Celda celdaAbajo= Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(3,4, new Abajo());
-        Celda celdaIzquierda = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(4,3, new Izquierda());
+        Celda celdaAbajo= Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(new Coordenadas(3,4), new Abajo());
+        Celda celdaIzquierda = Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(new Coordenadas(4,3), new Izquierda());
 
         assertTrue(celdaAbajo.esIgualA(celdaIzquierda));
 

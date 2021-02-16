@@ -2,22 +2,20 @@ package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
 public class Celda{
 
-    private int x;
-    private int y;
+    private Coordenadas posicion;
     private boolean dibujado;
 
 
     public Celda(int coordenadaX, int coordenadaY){
 
-        this.x = coordenadaX;
-        this.y = coordenadaY;
+        this.posicion = new Coordenadas(coordenadaX, coordenadaY);
         this.dibujado = false;
 
     }
 
     public Celda obtenerCeldaQueEstaALa(DireccionDeMovimiento direccionALaQueSeMueveElPersonaje){
 
-        return Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(this.x, this.y, direccionALaQueSeMueveElPersonaje);
+        return Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(this.posicion, direccionALaQueSeMueveElPersonaje);
 
     }
 
@@ -40,7 +38,7 @@ public class Celda{
     //DOUBLE DISPAAAAAAAAAAAAAAAAAAAAAAAAAAATCH
     public boolean esIgualA(Celda otraCelda){
 
-        boolean mismasCoordenadas = otraCelda.sonLasMismasCoordenadas(this.x, this.y);
+        boolean mismasCoordenadas = otraCelda.sonLasMismasCoordenadas(this.posicion);
         boolean ambasDibujadas = otraCelda.seEncuentranAmbasDibujadas(this.dibujado);
 
         return (mismasCoordenadas && ambasDibujadas);
@@ -53,9 +51,9 @@ public class Celda{
 
     }
 
-    private boolean sonLasMismasCoordenadas(int otraX, int otraY){
+    private boolean sonLasMismasCoordenadas(Coordenadas coordenadasAComparar){
 
-        return (this.x == otraX && this.y == otraY);
+        return coordenadasAComparar.sonLasMismasCoordenadas(this.posicion);
 
     }
 
@@ -67,8 +65,7 @@ public class Celda{
 
     public void imprimirCoordenadas(){
 
-        System.out.println(this.x);
-        System.out.println(this.y);
+        this.posicion.imprimirCoordenadas();
 
     }
 
