@@ -16,6 +16,7 @@ public class SectorDibujoTests {
 
     public void setUp(){
 
+        Pizarra.getInstance().blanquearTodo();
         this.zonaDeDibujo = new SectorDibujo(9, 9);
 
     }

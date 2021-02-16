@@ -10,15 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CeldaTests {
 
-    //private Pizarra miPizarra;
     private Celda celdaCentral;
 
     @BeforeEach
 
     public void setUp(){
 
-       //this.miPizarra = new Pizarra(9, 9);
-       this.celdaCentral = Pizarra.getInstance().obtenerCeldaCentral();
+        Pizarra.getInstance().blanquearTodo();
+        this.celdaCentral = Pizarra.getInstance().obtenerCeldaCentral();
 
     }
 

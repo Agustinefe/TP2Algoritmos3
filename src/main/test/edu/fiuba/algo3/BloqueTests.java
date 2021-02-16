@@ -10,13 +10,12 @@ public class BloqueTests {
 
     private Personaje dibujante;
     private Celda celdaDeInicio;
-    //private Pizarra zonaDeDibujo;
 
     @BeforeEach
 
     public void setUp(){
 
-        //this.zonaDeDibujo = new Pizarra(9, 9);
+        Pizarra.getInstance().blanquearTodo();
         this.celdaDeInicio = Pizarra.getInstance().obtenerCeldaCentral();
         this.dibujante = new Personaje(this.celdaDeInicio);
 

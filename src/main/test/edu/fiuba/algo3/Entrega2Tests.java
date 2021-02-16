@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Entrega2Tests {
 
-    private Pizarra areaDeDibujo;
     private Personaje jimmy;
     private BloqueRepeticion bloqueIterativo;
     private BloqueMovimiento arriba;
@@ -23,8 +22,8 @@ public class Entrega2Tests {
     @BeforeEach
     public void setUp(){
 
+        Pizarra.getInstance().blanquearTodo();
         this.bloqueIterativo = new BloqueRepeticion();
-        //this.areaDeDibujo = new Pizarra(9, 9);
         this.jimmy = new Personaje(Pizarra.getInstance().obtenerCeldaCentral());
         this.abajo = new BloqueMovimiento(new Abajo());
         this.arriba = new BloqueMovimiento(new Arriba());

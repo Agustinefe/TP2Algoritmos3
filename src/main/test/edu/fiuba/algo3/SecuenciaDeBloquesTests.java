@@ -10,14 +10,13 @@ public class SecuenciaDeBloquesTests {
 
     private SecuenciaDeBloques miSecuencia;
     private SecuenciaDeBloques miSecuencia2;
-    //private Pizarra nuevaPizarra;
     private Personaje dibujante;
 
     @BeforeEach
 
     public void setUp() {
 
-        //this.nuevaPizarra = new Pizarra(9, 9);
+        Pizarra.getInstance().blanquearTodo();
         this.dibujante = new Personaje(Pizarra.getInstance().obtenerCeldaCentral());
 
         Derecha derecha = new Derecha();

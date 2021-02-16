@@ -40,11 +40,11 @@ public class Personaje {
 
     }
 
-   /* public void imprimirCoordenadas(){
+   public void imprimirCoordenadas(){
 
         this.celdaActual.imprimirCoordenadas();
 
-    }*/
+    }
 
 
 

@@ -13,13 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonajeTests {
 
     private Personaje timmy;
-    //private Pizarra pizarraDeTimmy;
     private Celda celdaInicial;
 
     @BeforeEach
     public void setUp(){
 
-        //this.pizarraDeTimmy = new Pizarra(9, 9);
+        Pizarra.getInstance().blanquearTodo();
         this.celdaInicial = Pizarra.getInstance().obtenerCeldaCentral();
         this.timmy = new Personaje(this.celdaInicial);
 

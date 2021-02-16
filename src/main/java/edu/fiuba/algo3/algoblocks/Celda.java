@@ -65,11 +65,11 @@ public class Celda{
 
     }
 
-   /* public void imprimirCoordenadas(){
+    public void imprimirCoordenadas(){
 
         System.out.println(this.x);
         System.out.println(this.y);
 
-    }*/
+    }
 
 }

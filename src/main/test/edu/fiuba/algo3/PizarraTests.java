@@ -7,14 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PizarraTests {
 
-    //private Pizarra miPizarra;
     private Celda celdaCentro;
 
     @BeforeEach
 
     public void setUp(){
 
-        //this.miPizarra = new Pizarra(9, 9);
+        Pizarra.getInstance().blanquearTodo();
         celdaCentro = Pizarra.getInstance().obtenerCeldaCentral();
     }
 
