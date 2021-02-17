@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;/* Author: firmapaz ;created on 15/2/21*/
+package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 15/2/21*/
 
 public class ReiniciarNombre implements DadorDeNombreDeBoton{
 

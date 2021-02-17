@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;/* Author: firmapaz ;created on 14/2/21*/
+package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 14/2/21*/
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

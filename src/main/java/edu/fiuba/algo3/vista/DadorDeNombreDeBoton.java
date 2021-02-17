@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.vista;
 
 public interface DadorDeNombreDeBoton {
 
