@@ -63,6 +63,12 @@ public class Celda{
 
     }
 
+
+
+    /*Mensajes que rompen principios de POO pero
+    son solo para pruebitas
+     */
+
     public void imprimirCoordenadas(){
 
         this.posicion.imprimirCoordenadas();

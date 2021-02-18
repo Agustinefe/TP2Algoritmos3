@@ -13,14 +13,14 @@ public class BloqueInvertirComportamiento implements Bloque{
     @Override
     public void ejecutarComportamientoSobrePizarraEn(Personaje estePersonaje) {
 
-        secuenciaAInvertir.ejecutarComportamientoInverso(estePersonaje);
+        secuenciaAInvertir.ejecutarComportamientoInversoSobrePizarraEn(estePersonaje);
 
     }
 
     @Override
     public void ejecutarComportamientoInversoSobrePizarraEn(Personaje estePersonaje) {
 
-        secuenciaAInvertir.ejecutar(estePersonaje);
+        secuenciaAInvertir.ejecutarComportamientoSobrePizarraEn(estePersonaje);
 
     }
 
@@ -30,6 +30,12 @@ public class BloqueInvertirComportamiento implements Bloque{
     public void aniadirBloqueEnPosicion(Bloque nuevoBloque, int posicion){
 
         this.secuenciaAInvertir.insertar(nuevoBloque, posicion);
+
+    }
+
+    public void aniadirBloqueEnPosicion(SecuenciaDeBloques nuevoBloque, int posicion){
+
+        this.secuenciaAInvertir.juntar(nuevoBloque, posicion);
 
     }
 

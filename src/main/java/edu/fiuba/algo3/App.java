@@ -25,13 +25,6 @@ public class App extends Application {
 
         //var label = new Label("Hello, JavaFX " + javafxVersion + ", running on Java " + javaVersion + ".");
 
-        Button miBoton = new Button();
-        MyButtonEventHandler eventoDeBoton = new MyButtonEventHandler(miBoton);
-        miBoton.setOnAction(eventoDeBoton);
-
-        TextField cuadroDeTexto = new TextField();
-        cuadroDeTexto.setPromptText("Ingrese un texto");
-
         VistaSectorDibujo sectorDibujo = new VistaSectorDibujo();
         VistaSectorBloque sectorBloque = new VistaSectorBloque();
         VistaSectorAlgoritmo sectorAlgoritmo = new VistaSectorAlgoritmo();
@@ -43,23 +36,12 @@ public class App extends Application {
 
         contenedorHorizontal.setSpacing(10);
 
-        var scene = new Scene(contenedorHorizontal, 640, 480);
+        var scene = new Scene(contenedorHorizontal, 1400, 680);
         stage.setScene(scene);
         stage.setTitle("Hola");
         stage.show();
 
 
-    }
-
-    private Circle createRectangle(String strokeColor, String fillColor, double x) {
-        Circle circle = new Circle();
-        circle.setCenterX(x);
-        circle.setCenterY(200);
-        circle.setRadius(50);
-        circle.setStroke(Color.valueOf(strokeColor));
-        circle.setStrokeWidth(5);
-        circle.setFill(Color.valueOf(fillColor));
-        return circle;
     }
 
     public static void main(String[] args) {

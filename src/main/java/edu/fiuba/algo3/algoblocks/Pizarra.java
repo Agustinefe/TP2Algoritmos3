@@ -37,11 +37,6 @@ public class Pizarra {
 
     }
 
-    private int funcionCoordenadasAPosicionEnListaDeCeldas(int x, int y){
-
-        return (this.base * y + x);
-
-    }
 
     public Celda obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(Coordenadas estasCoordenadas, DireccionDeMovimiento
                                                              direccionDeCeldaContigua){
@@ -56,9 +51,7 @@ public class Pizarra {
 
     public Celda obtenerCeldaCentral(){
 
-        int posicionDeCeldaContigua = this.funcionCoordenadasAPosicionEnListaDeCeldas(
-                this.base / 2,
-                this.altura / 2);
+        int posicionDeCeldaContigua = this.base * (this.altura / 2) + (this.base / 2);
 
         return listaDeCeldas.get(posicionDeCeldaContigua);
     }

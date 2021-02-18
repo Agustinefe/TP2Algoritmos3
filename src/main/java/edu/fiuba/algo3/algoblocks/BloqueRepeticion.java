@@ -19,7 +19,7 @@ public class BloqueRepeticion implements Bloque{
 
         for (int i = 0; i < (this.cantidadDeIteraciones); i++){
 
-            secuenciaAIterar.ejecutar(estePersonaje);
+            secuenciaAIterar.ejecutarComportamientoSobrePizarraEn(estePersonaje);
 
         }
 
@@ -30,7 +30,7 @@ public class BloqueRepeticion implements Bloque{
 
         for (int i = 0; i < (this.cantidadDeIteraciones); i++){
 
-            secuenciaAIterar.ejecutarComportamientoInverso(estePersonaje);
+            secuenciaAIterar.ejecutarComportamientoInversoSobrePizarraEn(estePersonaje);
 
         }
 
@@ -45,6 +45,12 @@ public class BloqueRepeticion implements Bloque{
     public void aniadirBloqueEnPosicion(Bloque nuevoBloque, int posicion){
 
        this.secuenciaAIterar.insertar(nuevoBloque, posicion);
+
+    }
+
+    public void aniadirBloqueEnPosicion(SecuenciaDeBloques nuevoBloque, int posicion){
+
+        this.secuenciaAIterar.juntar(nuevoBloque, posicion);
 
     }
 

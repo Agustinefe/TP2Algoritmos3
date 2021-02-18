@@ -40,6 +40,10 @@ public class Personaje {
 
     }
 
+    /*Mensajes que rompen principios de POO pero
+    son solo para pruebitas
+     */
+
    public void imprimirCoordenadas(){
 
         this.celdaActual.imprimirCoordenadas();

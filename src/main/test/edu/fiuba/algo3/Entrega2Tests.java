@@ -103,7 +103,7 @@ public class Entrega2Tests {
 
         for(cont = 0; cont < 3; cont++){
 
-            listaDeSecuencias.get(cont).ejecutar(this.jimmy);
+            listaDeSecuencias.get(cont).ejecutarComportamientoSobrePizarraEn(this.jimmy);
             assertTrue(this.jimmy.seEncuentraEn(pasoEstimadoDePersonaje.get(cont)));
 
         }

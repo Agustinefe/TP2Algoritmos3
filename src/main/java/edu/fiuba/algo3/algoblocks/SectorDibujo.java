@@ -20,7 +20,7 @@ public class SectorDibujo {
 
     public void ejecutarSucesionDeBloques(SecuenciaDeBloques algoritmoAEjecutar){
 
-        algoritmoAEjecutar.ejecutar(this.dibujante);
+        algoritmoAEjecutar.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
     }
 

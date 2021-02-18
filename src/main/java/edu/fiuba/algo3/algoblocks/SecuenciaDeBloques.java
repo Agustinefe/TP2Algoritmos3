@@ -2,7 +2,7 @@ package edu.fiuba.algo3.algoblocks;
 
 import java.util.ArrayList;
 
-public class SecuenciaDeBloques {
+public class SecuenciaDeBloques implements Bloque{
 
     private ArrayList<Bloque> laSecuencia;
 
@@ -70,13 +70,13 @@ public class SecuenciaDeBloques {
 
     }
 
-    public void ejecutar(Personaje dibujante){
+    public void ejecutarComportamientoSobrePizarraEn(Personaje dibujante){
 
         this.laSecuencia.stream().forEach(bloque -> {bloque.ejecutarComportamientoSobrePizarraEn(dibujante);});
 
     }
 
-    public void ejecutarComportamientoInverso(Personaje dibujante){
+    public void ejecutarComportamientoInversoSobrePizarraEn(Personaje dibujante){
 
         this.laSecuencia.stream().forEach(bloque -> {bloque.ejecutarComportamientoInversoSobrePizarraEn(dibujante);});
 
