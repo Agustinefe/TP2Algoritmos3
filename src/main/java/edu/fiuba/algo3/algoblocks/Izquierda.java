@@ -25,4 +25,7 @@ public class Izquierda implements DireccionDeMovimiento{
     public DireccionDeMovimiento direccionOpuesta() {
         return new Derecha();
     }
+
+    @Override
+    public DireccionDeMovimiento duplicar(){return new Izquierda();}
 }

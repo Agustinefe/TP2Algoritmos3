@@ -45,8 +45,7 @@ public class Coordenadas {
 
     public void imprimirCoordenadas(){
 
-        System.out.println(this.x);
-        System.out.println(this.y);
+        System.out.println("(" + this.x + ", " + this.y + ")");
     }
 
 }

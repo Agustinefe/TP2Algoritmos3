@@ -7,107 +7,51 @@ import java.util.ArrayList;
 
 public class SectorAlgoritmo {
 
-    private ArrayList<Bloque> secuenciaDeEjecucion;
-    private OrganizadorDeObjetos<Bloque> manito;
-    private ArrayList<ArrayList<Bloque>> espacioDeTrabajo;
+    private ArrayList<SecuenciaDeBloques> espacioDeTrabajo;
 
-    public SectorAlgoritmo(){
+    public SectorAlgoritmo() {
 
-        this.secuenciaDeEjecucion = new ArrayList<Bloque>();
-        this.espacioDeTrabajo = new ArrayList<ArrayList<Bloque>>();
-        this.manito = new OrganizadorDeObjetos<Bloque>();
+        this.espacioDeTrabajo = new ArrayList<SecuenciaDeBloques>();
+        this.espacioDeTrabajo.add(new SecuenciaDeBloques());
+
+    }
+    /*Lanza una excepcion si la la posicion en alguna de las listas se encuentra fuera de rango*/
+    public void insertarSecuenciaEnEspacioDeTrabajo(SecuenciaDeBloques nuevaSecuencia, int posicionEnEspacioDeTrabajo,
+                                                    int posicionDentroDeSecuenciaReceptora) throws RuntimeException{
+
+        this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).insertarSecuenciaEn(nuevaSecuencia,
+                    posicionDentroDeSecuenciaReceptora);
 
     }
 
-    /*BLOQUE --> EJECUCION*/
-    public void aniadirBloqueASecuenciaDeEjecucion(Bloque esteBloque){
+    /*Lanza una excepcion si la la posicion en alguna de las listas se encuentra fuera de rango*/
+    public SecuenciaDeBloques separarSecuenciaEnEspacioDeTrabajo(int posicionEnEspacioDeTrabajo,
+                                                   int posicionDentroDeSecuenciaReceptora) throws RuntimeException{
 
+        SecuenciaDeBloques secuenciaObtenida = this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo)
+                .separarLaSecuenciaEn(posicionDentroDeSecuenciaReceptora);
 
-        this.secuenciaDeEjecucion.add(esteBloque);
+        //¿Que hago si la secuencia queda vacia? ¿Como la elimino del arraylist sin preguntarle si se encuentra vacia?
 
-    }
-
-    public void aniadirBloqueASecuenciaDeEjecucion(Bloque esteBloque, int posicion){
-
-        this.secuenciaDeEjecucion.add(posicion, esteBloque);
-
-    }
-
-    public void aniadirBloqueAEspacioDeTrabajo(Bloque esteBloque){
-
-        ArrayList<Bloque> nuevoBloque = new ArrayList<Bloque>();
-        nuevoBloque.add(esteBloque);
-        this.espacioDeTrabajo.add(nuevoBloque);
+        return secuenciaObtenida;
 
     }
 
-    public void aniadirBloqueASucesionDeBloquesDelEspacioDeTrabajoEnPosicion( Bloque esteBloque,
-                                                                              int posicionDeSucesionEnEspacioDeTrabajo,
-                                                                              int posicionDentroDeLaSucesion){
+    /*Lanza una excepcion si la la posicion en alguna de las listas se encuentra fuera de rango*/
+    public void eliminarSecuenciaEnEspacionDeTrabajo(int posicionEnEspacioDeTrabajo,
+                                                     int posicionDentroDeSecuenciaReceptora) throws RuntimeException{
 
-        this.espacioDeTrabajo.get(posicionDeSucesionEnEspacioDeTrabajo).add(posicionDentroDeLaSucesion, esteBloque);
-
-    }
-
-    public void arrojarBloquesALaBasura(){
-
-        this.manito.soltarSucesionDeObjetosEnLaBasura();
+        this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).separarLaSecuenciaEn(posicionEnEspacioDeTrabajo);
 
     }
 
 
-    public void agarrarSucesionDeBloquesDeLaSecuenciaDeEjecucionDesdePosicion(int posicion)
-            throws OrganizadorOcupadoException {
+    public void ejecutarSecuenciaDeEjecucion(Personaje dibujante){
 
-        this.manito.agarrarSucesionDeObjetosDe(this.secuenciaDeEjecucion, posicion);
-
-    }
-
-
-    public void soltarSucesionDeBloquesEnLaSecuenciaDeEjecucionEnPosicion(int posicion) {
-
-        this.manito.soltarSucesionDeObjetosEn(this.secuenciaDeEjecucion, posicion);
+        this.espacioDeTrabajo.get(0).ejecutarComportamientoSobrePizarraEn(dibujante);
 
     }
 
-    public void agarrarSucesionDeBloquesLibresDeEspacioDeTrabajo(int posicionDeSucesionEnEspacioDeTrabajo) throws OrganizadorOcupadoException{
 
-        this.manito.agarrarSucesionDeObjetosDe(
-                this.espacioDeTrabajo.remove(posicionDeSucesionEnEspacioDeTrabajo), 0);
-
-    }
-
-    public void soltarSucesionDeBloquesLibresEnEspacioDeTrabajo(){
-
-        ArrayList<Bloque> nuevaSublistaDeBloquesLibres = new ArrayList<Bloque>();
-        this.espacioDeTrabajo.add(nuevaSublistaDeBloquesLibres);
-        this.manito.soltarSucesionDeObjetosEn(nuevaSublistaDeBloquesLibres, 0);
-
-    }
-
-    public void agarrarSucesionDeBloquesDeOtraSucesionDelEspacioDeTrabajoEnPosicion(
-            int posicionDeSucesionEnEspacioDeTrabajo,
-            int posicionDentroDeLaSucesion) throws OrganizadorOcupadoException{
-
-        this.manito.agarrarSucesionDeObjetosDe(this.espacioDeTrabajo.get(posicionDeSucesionEnEspacioDeTrabajo),
-                posicionDentroDeLaSucesion);
-
-    }
-
-    public void soltarSucesionDeBloquesEnOtraSucesionDelEspacioDeTrabajoEnPosicion(
-            int posicionDeSucesionEnEspacioDeTrabajo,
-            int posicionDentroDeLaSucesion){
-
-        this.manito.soltarSucesionDeObjetosEn(this.espacioDeTrabajo.get(posicionDeSucesionEnEspacioDeTrabajo),
-                posicionDentroDeLaSucesion);
-
-
-    }
-
-    public void ejecutarAlgoritmoEn(SectorDibujo pizarra){
-
-        this.secuenciaDeEjecucion.stream().forEach(pizarra::ejecutarBloque);
-
-    }
 
 }

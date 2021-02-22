@@ -20,4 +20,30 @@ public class BloqueBajarLapiz implements Bloque{
         estePersonaje.subirLapiz();
 
     }
+
+    @Override
+    public int tamanio(){
+
+        return 1;
+
+    }
+
+    @Override
+    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion){
+
+        //NADA, ACA DEBERIA TIRAR ERROR
+
+    }
+
+    @Override
+    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion) throws RuntimeException{
+
+        return new SecuenciaDeBloques();
+
+    }
+
+    @Override
+    public Bloque duplicar(){
+        return new BloqueBajarLapiz();
+    }
 }

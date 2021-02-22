@@ -32,6 +32,8 @@ public class Personaje {
 
         this.celdaActual = celdaContigua;
 
+        //this.celdaActual.imprimirCoordenadas();
+
     }
 
     public boolean seEncuentraEn(Celda estaCelda){

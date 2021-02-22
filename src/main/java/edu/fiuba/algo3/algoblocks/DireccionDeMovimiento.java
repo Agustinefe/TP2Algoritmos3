@@ -6,6 +6,6 @@ public interface DireccionDeMovimiento {
 
     DireccionDeMovimiento direccionOpuesta();
 
-
+    DireccionDeMovimiento duplicar();
 
 }

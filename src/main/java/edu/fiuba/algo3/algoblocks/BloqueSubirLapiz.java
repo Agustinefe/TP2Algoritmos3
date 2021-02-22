@@ -16,4 +16,29 @@ public class BloqueSubirLapiz implements Bloque{
 
     }
 
+    @Override
+    public int tamanio(){
+
+        return 1;
+
+    }
+
+    @Override
+    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion){
+
+        //NADA, ACA DEBERIA TIRAR ERROR
+
+    }
+
+    @Override
+    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion){
+
+        return new SecuenciaDeBloques();
+
+    }
+
+    @Override
+    public Bloque duplicar(){return new BloqueSubirLapiz();}
+
+
 }

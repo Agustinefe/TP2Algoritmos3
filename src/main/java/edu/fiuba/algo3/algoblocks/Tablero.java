@@ -16,15 +16,5 @@ public class Tablero {
 
     }
 
-    public void ejecutarSucesionDeAlgoritmos(){
 
-        this.sectorDeAlgoritmos.ejecutarAlgoritmoEn(this.sectorDeDibujo);
-
-    }
-
-    public void agregarBloqueBajarLapiz(){
-
-        sectorDeAlgoritmos.aniadirBloqueASecuenciaDeEjecucion(sectorDeBloques.crearBloqueBajarLapiz());
-
-    }
 }

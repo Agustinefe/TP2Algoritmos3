@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 13/1/21*/
 
-import java.util.ArrayList;
-
 public class BloqueRepeticion implements Bloque{
 
    private int cantidadDeIteraciones;
@@ -9,7 +7,7 @@ public class BloqueRepeticion implements Bloque{
 
    public BloqueRepeticion(){
 
-       this.cantidadDeIteraciones = 0;
+       this.cantidadDeIteraciones = 2;
        this.secuenciaAIterar = new SecuenciaDeBloques();
 
    }
@@ -34,6 +32,37 @@ public class BloqueRepeticion implements Bloque{
 
         }
 
+    }
+
+    @Override
+    public int tamanio(){
+
+        return (this.secuenciaAIterar.tamanio() + 1);
+
+    }
+
+    @Override
+    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion){
+
+       this.secuenciaAIterar.insertarSecuenciaEn(nuevaSecuencia, posicion);
+
+    }
+
+    @Override
+    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion){
+
+        return this.secuenciaAIterar.separarLaSecuenciaEn(posicion);
+
+    }
+
+    @Override
+    public Bloque duplicar(){
+
+        BloqueRepeticion bloqueIterador = new BloqueRepeticion();
+
+        bloqueIterador.insertarSecuenciaEn( this.secuenciaAIterar.duplicar(), 0);
+
+        return bloqueIterador;
     }
 
     public void establecerNuevaCantidadDeIteraciones(int nuevaCantidadDeIteraciones){

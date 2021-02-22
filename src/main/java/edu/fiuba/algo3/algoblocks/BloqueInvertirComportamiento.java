@@ -24,7 +24,36 @@ public class BloqueInvertirComportamiento implements Bloque{
 
     }
 
+    @Override
+    public int tamanio(){
 
+        return (this.secuenciaAInvertir.tamanio() + 1);
+
+    }
+
+    @Override
+    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion){
+
+        this.secuenciaAInvertir.insertarSecuenciaEn(nuevaSecuencia, posicion);
+
+    }
+
+    @Override
+    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion){
+
+        return this.secuenciaAInvertir.separarLaSecuenciaEn(posicion);
+
+    }
+
+    @Override
+    public Bloque duplicar(){
+
+        BloqueInvertirComportamiento bloqueInversor = new BloqueInvertirComportamiento();
+
+        bloqueInversor.insertarSecuenciaEn( this.secuenciaAInvertir.duplicar(), 0);
+
+        return bloqueInversor;
+    }
 
 
     public void aniadirBloqueEnPosicion(Bloque nuevoBloque, int posicion){
