@@ -1,8 +1,11 @@
 package edu.fiuba.algo3;/* Author: firmapaz ;created on 12/12/20*/
 
 import edu.fiuba.algo3.algoblocks.*;
+import edu.fiuba.algo3.excepciones.FueraDePizarraException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PizarraTests {
@@ -46,7 +49,18 @@ public class PizarraTests {
 
     }
 
-    /*Pensar mas pruebas*/
+
+    @Test
+
+    public void test04SalirmeDeLosLimitesDeLaPizarraLanzaUnaExcepcion(){
+
+        Executable task = () -> {
+            Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(new Coordenadas(8, 6), new Derecha());
+        };
+
+        assertThrows(FueraDePizarraException.class, task);
+
+    }
 
 
 }

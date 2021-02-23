@@ -39,7 +39,7 @@ public class Coordenadas {
 
     public boolean seEncuentraDentroDeLoslimites(int limiteX, int limiteY){
 
-        return (this.x <= limiteX || this.y <= limiteY);
+        return (this.x < limiteX && this.y < limiteY);
 
     }
 

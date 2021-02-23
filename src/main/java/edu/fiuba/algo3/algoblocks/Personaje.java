@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
+import edu.fiuba.algo3.excepciones.FueraDePizarraException;
+
 public class Personaje {
 
     private Lapiz suLapiz;
@@ -26,11 +28,19 @@ public class Personaje {
 
     public void moversePorLaPizarraHacia(DireccionDeMovimiento estaDireccion){
 
-        Celda celdaContigua = celdaActual.obtenerCeldaQueEstaALa(estaDireccion);
+        try {
 
-        suLapiz.dibujar(this.celdaActual, celdaContigua);
+            Celda celdaContigua = celdaActual.obtenerCeldaQueEstaALa(estaDireccion);
 
-        this.celdaActual = celdaContigua;
+            suLapiz.dibujar(this.celdaActual, celdaContigua);
+
+            this.celdaActual = celdaContigua;
+
+        } catch(FueraDePizarraException error){
+
+            /*No avanza, se queda donde esta parado*/
+
+        }
 
         //this.celdaActual.imprimirCoordenadas();
 
@@ -45,6 +55,7 @@ public class Personaje {
     public void regresarAlCentro(){
 
         this.celdaActual = Pizarra.getInstance().obtenerCeldaCentral();
+        this.subirLapiz();
 
     }
 

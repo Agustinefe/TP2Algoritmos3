@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 13/1/21*/
 
-public class BloqueRepeticion implements Bloque{
+public class BloqueRepeticion implements BloqueContenedor{
 
    private int cantidadDeIteraciones;
    private SecuenciaDeBloques secuenciaAIterar;

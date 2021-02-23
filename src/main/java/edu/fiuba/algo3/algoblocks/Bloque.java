@@ -8,10 +8,6 @@ public interface Bloque {
 
     int tamanio();
 
-    void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion);
-
-    SecuenciaDeBloques separarLaSecuenciaEn(int posicion);
-
     Bloque duplicar();
 
 

@@ -276,6 +276,8 @@ public class SecuenciaDeBloquesNuevosTests {
         assertEquals(11, this.unaSecuencia.tamanio());
 
     }
+
+
 }
 
 

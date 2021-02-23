@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 15/2/21*/
 
-public class BloqueInvertirComportamiento implements Bloque{
+public class BloqueInvertirComportamiento implements BloqueContenedor{
 
     private SecuenciaDeBloques secuenciaAInvertir;
 

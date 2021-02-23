@@ -5,15 +5,18 @@ import edu.fiuba.algo3.vista.VistaSectorAlgoritmo;
 import edu.fiuba.algo3.vista.VistaSectorBloque;
 import edu.fiuba.algo3.vista.VistaSectorDibujo;
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
-
 
     @Override
     public void start(Stage stage) {
@@ -45,4 +48,38 @@ public class App extends Application {
         launch();
     }
 
+
+
+/*
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Canvas canvas = new Canvas(1000, 1000);
+        Group root = new Group(canvas);
+
+        GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.fillText("Hello JavaFX Canvas", 20, 40);
+
+        gc.setStroke(Color.BLUE);
+        gc.setLineWidth(5.0);
+
+        gc.beginPath();
+
+        gc.lineTo(500, 500);
+        gc.lineTo(500, 400);
+        gc.moveTo(400, 400);
+        gc.lineTo(400, 300);
+
+        gc.closePath();
+        gc.stroke();
+
+        primaryStage.setTitle("JavaFX Canvas");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+ */
 }

@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
+import edu.fiuba.algo3.excepciones.AccesoNoPermitidoException;
+
 public class BloqueMovimiento implements Bloque {
 
     private DireccionDeMovimiento direccion;
@@ -31,19 +33,22 @@ public class BloqueMovimiento implements Bloque {
 
     }
 
+    /*
     @Override
-    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion){
+    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion) throws AccesoNoPermitidoException {
 
-        //NADA, ACA DEBERIA TIRAR ERROR
+        throw new AccesoNoPermitidoException();
 
     }
 
     @Override
-    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion){
+    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion) throws AccesoNoPermitidoException{
 
-        return new SecuenciaDeBloques();
+        throw new AccesoNoPermitidoException();
 
     }
+
+     */
 
     @Override
     public Bloque duplicar(){

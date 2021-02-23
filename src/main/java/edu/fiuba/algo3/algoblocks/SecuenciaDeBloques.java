@@ -1,8 +1,10 @@
 package edu.fiuba.algo3.algoblocks;
 
+import edu.fiuba.algo3.excepciones.FueraDeSecuenciaException;
+
 import java.util.ArrayList;
 
-public class SecuenciaDeBloques implements Bloque{
+public class SecuenciaDeBloques implements BloqueContenedor{
 
     private ArrayList<Bloque> laSecuencia;
 
@@ -103,10 +105,12 @@ public class SecuenciaDeBloques implements Bloque{
     }
 
     @Override
-    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicionBuscada){
+    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicionBuscada) throws FueraDeSecuenciaException{
 
-        if(posicionBuscada > (this.tamanio() + 1) ){
-            //rompe
+        if(posicionBuscada > (this.tamanio()) ){
+
+            throw new FueraDeSecuenciaException();
+
         }
 
         Bloque bloqueActual;
@@ -124,8 +128,8 @@ public class SecuenciaDeBloques implements Bloque{
 
         if(posicionEnRecorrido != posicionBuscada){
 
-            bloqueActual = this.laSecuencia.get(contador - 1);
-            bloqueActual.insertarSecuenciaEn(nuevaSecuencia, posicionBuscada - (posicionEnRecorrido - bloqueActual.tamanio()) - 1);
+            BloqueContenedor bloqueConSecuenciaBuscada = (BloqueContenedor) this.laSecuencia.get(contador - 1);
+            bloqueConSecuenciaBuscada.insertarSecuenciaEn(nuevaSecuencia, posicionBuscada - (posicionEnRecorrido - bloqueConSecuenciaBuscada.tamanio()) - 1);
 
         } else {
 
@@ -136,10 +140,12 @@ public class SecuenciaDeBloques implements Bloque{
     }
 
     @Override
-    public SecuenciaDeBloques separarLaSecuenciaEn(int posicionBuscada){
+    public SecuenciaDeBloques separarLaSecuenciaEn(int posicionBuscada) throws FueraDeSecuenciaException {
 
-        if(posicionBuscada > (this.tamanio() + 1) ){
-            //rompe
+        if(posicionBuscada > (this.tamanio()) ){
+
+            throw new FueraDeSecuenciaException();
+
         }
 
         SecuenciaDeBloques secuenciaRestante;
@@ -158,7 +164,8 @@ public class SecuenciaDeBloques implements Bloque{
 
         if(posicionEnRecorrido != posicionBuscada){
 
-            secuenciaRestante = bloqueActual.separarLaSecuenciaEn(posicionBuscada - (posicionEnRecorrido - bloqueActual.tamanio()) - 1);
+            BloqueContenedor bloqueConSecuenciaBuscada = (BloqueContenedor) this.laSecuencia.get(contador - 1);
+            secuenciaRestante = bloqueConSecuenciaBuscada.separarLaSecuenciaEn(posicionBuscada - (posicionEnRecorrido - bloqueConSecuenciaBuscada.tamanio()) - 1);
 
         } else {
 

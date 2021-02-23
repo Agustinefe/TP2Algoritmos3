@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.algoblocks;
 
+import edu.fiuba.algo3.excepciones.FueraDePizarraException;
+
 import java.util.ArrayList;
 
 public class Pizarra {
@@ -39,7 +41,7 @@ public class Pizarra {
 
 
     public Celda obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(Coordenadas estasCoordenadas, DireccionDeMovimiento
-                                                             direccionDeCeldaContigua){
+                                                             direccionDeCeldaContigua) throws FueraDePizarraException {
 
         Coordenadas nuevasCoordenadas = estasCoordenadas.generarCoordenadasAdyacentes(direccionDeCeldaContigua);
         this.comprobarQueLasCoordenadasEstanDentroDeLaPizarra(nuevasCoordenadas);
@@ -56,10 +58,12 @@ public class Pizarra {
         return listaDeCeldas.get(posicionDeCeldaContigua);
     }
 
-    private void comprobarQueLasCoordenadasEstanDentroDeLaPizarra(Coordenadas coordenadasAVerificar){
+    private void comprobarQueLasCoordenadasEstanDentroDeLaPizarra(Coordenadas coordenadasAVerificar) throws FueraDePizarraException{
 
-        if(coordenadasAVerificar.seEncuentraDentroDeLoslimites(this.base, this.altura)){
-            //Tira error de pizarra fuera de rango
+        if(!coordenadasAVerificar.seEncuentraDentroDeLoslimites(this.base, this.altura)){
+
+            throw new FueraDePizarraException();
+
         }
 
     }

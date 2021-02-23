@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
+import edu.fiuba.algo3.excepciones.FueraDePizarraException;
+
 public class Celda{
 
     private Coordenadas posicion;
@@ -13,7 +15,7 @@ public class Celda{
 
     }
 
-    public Celda obtenerCeldaQueEstaALa(DireccionDeMovimiento direccionALaQueSeMueveElPersonaje){
+    public Celda obtenerCeldaQueEstaALa(DireccionDeMovimiento direccionALaQueSeMueveElPersonaje) throws FueraDePizarraException {
 
         return Pizarra.getInstance().obtenerCeldaQueEstaAlLadoDeEstasCoordenadas(this.posicion, direccionALaQueSeMueveElPersonaje);
 

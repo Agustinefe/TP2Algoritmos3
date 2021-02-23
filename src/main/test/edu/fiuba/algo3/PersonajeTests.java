@@ -86,8 +86,8 @@ public class PersonajeTests {
     @Test
     public void test05BajaLapizAbajoDerechaDerechaArribaSuboLapizArribaIzquierda(){
 
-        ArrayList<Celda> registroDePasoEstimado = new ArrayList<Celda>();
-        ArrayList<DireccionDeMovimiento> listaDeMovimientos= new ArrayList<DireccionDeMovimiento>();
+        ArrayList<Celda> registroDePasoEstimado = new ArrayList<>();
+        ArrayList<DireccionDeMovimiento> listaDeMovimientos= new ArrayList<>();
 
         listaDeMovimientos.add(new Abajo());
         listaDeMovimientos.add(new Derecha());
@@ -129,6 +129,27 @@ public class PersonajeTests {
 
     }
 
+    @Test
+    public void test06SiElPersonajeQuiereSalirDeLaPizarraNoSeMueve(){
+
+        ArrayList<DireccionDeMovimiento> listaDeMovimientos= new ArrayList<>();
+
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Derecha());
+        listaDeMovimientos.add(new Izquierda());
+        listaDeMovimientos.add(new Arriba());
+
+        listaDeMovimientos.stream().forEach(direccion -> {this.timmy.moversePorLaPizarraHacia(direccion);});
+
+        Celda celdaFinalEstimada = new Celda(7, 5);
+        assertTrue(this.timmy.seEncuentraEn(celdaFinalEstimada));
+    }
 
 
 }
