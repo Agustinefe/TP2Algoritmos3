@@ -12,7 +12,7 @@ public class SectorBloqueTests {
     @Test
     public void test01SectorBloqueSeInicializaConLaCantidadDeBloquesCorrecta(){
         SectorBloque miSectorBloque = new SectorBloque();
-        assertTrue(miSectorBloque.cantidadDeBloques() == 8);
+        assertTrue(miSectorBloque.cantidadDeBloques() == 9);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class SectorBloqueTests {
 
         SecuenciaDeBloques miBloque = new SecuenciaDeBloques(miLista);
         miSectorBloque.crearAlgoritmoPersonalizado(miBloque);
-        assertTrue(miSectorBloque.cantidadDeBloques() == 9);
+        assertTrue(miSectorBloque.cantidadDeBloques() == 10);
     }
 
     @Test
@@ -57,7 +57,7 @@ public class SectorBloqueTests {
 
         SecuenciaDeBloques miBloque = new SecuenciaDeBloques(misBloques);
         miSectorBloque.crearAlgoritmoPersonalizado(miBloque);
-        SecuenciaDeBloques nuevoBloque = miSectorBloque.nuevoBloque(8);
+        SecuenciaDeBloques nuevoBloque = miSectorBloque.nuevoBloque(9);
 
         miSectorAlgoritmo.insertarSecuenciaEnEspacioDeTrabajo(nuevoBloque,0, 0);
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);

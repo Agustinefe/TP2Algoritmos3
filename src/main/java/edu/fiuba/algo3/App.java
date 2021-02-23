@@ -6,17 +6,14 @@ import edu.fiuba.algo3.vista.VistaSectorBloque;
 import edu.fiuba.algo3.vista.VistaSectorDibujo;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
+
 
     @Override
     public void start(Stage stage) {

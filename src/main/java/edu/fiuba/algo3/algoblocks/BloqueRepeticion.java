@@ -5,9 +5,9 @@ public class BloqueRepeticion implements Bloque{
    private int cantidadDeIteraciones;
    private SecuenciaDeBloques secuenciaAIterar;
 
-   public BloqueRepeticion(){
+   public BloqueRepeticion(int cantidadDeIteraciones){
 
-       this.cantidadDeIteraciones = 2;
+       this.cantidadDeIteraciones = cantidadDeIteraciones;
        this.secuenciaAIterar = new SecuenciaDeBloques();
 
    }
@@ -58,17 +58,11 @@ public class BloqueRepeticion implements Bloque{
     @Override
     public Bloque duplicar(){
 
-        BloqueRepeticion bloqueIterador = new BloqueRepeticion();
+        BloqueRepeticion bloqueIterador = new BloqueRepeticion(this.cantidadDeIteraciones);
 
         bloqueIterador.insertarSecuenciaEn( this.secuenciaAIterar.duplicar(), 0);
 
         return bloqueIterador;
-    }
-
-    public void establecerNuevaCantidadDeIteraciones(int nuevaCantidadDeIteraciones){
-
-        this.cantidadDeIteraciones = nuevaCantidadDeIteraciones;
-
     }
 
     public void aniadirBloqueEnPosicion(Bloque nuevoBloque, int posicion){

@@ -21,7 +21,7 @@ public class Entrega2Tests {
     public void setUp(){
 
         Pizarra.getInstance().blanquearTodo();
-        this.bloqueIterativo = new BloqueRepeticion();
+        this.bloqueIterativo = new BloqueRepeticion3();
         this.jimmy = new Personaje(Pizarra.getInstance().obtenerCeldaCentral());
         this.abajo = new BloqueMovimiento(new Abajo());
         this.arriba = new BloqueMovimiento(new Arriba());
@@ -39,8 +39,6 @@ public class Entrega2Tests {
         bloqueIterativo.aniadirBloqueEnPosicion(this.derecha, 3);
         bloqueIterativo.aniadirBloqueEnPosicion(this.abajo, 4);
 
-        bloqueIterativo.establecerNuevaCantidadDeIteraciones(3);
-
         bloqueIterativo.ejecutarComportamientoSobrePizarraEn(jimmy);
 
         assertTrue(this.jimmy.seEncuentraEn(new Celda(4, 7)));
@@ -56,10 +54,10 @@ public class Entrega2Tests {
         ArrayList<Bloque> listaDeBloques = new ArrayList<Bloque>();
         ArrayList<Celda> pasoEstimadoDePersonaje = new ArrayList<Celda>();
 
-        BloqueRepeticion bloqueIterativo = new BloqueRepeticion();
+        BloqueRepeticion bloqueIterativo = new BloqueRepeticion3();
         bloqueIterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Izquierda()), 0);
         bloqueIterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 1);
-        bloqueIterativo.establecerNuevaCantidadDeIteraciones(3);
+
 
 
         listaDeBloques.add(new BloqueMovimiento(new Derecha()));

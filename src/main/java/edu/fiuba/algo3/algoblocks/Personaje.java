@@ -42,6 +42,12 @@ public class Personaje {
 
     }
 
+    public void regresarAlCentro(){
+
+        this.celdaActual = Pizarra.getInstance().obtenerCeldaCentral();
+
+    }
+
     /*Mensajes que rompen principios de POO pero
     son solo para pruebitas
      */

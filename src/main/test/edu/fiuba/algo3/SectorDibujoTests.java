@@ -37,10 +37,9 @@ public class SectorDibujoTests {
 
         SecuenciaDeBloques pasoDelDibujante = new SecuenciaDeBloques();
 
-        BloqueRepeticion bloqueIterativo = new BloqueRepeticion();
+        BloqueRepeticion bloqueIterativo = new BloqueRepeticion3();
         bloqueIterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Izquierda()), 0);
         bloqueIterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 1);
-        bloqueIterativo.establecerNuevaCantidadDeIteraciones(3);
 
 
         pasoDelDibujante.insertar(new BloqueMovimiento(new Derecha()));

@@ -19,9 +19,8 @@ public class SecuenciaDeBloquesNuevosTests {
         this.unaSecuencia = new SecuenciaDeBloques();
         this.dibujante = new Personaje(Pizarra.getInstance().obtenerCeldaCentral());
 
-        BloqueRepeticion iterativo = new BloqueRepeticion();
+        BloqueRepeticion iterativo = new BloqueRepeticion2();
 
-        iterativo.establecerNuevaCantidadDeIteraciones(2);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 1);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Izquierda()), 2);
@@ -37,12 +36,12 @@ public class SecuenciaDeBloquesNuevosTests {
 
         |Izquierda|
         |Arriba|
-        |Arriba|
-        |Iterativo (comienzo)|
-            |Derecha|
-            |Abajo|
-            |Izquierda|
-        |Iterativo (final)|
+        |Arriba|______________
+        |Iterativo           |
+        |    |Derecha|       |
+        |    |Abajo|         |
+        |    |Izquierda|     |
+        |____________________|
         |Abajo|
         |Derecha|
 
@@ -134,8 +133,7 @@ public class SecuenciaDeBloquesNuevosTests {
 
         SecuenciaDeBloques nuevaSecuencia = new SecuenciaDeBloques();
 
-        BloqueRepeticion iterador = new BloqueRepeticion();
-        iterador.establecerNuevaCantidadDeIteraciones(2);
+        BloqueRepeticion iterador = new BloqueRepeticion2();
         iterador.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
         iterador.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);
         nuevaSecuencia.insertar(iterador);

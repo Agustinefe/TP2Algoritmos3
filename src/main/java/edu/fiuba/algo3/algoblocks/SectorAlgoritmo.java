@@ -18,9 +18,15 @@ public class SectorAlgoritmo {
     /*Lanza una excepcion si la la posicion en alguna de las listas se encuentra fuera de rango*/
     public void insertarSecuenciaEnEspacioDeTrabajo(SecuenciaDeBloques nuevaSecuencia, int posicionEnEspacioDeTrabajo,
                                                     int posicionDentroDeSecuenciaReceptora) throws RuntimeException{
-
-        this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).insertarSecuenciaEn(nuevaSecuencia,
+        try{
+            this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).insertarSecuenciaEn(nuevaSecuencia,
                     posicionDentroDeSecuenciaReceptora);
+        } catch (IndexOutOfBoundsException error){
+
+            this.espacioDeTrabajo.add(nuevaSecuencia);
+
+        }
+
 
     }
 
@@ -42,6 +48,18 @@ public class SectorAlgoritmo {
                                                      int posicionDentroDeSecuenciaReceptora) throws RuntimeException{
 
         this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).separarLaSecuenciaEn(posicionEnEspacioDeTrabajo);
+
+    }
+
+    public void crearNuevoAlgoritmoPersonalizado(SectorBloque sectorBloqueReceptor){
+
+       sectorBloqueReceptor.crearAlgoritmoPersonalizado(this.espacioDeTrabajo.get(0).duplicar());
+
+    }
+
+    public void vaciar(){
+
+        this.espacioDeTrabajo.clear();
 
     }
 

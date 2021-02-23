@@ -9,28 +9,31 @@ public class SectorBloque {
     public SectorBloque(){
         this.bloquesDisponibles = new ArrayList<>();
         ArrayList<Bloque> listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueMovimiento(new Derecha())); //0
+        listaBloques.add(new BloqueMovimiento(new Derecha())); // DERECHA (0)
         this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
         listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueMovimiento(new Izquierda())); //1
+        listaBloques.add(new BloqueMovimiento(new Izquierda())); // IZQUIERDA (1)
         this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
         listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueMovimiento(new Arriba())); //2
+        listaBloques.add(new BloqueMovimiento(new Arriba())); // ARRIBA (2)
         this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
         listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueMovimiento(new Abajo())); //3
+        listaBloques.add(new BloqueMovimiento(new Abajo())); // ABAJO (3)
         this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
         listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueBajarLapiz()); //4
+        listaBloques.add(new BloqueBajarLapiz()); // BAJAR LAPIZ (4)
         this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
         listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueSubirLapiz()); //5
+        listaBloques.add(new BloqueSubirLapiz()); // SUBIR LAPIZ (5)
         this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
         listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueRepeticion()); //6
+        listaBloques.add(new BloqueRepeticion2()); // REPETICION 2 (6)
         this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
         listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueInvertirComportamiento()); //7
+        listaBloques.add(new BloqueRepeticion3()); // REPETICION 3 (7)
+        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
+        listaBloques = new ArrayList<>();
+        listaBloques.add(new BloqueInvertirComportamiento()); // INVERSOR (8)
         this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
     }
 

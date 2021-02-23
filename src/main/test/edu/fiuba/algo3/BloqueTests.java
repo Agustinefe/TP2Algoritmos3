@@ -1,7 +1,6 @@
 package edu.fiuba.algo3;/* Author: firmapaz ;created on 16/12/20*/
 
 import edu.fiuba.algo3.algoblocks.*;
-import org.mockito.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -85,11 +84,10 @@ public class BloqueTests {
     }
 
     @Test
-    public void test07BloqueRepeticion(){
+    public void test07BloqueRepeticion2(){
 
-        BloqueRepeticion iterativo = new BloqueRepeticion();
+        BloqueRepeticion iterativo = new BloqueRepeticion2();
 
-        iterativo.establecerNuevaCantidadDeIteraciones(2);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 2);
@@ -127,9 +125,8 @@ public class BloqueTests {
     @Test
     public void test09InviertoElComportamientoDeUnBloqueRepeticion(){
 
-        BloqueRepeticion iterativo = new BloqueRepeticion();
+        BloqueRepeticion iterativo = new BloqueRepeticion2();
 
-        iterativo.establecerNuevaCantidadDeIteraciones(2);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 2);

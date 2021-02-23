@@ -34,6 +34,7 @@ public class VistaSectorDibujo {
         pizarra.setHeight(400);
         pizarra.setStroke(Color.TRANSPARENT);
         pizarra.setFill(Color.GREY);
+        //pizarra.setOnM
 
         Button botonDeEjecucion = new Button();
         MyButtonEventHandler eventoDeBotonDeEjecucion = new MyButtonEventHandler(botonDeEjecucion);
