@@ -28,4 +28,7 @@ public class Izquierda implements DireccionDeMovimiento{
 
     @Override
     public DireccionDeMovimiento duplicar(){return new Izquierda();}
+
+    @Override
+    public String direccion(){ return "izquierda";}
 }

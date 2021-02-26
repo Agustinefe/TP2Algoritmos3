@@ -86,7 +86,7 @@ public class BloqueTests {
     @Test
     public void test07BloqueRepeticion2(){
 
-        BloqueRepeticion iterativo = new BloqueRepeticion2();
+        BloqueRepeticion iterativo = new BloqueRepeticionPor2();
 
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);
@@ -125,7 +125,7 @@ public class BloqueTests {
     @Test
     public void test09InviertoElComportamientoDeUnBloqueRepeticion(){
 
-        BloqueRepeticion iterativo = new BloqueRepeticion2();
+        BloqueRepeticion iterativo = new BloqueRepeticionPor2();
 
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Derecha()), 0);
         iterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Arriba()), 1);

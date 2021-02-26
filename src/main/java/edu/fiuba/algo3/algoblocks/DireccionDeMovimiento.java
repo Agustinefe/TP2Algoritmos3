@@ -8,4 +8,6 @@ public interface DireccionDeMovimiento {
 
     DireccionDeMovimiento duplicar();
 
+    String direccion();
+
 }

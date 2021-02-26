@@ -2,9 +2,11 @@ package edu.fiuba.algo3.algoblocks;
 
 import edu.fiuba.algo3.excepciones.FueraDeSecuenciaException;
 
+
+
 import java.util.ArrayList;
 
-public class SecuenciaDeBloques implements BloqueContenedor{
+public class SecuenciaDeBloques implements Bloque{
 
     private ArrayList<Bloque> laSecuencia;
 
@@ -31,14 +33,12 @@ public class SecuenciaDeBloques implements BloqueContenedor{
     public void insertar(Bloque nuevoObjeto, int posicion){
 
         this.laSecuencia.add(posicion, nuevoObjeto);
-        //this.tamanio += nuevoObjeto.tamanio();
 
     }
 
     public void juntar(SecuenciaDeBloques nuevaSecuencia, int posicion){
 
         nuevaSecuencia.insertarseEn(this.laSecuencia, posicion);
-        //this.tamanio += nuevaSecuencia.tamanio();
 
     }
 
@@ -50,8 +50,15 @@ public class SecuenciaDeBloques implements BloqueContenedor{
 
     private void insertarseEn(ArrayList<Bloque> secuenciaBase, int posicion){
 
+        secuenciaBase.addAll(Math.min(posicion, secuenciaBase.size()), this.laSecuencia);
 
-        secuenciaBase.addAll(posicion, this.laSecuencia);
+    }
+
+    public SecuenciaDeBloques removerBloque(int posicion){
+
+        SecuenciaDeBloques secuenciaRemovida = new SecuenciaDeBloques();
+        secuenciaRemovida.insertar(this.laSecuencia.remove(posicion));
+        return secuenciaRemovida;
 
     }
 
@@ -89,7 +96,13 @@ public class SecuenciaDeBloques implements BloqueContenedor{
 
     }
 
+    public int tamanio(){
 
+        return this.laSecuencia.size();
+
+    }
+
+    /*
     @Override
     public int tamanio(){
 
@@ -104,8 +117,14 @@ public class SecuenciaDeBloques implements BloqueContenedor{
 
     }
 
+    public void insertarSecuencia(SecuenciaDeBloques nuevaSecuencia){
+
+        this.juntar(nuevaSecuencia);
+
+    }
+
     @Override
-    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicionBuscada) throws FueraDeSecuenciaException{
+    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicionBuscada){
 
         if(posicionBuscada > (this.tamanio()) ){
 
@@ -176,7 +195,7 @@ public class SecuenciaDeBloques implements BloqueContenedor{
         return secuenciaRestante;
 
     }
-
+*/
     public SecuenciaDeBloques duplicar(){
 
         ArrayList<Bloque> nuevaLista = new ArrayList<>();

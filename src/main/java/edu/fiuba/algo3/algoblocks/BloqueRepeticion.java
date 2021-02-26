@@ -35,23 +35,16 @@ public class BloqueRepeticion implements BloqueContenedor{
     }
 
     @Override
-    public int tamanio(){
+    public void juntar(SecuenciaDeBloques nuevaSecuencia, int posicion){
 
-        return (this.secuenciaAIterar.tamanio() + 1);
-
-    }
-
-    @Override
-    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion){
-
-       this.secuenciaAIterar.insertarSecuenciaEn(nuevaSecuencia, posicion);
+       this.secuenciaAIterar.juntar(nuevaSecuencia, posicion);
 
     }
 
     @Override
-    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion){
+    public SecuenciaDeBloques separar(int posicion){
 
-        return this.secuenciaAIterar.separarLaSecuenciaEn(posicion);
+        return this.secuenciaAIterar.separar(posicion);
 
     }
 
@@ -60,7 +53,7 @@ public class BloqueRepeticion implements BloqueContenedor{
 
         BloqueRepeticion bloqueIterador = new BloqueRepeticion(this.cantidadDeIteraciones);
 
-        bloqueIterador.insertarSecuenciaEn( this.secuenciaAIterar.duplicar(), 0);
+        bloqueIterador.juntar( this.secuenciaAIterar.duplicar(), 0);
 
         return bloqueIterador;
     }
@@ -68,18 +61,6 @@ public class BloqueRepeticion implements BloqueContenedor{
     public void aniadirBloqueEnPosicion(Bloque nuevoBloque, int posicion){
 
        this.secuenciaAIterar.insertar(nuevoBloque, posicion);
-
-    }
-
-    public void aniadirBloqueEnPosicion(SecuenciaDeBloques nuevoBloque, int posicion){
-
-        this.secuenciaAIterar.juntar(nuevoBloque, posicion);
-
-    }
-
-    public SecuenciaDeBloques removerBloquesEnPosicion(int posicion){
-
-       return this.secuenciaAIterar.separar(posicion);
 
     }
 

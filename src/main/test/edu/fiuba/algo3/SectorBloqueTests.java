@@ -32,7 +32,7 @@ public class SectorBloqueTests {
         miLista.add(new BloqueMovimiento(izquierda));
 
         SecuenciaDeBloques miBloque = new SecuenciaDeBloques(miLista);
-        miSectorBloque.crearAlgoritmoPersonalizado(miBloque);
+        miSectorBloque.crearAlgoritmoPersonalizado(miBloque, "personalizado");
         assertTrue(miSectorBloque.cantidadDeBloques() == 10);
     }
 
@@ -56,8 +56,8 @@ public class SectorBloqueTests {
         misBloques.add(new BloqueMovimiento(izquierda));
 
         SecuenciaDeBloques miBloque = new SecuenciaDeBloques(misBloques);
-        miSectorBloque.crearAlgoritmoPersonalizado(miBloque);
-        SecuenciaDeBloques nuevoBloque = miSectorBloque.nuevoBloque(9);
+        miSectorBloque.crearAlgoritmoPersonalizado(miBloque, "personalizado");
+        SecuenciaDeBloques nuevoBloque = miSectorBloque.nuevoBloque("personalizado");
 
         miSectorAlgoritmo.insertarSecuenciaEnEspacioDeTrabajo(nuevoBloque,0, 0);
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);

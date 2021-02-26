@@ -134,4 +134,16 @@ public class SecuenciaDeBloquesTests {
 
     }
 
+    @Test
+    public void test08RemuevoElementosParticularesDeUnaSecuencia(){
+
+        this.miSecuencia.removerBloque(2);
+        this.miSecuencia.removerBloque(3);
+
+        this.miSecuencia.ejecutarComportamientoSobrePizarraEn(this.dibujante);
+        Celda celdaFinalEstimada = new Celda(6, 5);
+        assertTrue(this.dibujante.seEncuentraEn(celdaFinalEstimada));
+
+    }
+
 }

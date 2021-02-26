@@ -24,30 +24,6 @@ public class BloqueBajarLapiz implements Bloque{
     }
 
     @Override
-    public int tamanio(){
-
-        return 1;
-
-    }
-
-    /*
-    //Rompe el principio de segregacion de interfaz
-    @Override
-    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion) throws AccesoNoPermitidoException {
-
-        throw new AccesoNoPermitidoException();
-
-    }
-
-    @Override
-    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion) throws AccesoNoPermitidoException{
-
-        throw new AccesoNoPermitidoException();
-
-    }
-     */
-
-    @Override
     public Bloque duplicar(){
         return new BloqueBajarLapiz();
     }

@@ -35,6 +35,7 @@ public class GeneradorDeBloques {
         rectangle.setStroke(Color.TRANSPARENT);
         rectangle.setFill(Color.RED);
 
+
         bloque.getChildren().addAll(rectangle, labelBloque);
 
         return bloque;

@@ -6,8 +6,6 @@ public interface Bloque {
 
     void ejecutarComportamientoInversoSobrePizarraEn(Personaje estePersonaje);
 
-    int tamanio();
-
     Bloque duplicar();
 
 

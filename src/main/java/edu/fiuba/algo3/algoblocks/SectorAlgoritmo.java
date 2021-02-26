@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class SectorAlgoritmo {
 
+    
     private ArrayList<SecuenciaDeBloques> espacioDeTrabajo;
 
     public SectorAlgoritmo() {
@@ -12,11 +13,25 @@ public class SectorAlgoritmo {
         this.espacioDeTrabajo.add(new SecuenciaDeBloques());
 
     }
-    /*Lanza una excepcion si la la posicion en alguna de las listas se encuentra fuera de rango*/
+
+    public void insertarSecuenciaEnEspacioDeTrabajo(SecuenciaDeBloques nuevaSecuencia, int posicionEnEspacioDeTrabajo) throws RuntimeException{
+
+        try{
+
+            this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).juntar(nuevaSecuencia);
+
+        } catch (IndexOutOfBoundsException error){
+
+            this.espacioDeTrabajo.add(nuevaSecuencia);
+
+        }
+
+    }
+
     public void insertarSecuenciaEnEspacioDeTrabajo(SecuenciaDeBloques nuevaSecuencia, int posicionEnEspacioDeTrabajo,
                                                     int posicionDentroDeSecuenciaReceptora) throws RuntimeException{
         try{
-            this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).insertarSecuenciaEn(nuevaSecuencia,
+            this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).juntar(nuevaSecuencia,
                     posicionDentroDeSecuenciaReceptora);
         } catch (IndexOutOfBoundsException error){
 
@@ -27,12 +42,11 @@ public class SectorAlgoritmo {
 
     }
 
-    /*Lanza una excepcion si la la posicion en alguna de las listas se encuentra fuera de rango*/
     public SecuenciaDeBloques separarSecuenciaEnEspacioDeTrabajo(int posicionEnEspacioDeTrabajo,
                                                    int posicionDentroDeSecuenciaReceptora) throws RuntimeException{
 
         SecuenciaDeBloques secuenciaObtenida = this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo)
-                .separarLaSecuenciaEn(posicionDentroDeSecuenciaReceptora);
+                .separar(posicionDentroDeSecuenciaReceptora);
 
         //¿Que hago si la secuencia queda vacia? ¿Como la elimino del arraylist sin preguntarle si se encuentra vacia?
 
@@ -40,23 +54,32 @@ public class SectorAlgoritmo {
 
     }
 
-    /*Lanza una excepcion si la la posicion en alguna de las listas se encuentra fuera de rango*/
-    public void eliminarSecuenciaEnEspacionDeTrabajo(int posicionEnEspacioDeTrabajo,
-                                                     int posicionDentroDeSecuenciaReceptora) throws RuntimeException{
+    public SecuenciaDeBloques removerBloqueParticular(int posicionEnEspacioDeTrabajo,
+                                                      int posicionDentroDeSecuenciaReceptora){
 
-        this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).separarLaSecuenciaEn(posicionDentroDeSecuenciaReceptora);
+        return this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo).removerBloque(posicionDentroDeSecuenciaReceptora);
 
     }
 
-    public void crearNuevoAlgoritmoPersonalizado(SectorBloque sectorBloqueReceptor){
+    public void crearNuevoAlgoritmoPersonalizado(SectorBloque sectorBloqueReceptor, String nombre){
 
-       sectorBloqueReceptor.crearAlgoritmoPersonalizado(this.espacioDeTrabajo.get(0).duplicar());
+       sectorBloqueReceptor.crearAlgoritmoPersonalizado(this.espacioDeTrabajo.get(0).duplicar(), nombre);
 
     }
 
     public void vaciar(){
 
         this.espacioDeTrabajo.clear();
+        this.espacioDeTrabajo.add(new SecuenciaDeBloques());
+
+    }
+
+    public void meterSecuenciaEnContenedor(BloqueContenedor contenedor, int posicionEnEspacioDeTrabajo){
+
+        contenedor.juntar(this.espacioDeTrabajo.get(posicionEnEspacioDeTrabajo), 0);
+        ArrayList<Bloque> contenedorEnLista = new ArrayList<>();
+        contenedorEnLista.add(contenedor);
+        this.espacioDeTrabajo.set(posicionEnEspacioDeTrabajo, new SecuenciaDeBloques(contenedorEnLista));
 
     }
 

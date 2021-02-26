@@ -27,30 +27,6 @@ public class BloqueMovimiento implements Bloque {
     }
 
     @Override
-    public int tamanio(){
-
-        return 1;
-
-    }
-
-    /*
-    @Override
-    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion) throws AccesoNoPermitidoException {
-
-        throw new AccesoNoPermitidoException();
-
-    }
-
-    @Override
-    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion) throws AccesoNoPermitidoException{
-
-        throw new AccesoNoPermitidoException();
-
-    }
-
-     */
-
-    @Override
     public Bloque duplicar(){
         return new BloqueMovimiento(this.direccion.duplicar());
     }

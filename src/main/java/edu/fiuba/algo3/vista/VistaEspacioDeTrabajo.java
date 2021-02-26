@@ -1,53 +1,20 @@
-package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 17/2/21*/
+package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 25/2/21*/
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-import java.util.Stack;
+public class VistaEspacioDeTrabajo extends HBox {
 
-public class VistaSectorAlgoritmo {
+    public VistaEspacioDeTrabajo(){
 
-    private VBox sectorAlgoritmo;
+        super();
 
-    public VistaSectorAlgoritmo(){
-
-        this.sectorAlgoritmo = new VBox();
-        this.sectorAlgoritmo.setSpacing(10);
-        this.sectorAlgoritmo.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
-
-        Label titulo = new Label();
-        titulo.setText("Sector Algoritmo");
-
-        HBox cajaDeTitulo = new HBox(titulo);
-        cajaDeTitulo.setAlignment(Pos.CENTER);
-
-        HBox espacioDeTrabajo = this.inicializarContenedoresDeBloques();
-
-        HBox contenedorIngresoUsuario = this.inicializarControladorDelUsuario();
-
-        this.sectorAlgoritmo.getChildren().addAll(cajaDeTitulo, espacioDeTrabajo, contenedorIngresoUsuario);
-
-    }
-
-    public VBox obtenerSectorAlgoritmo(){
-
-        return this.sectorAlgoritmo;
-
-    }
-
-
-    private HBox inicializarContenedoresDeBloques(){
-
-        HBox contenedorPrincipal = new HBox();
-        contenedorPrincipal.setPrefWidth(1000);
-        contenedorPrincipal.setPrefHeight(600);
+        this.setPrefWidth(1000);
+        this.setPrefHeight(600);
 
         VBox contenedorSecuencia = new VBox();
         VBox contenedorLibre1 = new VBox();
@@ -74,40 +41,6 @@ public class VistaSectorAlgoritmo {
 
         contenedorSecuencia.getChildren().add(bloque);
 
-        contenedorPrincipal.getChildren().addAll(
-                contenedorSecuencia,
-                contenedorLibre1,
-                contenedorLibre2,
-                contenedorLibre3,
-                contenedorLibre4);
-
-        return contenedorPrincipal;
-    }
-
-    private HBox inicializarControladorDelUsuario(){
-
-        HBox contenedorPrincipal = new HBox();
-        contenedorPrincipal.setSpacing(10);
-
-        TextField numeroDeContenedor = new TextField("Numero de contenedor");
-        TextField posicionEnSecuencia = new TextField("Posicion del bloque");
-
-        Button botonInsertarSeparar = new Button();
-        botonInsertarSeparar.setText("Insertar");
-
-        Button botonLimpiarSectorAlgoritmo = new Button();
-        botonLimpiarSectorAlgoritmo.setText("Volver a empezar");
-
-        contenedorPrincipal.getChildren().addAll(
-                new Label("Contenedor: "),
-                numeroDeContenedor,
-                new Label("Posicion: "),
-                posicionEnSecuencia,
-                botonInsertarSeparar,
-                botonLimpiarSectorAlgoritmo);
-
-        return contenedorPrincipal;
-
     }
 
     private StackPane bloqueInicialDeSecuenciaDeEjecucion(){
@@ -129,4 +62,5 @@ public class VistaSectorAlgoritmo {
         return bloqueInicioDeSecuencia;
 
     }
+
 }

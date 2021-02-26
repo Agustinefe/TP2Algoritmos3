@@ -21,7 +21,7 @@ public class Entrega2Tests {
     public void setUp(){
 
         Pizarra.getInstance().blanquearTodo();
-        this.bloqueIterativo = new BloqueRepeticion3();
+        this.bloqueIterativo = new BloqueRepeticionPor3();
         this.jimmy = new Personaje(Pizarra.getInstance().obtenerCeldaCentral());
         this.abajo = new BloqueMovimiento(new Abajo());
         this.arriba = new BloqueMovimiento(new Arriba());
@@ -54,7 +54,7 @@ public class Entrega2Tests {
         ArrayList<Bloque> listaDeBloques = new ArrayList<Bloque>();
         ArrayList<Celda> pasoEstimadoDePersonaje = new ArrayList<Celda>();
 
-        BloqueRepeticion bloqueIterativo = new BloqueRepeticion3();
+        BloqueRepeticion bloqueIterativo = new BloqueRepeticionPor3();
         bloqueIterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Izquierda()), 0);
         bloqueIterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Abajo()), 1);
 

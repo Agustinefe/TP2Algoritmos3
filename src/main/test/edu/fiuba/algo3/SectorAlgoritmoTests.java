@@ -1,10 +1,20 @@
 package edu.fiuba.algo3;/* Author: firmapaz ;created on 22/2/21*/
 
 import edu.fiuba.algo3.algoblocks.*;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.security.PublicKey;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SectorAlgoritmoTests {
+
+    @BeforeEach
+    public void setUp(){
+
+
+    }
 
     @Test
     public void test01AgregoUnBloqueALaSecuenciaDeEjecucionYPuedoEjecutarlo(){
@@ -137,36 +147,30 @@ public class SectorAlgoritmoTests {
         assertTrue(dibujante.seEncuentraEn(celdaFinalSecuencia));
     }
 
-    /*
     @Test
-    public void test05AgregarBloqueAEspacioDeTrabajoYLuegoEliminarlo(){
-        SectorAlgoritmo miSectorAlgoritmo = new SectorAlgoritmo();
-        SectorDibujo miSectorDibujo = new SectorDibujo(9,9);
+    public void test05metoUnaSecuenciaEnUnBloqueContenedor(){
 
-        Derecha derecha = new Derecha();
-        Izquierda izquierda = new Izquierda();
-        Arriba arriba = new Arriba();
-        Abajo abajo = new Abajo();
+
+        SectorAlgoritmo miSectorAlgoritmo = new SectorAlgoritmo();
+        Personaje dibujante = new Personaje(Pizarra.getInstance().obtenerCeldaCentral());
 
         SecuenciaDeBloques bloque = new SecuenciaDeBloques();
 
-        bloque.insertar(new BloqueMovimiento(derecha));
+        bloque.insertar(new BloqueMovimiento(new Derecha()));
         bloque.insertar(new BloqueSubirLapiz());
-        bloque.insertar(new BloqueMovimiento(arriba));
-        bloque.insertar(new BloqueMovimiento(arriba));
-        bloque.insertar(new BloqueBajarLapiz());
-        bloque.insertar(new BloqueMovimiento(izquierda));
-        bloque.insertar(new BloqueMovimiento(abajo));
-        bloque.insertar(new BloqueMovimiento(izquierda));
+        bloque.insertar(new BloqueMovimiento(new Arriba()));
 
-        miSectorAlgoritmo.aniadirBloqueAEspacioDeTrabajo(bloque);
-        assertTrue(miSectorAlgoritmo.elBloqueEstaEnElEspacioDeTrabajo(bloque));
+        miSectorAlgoritmo.insertarSecuenciaEnEspacioDeTrabajo(bloque, 0);
 
-        miSectorAlgoritmo.arrojarBloqueALaBasura(bloque);
-        assertTrue(!miSectorAlgoritmo.elBloqueEstaEnElEspacioDeTrabajo(bloque));
+        miSectorAlgoritmo.meterSecuenciaEnContenedor(new BloqueInvertirComportamiento(), 0);
+
+        miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
+
+        Celda celdaFinalEstimada = new Celda(3, 3);
+        celdaFinalEstimada.dibujar();
+
+        assertTrue(dibujante.seEncuentraEn(celdaFinalEstimada));
     }
-
-*/
 
 
 }

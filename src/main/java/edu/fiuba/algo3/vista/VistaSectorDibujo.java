@@ -1,11 +1,16 @@
 package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 16/2/21*/
 
+import edu.fiuba.algo3.algoblocks.Personaje;
+import edu.fiuba.algo3.algoblocks.Pizarra;
+import edu.fiuba.algo3.eventos.BotonEjecutarEventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
@@ -13,12 +18,12 @@ public class VistaSectorDibujo {
 
     private VBox sectorDibujo;
 
-    public VistaSectorDibujo(){
+    public VistaSectorDibujo(Personaje dibujantePrincipal){
 
         sectorDibujo = new VBox();
         sectorDibujo.setSpacing(10);
 
-        StackPane pizarraDeDibujo = new StackPane();
+        StackPane contenedorPrincipal = new StackPane();
 
         Label titulo = new Label();
         titulo.setText("Sector Dibujo");
@@ -26,23 +31,17 @@ public class VistaSectorDibujo {
         HBox cajaDeTitulo = new HBox(titulo);
         cajaDeTitulo.setAlignment(Pos.CENTER);
 
-        Label labelPizarra = new Label();
-        labelPizarra.setText("Aca va la pizarra");
 
-        Rectangle pizarra = new Rectangle();
-        pizarra.setWidth(300);
-        pizarra.setHeight(400);
-        pizarra.setStroke(Color.TRANSPARENT);
-        pizarra.setFill(Color.GREY);
-        //pizarra.setOnM
-
+        VistaPizarraDeDibujo pizarraDeDibujo = new VistaPizarraDeDibujo(dibujantePrincipal);
         Button botonDeEjecucion = new Button();
-        MyButtonEventHandler eventoDeBotonDeEjecucion = new MyButtonEventHandler(botonDeEjecucion);
+
+        BotonEjecutarEventHandler eventoDeBotonDeEjecucion = new BotonEjecutarEventHandler(botonDeEjecucion, pizarraDeDibujo, dibujantePrincipal);
         botonDeEjecucion.setOnAction(eventoDeBotonDeEjecucion);
+        this.sectorDibujo.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 
-        pizarraDeDibujo.getChildren().addAll(pizarra, labelPizarra);
+        contenedorPrincipal.getChildren().addAll(pizarraDeDibujo.obtenerPizarraDeDibujo());
 
-        sectorDibujo.getChildren().addAll(cajaDeTitulo, pizarraDeDibujo, botonDeEjecucion);
+        sectorDibujo.getChildren().addAll(cajaDeTitulo, contenedorPrincipal, botonDeEjecucion);
 
 
     }

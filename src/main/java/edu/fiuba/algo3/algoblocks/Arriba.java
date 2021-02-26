@@ -28,4 +28,7 @@ public class Arriba implements DireccionDeMovimiento{
 
     @Override
     public DireccionDeMovimiento duplicar(){return new Arriba();}
+
+    @Override
+    public String direccion(){ return "arriba";}
 }

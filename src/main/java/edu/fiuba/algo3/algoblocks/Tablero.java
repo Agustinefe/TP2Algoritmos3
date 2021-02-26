@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Tablero {
 
-    Personaje dibujante;
+    private Personaje dibujante;
     private SectorAlgoritmo sectorDeAlgoritmos;
     private SectorBloque sectorDeBloques;
 
@@ -16,9 +16,9 @@ public class Tablero {
 
     }
 
-    public SecuenciaDeBloques crearNuevoBloque(int posicionDelTipoDeBloque){
+    public SecuenciaDeBloques crearNuevoBloque(String nombreDeBloque){
 
-        return this.sectorDeBloques.nuevoBloque(posicionDelTipoDeBloque);
+        return this.sectorDeBloques.nuevoBloque(nombreDeBloque);
 
     }
 
@@ -40,9 +40,15 @@ public class Tablero {
 
     }
 
-    public void agregarAlgoritmoPersonalizadoAlSectorDeBloques(){
+    public void agregarAlgoritmoPersonalizadoAlSectorDeBloques(String nombre){
 
-        this.sectorDeAlgoritmos.crearNuevoAlgoritmoPersonalizado(this.sectorDeBloques);
+        this.sectorDeAlgoritmos.crearNuevoAlgoritmoPersonalizado(this.sectorDeBloques, nombre);
+
+    }
+
+    public void meterSecuenciaEnContenedor(BloqueContenedor contenedor, int posicionDeSecuencia){
+
+        this.sectorDeAlgoritmos.meterSecuenciaEnContenedor(contenedor, posicionDeSecuencia);
 
     }
 

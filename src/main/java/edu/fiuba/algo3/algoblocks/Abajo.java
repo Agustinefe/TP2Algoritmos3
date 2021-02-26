@@ -28,4 +28,7 @@ public class Abajo implements DireccionDeMovimiento{
 
     @Override
     public DireccionDeMovimiento duplicar(){return new Abajo();}
+
+    @Override
+    public String direccion(){ return "abajo";}
 }
