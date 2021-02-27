@@ -78,7 +78,7 @@ public class Personaje {
 
     public ArrayList<String> getRegistroDePaso(){
 
-        ArrayList<String> bitacora = new ArrayList<>();
+        /*ArrayList<String> bitacora = new ArrayList<>();
         bitacora.add("bajaLapiz");
         bitacora.add("derecha");
         bitacora.add("arriba");
@@ -87,11 +87,11 @@ public class Personaje {
         bitacora.add("izquierda");
         bitacora.add("abajo");
         bitacora.add("bajaLapiz");
-        bitacora.add("izquierda");
+        bitacora.add("izquierda");*
 
-        return bitacora;
+        return bitacora;*/
 
-       //return this.registroDePaso;
+       return this.registroDePaso;
 
     }
 

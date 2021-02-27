@@ -51,83 +51,21 @@ public class App extends Application {
         SectorAlgoritmo sectorAlgoritmo = new SectorAlgoritmo();
         SectorBloque sectorBloque = new SectorBloque();
 
-        VistaSectorDibujo vistaSectorDibujo = new VistaSectorDibujo(dibujantePrincipal);
-        VistaSectorBloque vistaSectorBloque = new VistaSectorBloque(sectorBloque, sectorAlgoritmo);
-        VistaSectorAlgoritmo vistaSectorAlgoritmo = new VistaSectorAlgoritmo();
+        VistaEspacioDeTrabajo espacioDeTrabajo = new VistaEspacioDeTrabajo();
+        VistaBotoneraDeBloques botoneraDeBloques = new VistaBotoneraDeBloques(sectorBloque, sectorAlgoritmo, espacioDeTrabajo);
+
+        VistaControladorDeEspacioDeTrabajo controladorDeEspacioDeTrabajo = new VistaControladorDeEspacioDeTrabajo(
+                botoneraDeBloques, espacioDeTrabajo, sectorBloque, sectorAlgoritmo);
+
+        VistaSectorDibujo vistaSectorDibujo = new VistaSectorDibujo(dibujantePrincipal, sectorAlgoritmo);
+        VistaSectorBloque vistaSectorBloque = new VistaSectorBloque(botoneraDeBloques);
+        VistaSectorAlgoritmo vistaSectorAlgoritmo = new VistaSectorAlgoritmo(espacioDeTrabajo, controladorDeEspacioDeTrabajo);
 
         contenedorPrincipal.getChildren().addAll(
-                vistaSectorDibujo.obtenerSectorDibujo(),
-                vistaSectorBloque.obtenerSectorBloque(),
-                vistaSectorAlgoritmo.obtenerSectorAlgoritmo());
+                vistaSectorDibujo,
+                vistaSectorBloque,
+                vistaSectorAlgoritmo);
 
     }
-
-
-/*
-    private Point2D dragVector = null;
-
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-
-        Pane root = new Pane();
-
-        Pane node = new Pane();
-        node.setBackground(new Background(new BackgroundFill(Color.BLUE, CornerRadii.EMPTY, javafx.geometry.Insets.EMPTY)));
-        node.setPrefWidth(100);
-        node.setPrefHeight(50);
-        node.setTranslateX(500);
-        node.setTranslateY(500);
-
-        node.setOnDragDetected(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("odDragDetected");
-
-                double x = event.getX();
-                double y = event.getY();
-                dragVector = node.localToParent(x, y).subtract(node.getTranslateX(), node.getTranslateY());
-                node.startFullDrag();
-            }
-        });
-
-        node.setOnMouseDragOver(new EventHandler<MouseDragEvent>() {
-            @Override
-            public void handle(MouseDragEvent event) {
-                System.out.println("onDragOver");
-
-                Point2D parentCoords = node.localToParent(event.getX(), event.getY());
-                //System.out.println("(", node.getLayoutX(), ", ", node.getLayoutY(), ")");
-
-                node.setTranslateX(parentCoords.getX() -dragVector.getX());
-                node.setTranslateY(parentCoords.getY() -dragVector.getY());
-            }
-        });
-
-        node.setOnMouseReleased(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                System.out.println("Mouse released");
-                dragVector = null;
-            }
-        });
-
-        root.getChildren().add(node);
-        root.getChildren().removeAll(node);
-        root.getChildren().add(node);
-
-        Scene scene = new Scene(root, 800, 600);
-
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("DragTry");
-        primaryStage.show();
-    }
-
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
-
- */
 
 }

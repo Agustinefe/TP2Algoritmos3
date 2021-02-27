@@ -58,18 +58,6 @@ public class VistaPizarraDeDibujo {
 
         this.graphicsContext.moveTo(this.base / 2, this.altura / 2);
 
-
-        /*ArrayList<String> bitacora = new ArrayList<>();
-        bitacora.add("bajaLapiz");
-        bitacora.add("derecha");
-        bitacora.add("arriba");
-        bitacora.add("izquierda");
-        bitacora.add("subeLapiz");
-        bitacora.add("izquierda");
-        bitacora.add("abajo");
-        bitacora.add("bajaLapiz");
-        bitacora.add("izquierda");*/
-
         for(int i = 0; i < bitacoraDePersonaje.size(); i++){
 
             OrdenDeDibujoParaCanvas orden = conversor.obtenerOrden(bitacoraDePersonaje.get(i));

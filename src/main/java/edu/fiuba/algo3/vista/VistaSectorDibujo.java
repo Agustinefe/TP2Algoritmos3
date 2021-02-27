@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 16/2/21*/
 
 import edu.fiuba.algo3.algoblocks.Personaje;
 import edu.fiuba.algo3.algoblocks.Pizarra;
+import edu.fiuba.algo3.algoblocks.SectorAlgoritmo;
 import edu.fiuba.algo3.eventos.BotonEjecutarEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -14,14 +15,13 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
-public class VistaSectorDibujo {
+public class VistaSectorDibujo extends VBox{
 
-    private VBox sectorDibujo;
 
-    public VistaSectorDibujo(Personaje dibujantePrincipal){
+    public VistaSectorDibujo(Personaje dibujantePrincipal, SectorAlgoritmo sectorAlgoritmo){
 
-        sectorDibujo = new VBox();
-        sectorDibujo.setSpacing(10);
+        super();
+        this.setSpacing(10);
 
         StackPane contenedorPrincipal = new StackPane();
 
@@ -35,20 +35,14 @@ public class VistaSectorDibujo {
         VistaPizarraDeDibujo pizarraDeDibujo = new VistaPizarraDeDibujo(dibujantePrincipal);
         Button botonDeEjecucion = new Button();
 
-        BotonEjecutarEventHandler eventoDeBotonDeEjecucion = new BotonEjecutarEventHandler(botonDeEjecucion, pizarraDeDibujo, dibujantePrincipal);
+        BotonEjecutarEventHandler eventoDeBotonDeEjecucion = new BotonEjecutarEventHandler(botonDeEjecucion, pizarraDeDibujo, dibujantePrincipal, sectorAlgoritmo);
         botonDeEjecucion.setOnAction(eventoDeBotonDeEjecucion);
-        this.sectorDibujo.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+        this.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 
         contenedorPrincipal.getChildren().addAll(pizarraDeDibujo.obtenerPizarraDeDibujo());
 
-        sectorDibujo.getChildren().addAll(cajaDeTitulo, contenedorPrincipal, botonDeEjecucion);
+        this.getChildren().addAll(cajaDeTitulo, contenedorPrincipal, botonDeEjecucion);
 
-
-    }
-
-    public VBox obtenerSectorDibujo(){
-
-        return this.sectorDibujo;
 
     }
 

@@ -2,47 +2,74 @@ package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 25/2/21*/
 
 import edu.fiuba.algo3.algoblocks.SectorAlgoritmo;
 import edu.fiuba.algo3.algoblocks.SectorBloque;
-import edu.fiuba.algo3.eventos.BotonGenerarBloqueNuevoEventHandler;
+import edu.fiuba.algo3.algoblocks.SecuenciaDeBloques;
+import edu.fiuba.algo3.eventos.BotonGenerarBloqueSimpleNuevoEventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.layout.Pane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
-
-import java.util.ArrayList;
 
 public class VistaBotoneraDeBloques extends VBox {
 
-    public VistaBotoneraDeBloques(SectorBloque sectorBloque, SectorAlgoritmo sectorAlgoritmo){
+    private SectorBloque sectorBloque;
+    private SectorAlgoritmo sectorAlgoritmo;
+    private VistaEspacioDeTrabajo vistaEspacioDeTrabajo;
+    private TextField posicionDeIngresoDeBloque;
+
+    public VistaBotoneraDeBloques(SectorBloque sectorBloque, SectorAlgoritmo sectorAlgoritmo, VistaEspacioDeTrabajo vistaEspacioDeTrabajo){
 
         super();
+
+        this.sectorBloque = sectorBloque;
+        this.sectorAlgoritmo = sectorAlgoritmo;
+        this.vistaEspacioDeTrabajo = vistaEspacioDeTrabajo;
+
+        this.posicionDeIngresoDeBloque = new TextField();
+        posicionDeIngresoDeBloque.setPromptText("Posicion en secuencia");
+        this.getChildren().add(posicionDeIngresoDeBloque);
 
         this.setAlignment(Pos.TOP_CENTER);
         this.setSpacing(10);
 
-        Button botonDeBloque;
+        this.crearBoton("Derecha", "derecha");
+        this.crearBoton("Izquierda", "izquierda");
+        this.crearBoton("Arriba", "arriba");
+        this.crearBoton("Abajo", "abajo");
+        this.crearBoton("Bajar lapiz", "bajar lapiz");
+        this.crearBoton("Subir lapiz", "subir lapiz");
+        this.crearBoton("Repetir 2 veces", "repeticion x2");
+        this.crearBoton("Repetir 3 veces", "repeticion x3");
+        this.crearBoton("Invertir comportamiento", "inversor");
 
-        ArrayList<String> listaDeNombres = new ArrayList<String>();
-        listaDeNombres.add("Derecha");
-        listaDeNombres.add("Izquierda");
-        listaDeNombres.add("Arriba");
-        listaDeNombres.add("Abajo");
-        listaDeNombres.add("Bajar Lapiz");
-        listaDeNombres.add("Subir Lapiz");
-        listaDeNombres.add("Repetir 2 veces");
-        listaDeNombres.add("Repetir 3 veces");
-        listaDeNombres.add("Invertir Comportamiento");
+    }
 
+    public void crearBoton(String nombreBoton, String nombreBloque){
 
-        for(int i = 0; i < 9; i++){
+        Button botonDeBloque = new Button();
+        botonDeBloque.setText(nombreBoton);
+        BotonGenerarBloqueSimpleNuevoEventHandler evento = new BotonGenerarBloqueSimpleNuevoEventHandler(
+                this.sectorBloque,
+                this.sectorAlgoritmo,
+                nombreBloque,
+                this.vistaEspacioDeTrabajo,
+                this.posicionDeIngresoDeBloque);
+        botonDeBloque.setOnAction(evento);
+        this.getChildren().add(botonDeBloque);
 
-            botonDeBloque = new Button();
-            botonDeBloque.setText(listaDeNombres.get(i));
-            BotonGenerarBloqueNuevoEventHandler evento = new BotonGenerarBloqueNuevoEventHandler(sectorBloque,
-                    sectorAlgoritmo, i);
-            botonDeBloque.setOnAction(evento);
-            this.getChildren().add(botonDeBloque);
+    }
 
-        }
+    void update(SecuenciaDeBloques nuevaSecuencia, String nombre){
+
+        Button nuevoBotonPersonalizado = new Button();
+        nuevoBotonPersonalizado.setText(nombre);
+        BotonGenerarBloqueSimpleNuevoEventHandler evento = new BotonGenerarBloqueSimpleNuevoEventHandler(
+                this.sectorBloque,
+                this.sectorAlgoritmo,
+                nombre,
+                vistaEspacioDeTrabajo,
+                this.posicionDeIngresoDeBloque);
+        nuevoBotonPersonalizado.setOnAction(evento);
+        this.getChildren().add(nuevoBotonPersonalizado);
 
     }
 

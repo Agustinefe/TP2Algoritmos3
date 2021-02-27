@@ -12,15 +12,15 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.Stack;
 
-public class VistaSectorAlgoritmo {
+public class VistaSectorAlgoritmo extends VBox {
 
-    private VBox sectorAlgoritmo;
 
-    public VistaSectorAlgoritmo(){
+    public VistaSectorAlgoritmo(VistaEspacioDeTrabajo vistaEspacioDeTrabajo, VistaControladorDeEspacioDeTrabajo vistaControladorDeEspacioDeTrabajo){
 
-        this.sectorAlgoritmo = new VBox();
-        this.sectorAlgoritmo.setSpacing(10);
-        this.sectorAlgoritmo.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+        super();
+
+        this.setSpacing(10);
+        this.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
 
         Label titulo = new Label();
         titulo.setText("Sector Algoritmo");
@@ -28,17 +28,11 @@ public class VistaSectorAlgoritmo {
         HBox cajaDeTitulo = new HBox(titulo);
         cajaDeTitulo.setAlignment(Pos.CENTER);
 
-        HBox espacioDeTrabajo = this.inicializarContenedoresDeBloques();
+        HBox espacioDeTrabajo = vistaEspacioDeTrabajo;
 
-        HBox contenedorIngresoUsuario = this.inicializarControladorDelUsuario();
+        HBox contenedorIngresoUsuario = vistaControladorDeEspacioDeTrabajo;
 
-        this.sectorAlgoritmo.getChildren().addAll(cajaDeTitulo, espacioDeTrabajo, contenedorIngresoUsuario);
-
-    }
-
-    public VBox obtenerSectorAlgoritmo(){
-
-        return this.sectorAlgoritmo;
+        this.getChildren().addAll(cajaDeTitulo, espacioDeTrabajo, contenedorIngresoUsuario);
 
     }
 

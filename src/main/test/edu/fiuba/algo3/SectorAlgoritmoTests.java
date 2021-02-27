@@ -13,6 +13,7 @@ public class SectorAlgoritmoTests {
     @BeforeEach
     public void setUp(){
 
+        Pizarra.getInstance().blanquearTodo();
 
     }
 
@@ -172,5 +173,29 @@ public class SectorAlgoritmoTests {
         assertTrue(dibujante.seEncuentraEn(celdaFinalEstimada));
     }
 
+    @Test
+    public void test06remuevoBloquesParticularesDeUnaSecuenciaEnElEspacioDeTrabajo(){
 
+        SectorAlgoritmo miSectorAlgoritmo = new SectorAlgoritmo();
+        Personaje dibujante = new Personaje(Pizarra.getInstance().obtenerCeldaCentral());
+
+        SecuenciaDeBloques bloque = new SecuenciaDeBloques();
+
+        bloque.insertar(new BloqueMovimiento(new Derecha()));
+        bloque.insertar(new BloqueSubirLapiz());
+        bloque.insertar(new BloqueMovimiento(new Arriba()));
+        bloque.insertar(new BloqueMovimiento(new Abajo()));
+
+        miSectorAlgoritmo.insertarSecuenciaEnEspacioDeTrabajo(bloque, 0);
+        miSectorAlgoritmo.removerBloqueParticular(0, 2);
+
+        miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
+
+        Celda celdaFinalEstimada = new Celda(5, 3);
+
+        assertTrue(dibujante.seEncuentraEn(celdaFinalEstimada));
+
+
+
+    }
 }
