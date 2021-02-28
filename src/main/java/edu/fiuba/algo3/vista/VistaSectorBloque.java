@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 16/2/21*/
 
-import edu.fiuba.algo3.algoblocks.SectorAlgoritmo;
-import edu.fiuba.algo3.algoblocks.SectorBloque;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

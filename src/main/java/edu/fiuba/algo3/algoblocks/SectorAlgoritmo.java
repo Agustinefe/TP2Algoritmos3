@@ -63,7 +63,7 @@ public class SectorAlgoritmo {
 
     public void crearNuevoAlgoritmoPersonalizado(SectorBloque sectorBloqueReceptor, String nombre){
 
-       sectorBloqueReceptor.crearAlgoritmoPersonalizado(this.espacioDeTrabajo.get(0).duplicar(), nombre);
+       sectorBloqueReceptor.crearAlgoritmoPersonalizado(this.espacioDeTrabajo.get(0), nombre);
 
     }
 

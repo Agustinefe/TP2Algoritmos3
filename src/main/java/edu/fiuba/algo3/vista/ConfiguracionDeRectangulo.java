@@ -10,10 +10,10 @@ public class ConfiguracionDeRectangulo {
 
     private String nombre;
     private Color color;
-    private int width;
-    private int height;
+    private double width;
+    private double height;
 
-    public ConfiguracionDeRectangulo(String nombre, Color color, int height, int width){
+    public ConfiguracionDeRectangulo(String nombre, Color color, double height, double width){
 
         this.nombre = nombre;
         this.color = color;
@@ -33,7 +33,7 @@ public class ConfiguracionDeRectangulo {
 
         rectanguloDeFondo.setWidth(this.width);
         rectanguloDeFondo.setHeight(this.height);
-        rectanguloDeFondo.setStroke(Color.TRANSPARENT);
+        rectanguloDeFondo.setStroke(Color.BLACK);
         rectanguloDeFondo.setFill(this.color);
 
         bloque.getChildren().addAll(rectanguloDeFondo, new Label(this.nombre));

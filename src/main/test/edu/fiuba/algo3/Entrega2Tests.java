@@ -50,9 +50,9 @@ public class Entrega2Tests {
 
         Celda unaCelda;
         SecuenciaDeBloques unaSecuencia;
-        ArrayList<SecuenciaDeBloques> listaDeSecuencias = new ArrayList<SecuenciaDeBloques>();
-        ArrayList<Bloque> listaDeBloques = new ArrayList<Bloque>();
-        ArrayList<Celda> pasoEstimadoDePersonaje = new ArrayList<Celda>();
+        ArrayList<SecuenciaDeBloques> listaDeSecuencias = new ArrayList<>();
+        ArrayList<Bloque> listaDeBloques = new ArrayList<>();
+        ArrayList<Celda> pasoEstimadoDePersonaje = new ArrayList<>();
 
         BloqueRepeticion bloqueIterativo = new BloqueRepeticionPor3();
         bloqueIterativo.aniadirBloqueEnPosicion(new BloqueMovimiento(new Izquierda()), 0);

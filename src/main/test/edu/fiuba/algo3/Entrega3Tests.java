@@ -88,6 +88,23 @@ public class Entrega3Tests {
         this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("cacerola"), 0, 3);
         this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("derecha"), 0, 4);
 
+        /*
+        * izquierda
+        * abajo
+        * bajarLapiz
+        * arriba
+        * derecha
+        * derecha
+        * abajo
+        * derecha
+        *
+        * izquierda
+        * abajo
+        * cacerola
+        * derecha
+        *
+        * */
+
         this.juego.iniciarSecuenciaDeEjecucion();
 
         celdaFinalEstimada = new Celda(2, 3);

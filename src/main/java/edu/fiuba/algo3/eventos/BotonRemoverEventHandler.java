@@ -34,8 +34,9 @@ public class BotonRemoverEventHandler implements EventHandler<ActionEvent> {
 
         int posicion = Integer.parseInt(this.posicionTextField.getText());
 
-        if(posicion + 2 < this.vistaEspacioDeTrabajo.cantidadDeBloques()) {
+        if(posicion < this.vistaEspacioDeTrabajo.cantidadDeBloques()) {
 
+            //TODO indicar al usuario que debe ingresar una posicion valida para la secuencia actual
             this.sectorAlgoritmo.removerBloqueParticular(0, posicion);
             this.vistaEspacioDeTrabajo.removerBloque(posicion);
 
@@ -50,7 +51,7 @@ public class BotonRemoverEventHandler implements EventHandler<ActionEvent> {
 
         if (this.posicionTextField.getText().trim().equals("")) {
 
-            numero = this.vistaEspacioDeTrabajo.cantidadDeBloques() - 2;
+            numero = this.vistaEspacioDeTrabajo.cantidadDeBloques();
 
         } else {
 

@@ -164,5 +164,23 @@ public class BloqueTests {
 
     }
 
+    @Test
+    public void test11BloquePersonalizado(){
+
+        SecuenciaDeBloques nuevaSecuencia = new SecuenciaDeBloques();
+        nuevaSecuencia.insertar(new BloqueMovimiento(new Derecha()));
+        nuevaSecuencia.insertar(new BloqueMovimiento(new Arriba()));
+        nuevaSecuencia.insertar(new BloqueMovimiento(new Derecha()));
+        nuevaSecuencia.insertar(new BloqueMovimiento(new Arriba()));
+
+        BloquePersonalizado bloque = new BloquePersonalizado(nuevaSecuencia);
+
+        bloque.ejecutarComportamientoSobrePizarraEn(this.dibujante);
+
+        Celda celdaFinalEstimada = new Celda(6, 6);
+        assertTrue(this.dibujante.seEncuentraEn(celdaFinalEstimada));
+
+    }
+
 
 }

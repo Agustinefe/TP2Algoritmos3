@@ -52,7 +52,7 @@ public class BotonGenerarBloqueSimpleNuevoEventHandler implements EventHandler<A
 
         if(this.posicionTextField.getText().trim().equals("")){
 
-            numero = this.vistaEspacioDeTrabajo.cantidadDeBloques() - 2;
+            numero = this.vistaEspacioDeTrabajo.cantidadDeBloques();
 
         } else {
 

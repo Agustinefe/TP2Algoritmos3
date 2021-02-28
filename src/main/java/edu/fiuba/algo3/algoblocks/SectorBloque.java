@@ -5,55 +5,7 @@ import java.util.HashMap;
 
 public class SectorBloque {
 
-    //private ArrayList<SecuenciaDeBloques> bloquesDisponibles;
-
     private HashMap<String, SecuenciaDeBloques> bloquesDisponibles;
-
-    /*public SectorBloque(){
-        this.bloquesDisponibles = new ArrayList<>();
-        ArrayList<Bloque> listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueMovimiento(new Derecha())); // DERECHA (0)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-        listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueMovimiento(new Izquierda())); // IZQUIERDA (1)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-        listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueMovimiento(new Arriba())); // ARRIBA (2)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-        listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueMovimiento(new Abajo())); // ABAJO (3)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-        listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueBajarLapiz()); // BAJAR LAPIZ (4)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-        listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueSubirLapiz()); // SUBIR LAPIZ (5)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-        listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueRepeticionPor2()); // REPETICION 2 (6)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-        listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueRepeticionPor3()); // REPETICION 3 (7)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-        listaBloques = new ArrayList<>();
-        listaBloques.add(new BloqueInvertirComportamiento()); // INVERSOR (8)
-        this.bloquesDisponibles.add(new SecuenciaDeBloques(listaBloques));
-
-    }
-
-    public SecuenciaDeBloques nuevoBloque(int posicion){
-
-        SecuenciaDeBloques bloque = bloquesDisponibles.get(posicion);
-        return bloque.duplicar();
-
-    }
-
-    public void crearAlgoritmoPersonalizado(SecuenciaDeBloques bloque){
-
-        this.bloquesDisponibles.add(bloque.duplicar());
-
-    }
-    */
 
     public SectorBloque(){
         this.bloquesDisponibles = new HashMap<>();
@@ -95,7 +47,11 @@ public class SectorBloque {
 
     public void crearAlgoritmoPersonalizado(SecuenciaDeBloques bloque, String nombre){
 
-        this.bloquesDisponibles.put(nombre, bloque.duplicar());
+        //TODO buscar una mejor manera de hacer esto
+        BloquePersonalizado nuevoBloque = new BloquePersonalizado(bloque.duplicar());
+        ArrayList<Bloque> listaBloques = new ArrayList<>();
+        listaBloques.add(nuevoBloque);
+        this.bloquesDisponibles.put(nombre, new SecuenciaDeBloques(listaBloques));
 
     }
 

@@ -6,4 +6,5 @@ public interface BloqueContenedor extends Bloque{
 
     SecuenciaDeBloques separar(int posicion);
 
+    //TODO removerBloque()
 }
