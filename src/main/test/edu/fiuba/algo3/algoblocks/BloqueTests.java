@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;/* Author: firmapaz ;created on 16/12/20*/
+package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 16/12/20*/
 
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,7 +26,7 @@ public class BloqueTests {
 
         (new BloqueBajarLapiz()).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaInicialEstimada = new Celda(4, 4);
+        Celda celdaInicialEstimada = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral());
         assertTrue(this.celdaDeInicio.esIgualA(celdaInicialEstimada));
 
         (new BloqueMovimiento(new Izquierda())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
@@ -43,7 +43,7 @@ public class BloqueTests {
         (new BloqueSubirLapiz()).ejecutarComportamientoSobrePizarraEn(this.dibujante);
         (new BloqueMovimiento(new Derecha())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaInicialEstimada = new Celda(4, 4);
+        Celda celdaInicialEstimada = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral());
         assertTrue(this.celdaDeInicio.esIgualA(celdaInicialEstimada));
     }
 
@@ -52,7 +52,7 @@ public class BloqueTests {
 
         (new BloqueMovimiento(new Derecha())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(5, 4);
+        Celda celdaActualEstimada = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral());
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
     }
 
@@ -61,7 +61,7 @@ public class BloqueTests {
 
         (new BloqueMovimiento(new Izquierda())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(3, 4);
+        Celda celdaActualEstimada = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral());
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
     }
 
@@ -70,7 +70,7 @@ public class BloqueTests {
 
         (new BloqueMovimiento(new Arriba())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(4, 5);
+        Celda celdaActualEstimada = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() + 1);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
     }
 
@@ -79,7 +79,7 @@ public class BloqueTests {
 
         (new BloqueMovimiento(new Abajo())).ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(4, 3);
+        Celda celdaActualEstimada = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() - 1);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
     }
 
@@ -96,7 +96,7 @@ public class BloqueTests {
 
         iterativo.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(6, 6);
+        Celda celdaActualEstimada = new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral() + 2);
         celdaActualEstimada.dibujar();
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
 
@@ -116,7 +116,7 @@ public class BloqueTests {
 
         inverso.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(3, 3);
+        Celda celdaActualEstimada = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() - 1);
         celdaActualEstimada.dibujar();
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
 
@@ -138,7 +138,7 @@ public class BloqueTests {
 
         inverso.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(2, 2);
+        Celda celdaActualEstimada = new Celda(Pizarra.getInstance().xCentral() - 2, Pizarra.getInstance().yCentral() - 2);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
 
     }
@@ -159,7 +159,7 @@ public class BloqueTests {
 
         inversoDelInverso.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaActualEstimada = new Celda(5, 5);
+        Celda celdaActualEstimada = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() + 1);
         assertTrue(this.dibujante.seEncuentraEn(celdaActualEstimada));
 
     }
@@ -177,7 +177,7 @@ public class BloqueTests {
 
         bloque.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaFinalEstimada = new Celda(6, 6);
+        Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral() + 2);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalEstimada));
 
     }

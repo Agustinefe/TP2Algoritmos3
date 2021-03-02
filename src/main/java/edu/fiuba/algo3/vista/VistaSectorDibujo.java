@@ -6,14 +6,10 @@ import edu.fiuba.algo3.algoblocks.SectorAlgoritmo;
 import edu.fiuba.algo3.eventos.BotonEjecutarEventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 
 public class VistaSectorDibujo extends VBox{
 
@@ -37,7 +33,7 @@ public class VistaSectorDibujo extends VBox{
 
         BotonEjecutarEventHandler eventoDeBotonDeEjecucion = new BotonEjecutarEventHandler(botonDeEjecucion, pizarraDeDibujo, dibujantePrincipal, sectorAlgoritmo);
         botonDeEjecucion.setOnAction(eventoDeBotonDeEjecucion);
-        this.setBackground(new Background(new BackgroundFill(Color.GRAY, CornerRadii.EMPTY, Insets.EMPTY)));
+        this.setBackground(new Background(new BackgroundFill(Color.LEMONCHIFFON.saturate(), CornerRadii.EMPTY, Insets.EMPTY)));
 
         contenedorPrincipal.getChildren().addAll(pizarraDeDibujo.obtenerPizarraDeDibujo());
 

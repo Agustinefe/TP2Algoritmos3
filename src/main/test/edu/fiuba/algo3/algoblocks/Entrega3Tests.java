@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;/* Author: firmapaz ;created on 23/2/21*/
+package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 23/2/21*/
 
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -33,7 +33,7 @@ public class Entrega3Tests {
         this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("izquierda"), 0, 9);
 
         this.juego.iniciarSecuenciaDeEjecucion();
-        Celda celdaFinalEstimada = new Celda(3, 5);
+        Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() + 1);
         assertTrue(this.juego.dibujanteSeEncuentraEn(celdaFinalEstimada));
 
     }
@@ -56,7 +56,7 @@ public class Entrega3Tests {
         this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("personalizado"), 0, 0);
         this.juego.iniciarSecuenciaDeEjecucion();
 
-        Celda celdaFinalEstimada = new Celda(3, 6);
+        Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() + 2);
         assertTrue(this.juego.dibujanteSeEncuentraEn(celdaFinalEstimada));
         
     }
@@ -73,7 +73,7 @@ public class Entrega3Tests {
         this.juego.meterSecuenciaEnContenedor(new BloqueInvertirComportamiento(), 0);
 
         this.juego.iniciarSecuenciaDeEjecucion();
-        Celda celdaFinalEstimada = new Celda(2, 4);
+        Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() - 2, Pizarra.getInstance().yCentral());
         assertTrue(this.juego.dibujanteSeEncuentraEn(celdaFinalEstimada));
 
         this.juego.agregarAlgoritmoPersonalizadoAlSectorDeBloques("cacerola");
@@ -107,7 +107,7 @@ public class Entrega3Tests {
 
         this.juego.iniciarSecuenciaDeEjecucion();
 
-        celdaFinalEstimada = new Celda(2, 3);
+        celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() - 2, Pizarra.getInstance().yCentral() - 1);
         assertTrue(this.juego.dibujanteSeEncuentraEn(celdaFinalEstimada));
     }
 

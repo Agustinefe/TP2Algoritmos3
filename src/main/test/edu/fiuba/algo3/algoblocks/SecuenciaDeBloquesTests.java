@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;/* Author: firmapaz ;created on 21/1/21*/
+package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 21/1/21*/
 
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -47,12 +47,12 @@ public class SecuenciaDeBloquesTests {
     public void test00elSetUpFueHechoCorrectamente() {
 
         this.miSecuencia.ejecutarComportamientoSobrePizarraEn(this.dibujante);
-        Celda celdaFinalSecuencia1 = new Celda(5, 5);
+        Celda celdaFinalSecuencia1 = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() + 1);
         celdaFinalSecuencia1.dibujar();
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia1));
 
         this.miSecuencia2.ejecutarComportamientoSobrePizarraEn(this.dibujante);
-        Celda celdaFinalSecuencia2 = new Celda(4, 3);
+        Celda celdaFinalSecuencia2 = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() - 1);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia2));
 
     }
@@ -63,7 +63,7 @@ public class SecuenciaDeBloquesTests {
         this.miSecuencia.insertar(new BloqueMovimiento(new Arriba()));
         this.miSecuencia.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(5, 6);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() + 2);
         celdaFinalSecuencia.dibujar();
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia));
 
@@ -76,7 +76,7 @@ public class SecuenciaDeBloquesTests {
         this.miSecuencia.insertar(new BloqueSubirLapiz(), 4);
         this.miSecuencia.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(5, 5);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() + 1);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia));
 
     }
@@ -87,7 +87,7 @@ public class SecuenciaDeBloquesTests {
         this.miSecuencia.juntar(this.miSecuencia2);
         this.miSecuencia.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(4, 3);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() - 1);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia));
 
     }
@@ -98,7 +98,7 @@ public class SecuenciaDeBloquesTests {
         SecuenciaDeBloques pedacito = this.miSecuencia.separar(2);
         pedacito.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(3, 5);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() + 1);
         celdaFinalSecuencia.dibujar();
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia));
 
@@ -111,7 +111,7 @@ public class SecuenciaDeBloquesTests {
         this.miSecuencia.juntar(pedacito, 3);
         this.miSecuencia.ejecutarComportamientoSobrePizarraEn(this.dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(4, 4);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral());
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalSecuencia));
 
 
@@ -141,7 +141,7 @@ public class SecuenciaDeBloquesTests {
         this.miSecuencia.removerBloque(3);
 
         this.miSecuencia.ejecutarComportamientoSobrePizarraEn(this.dibujante);
-        Celda celdaFinalEstimada = new Celda(6, 5);
+        Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral() + 1);
         assertTrue(this.dibujante.seEncuentraEn(celdaFinalEstimada));
 
     }

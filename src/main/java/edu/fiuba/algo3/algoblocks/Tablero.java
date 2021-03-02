@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 14/12/20*/
 
-import java.util.ArrayList;
 
 public class Tablero {
 

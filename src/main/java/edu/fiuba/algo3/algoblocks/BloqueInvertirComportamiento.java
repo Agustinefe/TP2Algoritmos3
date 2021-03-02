@@ -55,16 +55,4 @@ public class BloqueInvertirComportamiento implements BloqueContenedor{
 
     }
 
-    public void aniadirBloqueEnPosicion(SecuenciaDeBloques nuevoBloque, int posicion){
-
-        this.secuenciaAInvertir.juntar(nuevoBloque, posicion);
-
-    }
-
-    public SecuenciaDeBloques removerBloquesEnPosicion(int posicion){
-
-        return this.secuenciaAInvertir.separar(posicion);
-
-    }
-
 }

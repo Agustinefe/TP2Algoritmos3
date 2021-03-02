@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.algoblocks;
 
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.Test;
@@ -62,7 +62,7 @@ public class SectorBloqueTests {
         miSectorAlgoritmo.insertarSecuenciaEnEspacioDeTrabajo(nuevoBloque,0, 0);
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(6, 6);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral() + 2);
         assertTrue(dibujante.seEncuentraEn(celdaFinalSecuencia));
 
     }

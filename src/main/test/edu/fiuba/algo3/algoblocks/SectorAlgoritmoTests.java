@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;/* Author: firmapaz ;created on 22/2/21*/
+package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 22/2/21*/
 
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +35,7 @@ public class SectorAlgoritmoTests {
         miSectorAlgoritmo.insertarSecuenciaEnEspacioDeTrabajo(miBloque,0, 0);
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(3, 2);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() - 2);
         assertTrue(dibujante.seEncuentraEn(celdaFinalSecuencia));
     }
 
@@ -71,7 +71,7 @@ public class SectorAlgoritmoTests {
         miSectorAlgoritmo.insertarSecuenciaEnEspacioDeTrabajo(miBloque2, 1, 0);
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(3, 2);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() - 2);
         assertTrue(dibujante.seEncuentraEn(celdaFinalSecuencia));
     }
 
@@ -112,7 +112,7 @@ public class SectorAlgoritmoTests {
         miSectorAlgoritmo.insertarSecuenciaEnEspacioDeTrabajo(enLaMano, 0, 0);
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(4, 4);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral());
         assertTrue(dibujante.seEncuentraEn(celdaFinalSecuencia));
     }
 
@@ -144,7 +144,7 @@ public class SectorAlgoritmoTests {
         miSectorAlgoritmo.separarSecuenciaEnEspacioDeTrabajo(0, 5);
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
 
-        Celda celdaFinalSecuencia = new Celda(5, 4);
+        Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral());
         assertTrue(dibujante.seEncuentraEn(celdaFinalSecuencia));
     }
 
@@ -167,7 +167,7 @@ public class SectorAlgoritmoTests {
 
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
 
-        Celda celdaFinalEstimada = new Celda(3, 3);
+        Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() - 1);
         celdaFinalEstimada.dibujar();
 
         assertTrue(dibujante.seEncuentraEn(celdaFinalEstimada));
@@ -191,7 +191,7 @@ public class SectorAlgoritmoTests {
 
         miSectorAlgoritmo.ejecutarSecuenciaDeEjecucion(dibujante);
 
-        Celda celdaFinalEstimada = new Celda(5, 3);
+        Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() - 1);
 
         assertTrue(dibujante.seEncuentraEn(celdaFinalEstimada));
 

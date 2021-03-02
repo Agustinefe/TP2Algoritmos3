@@ -29,7 +29,7 @@ public class BotonEjecutarEventHandler implements EventHandler<ActionEvent> {
     public void handle(ActionEvent actionEvent){
 
         this.sectorAlgoritmo.ejecutarSecuenciaDeEjecucion(this.personaje);
-        vista.update();
+        vista.dibujarCaminoDelPersonaje();
         miBoton.setOnAction(new BotonReiniciarEventHandler(miBoton, vista, personaje, sectorAlgoritmo));
 
     }

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;/* Author: firmapaz ;created on 12/12/20*/
+package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
 import edu.fiuba.algo3.algoblocks.*;
 
@@ -27,11 +27,12 @@ public class PersonajeTests {
     @Test
     public void test01TimmyComienzaConElLapizLevantadoYNoDibujaAlMoverse(){
 
-
-
         this.timmy.moversePorLaPizarraHacia(new Izquierda());
 
-        assertFalse(this.celdaInicial.seEncuentraDibujada());
+        Celda celdaSemejante = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral());
+        celdaSemejante.dibujar();
+
+        assertFalse(this.celdaInicial.esIgualA(celdaSemejante));
 
     }
 
@@ -41,7 +42,10 @@ public class PersonajeTests {
         this.timmy.bajarLapiz();
         this.timmy.moversePorLaPizarraHacia(new Izquierda());
 
-        assertTrue(this.celdaInicial.seEncuentraDibujada());
+        Celda celdaSemejante = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral());
+        celdaSemejante.dibujar();
+
+        assertTrue(this.celdaInicial.esIgualA(celdaSemejante));
 
     }
 
@@ -52,7 +56,10 @@ public class PersonajeTests {
         this.timmy.subirLapiz();
         this.timmy.moversePorLaPizarraHacia(new Izquierda());
 
-        assertFalse(this.celdaInicial.seEncuentraDibujada());
+        Celda celdaSemejante = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral());
+        celdaSemejante.dibujar();
+
+        assertFalse(this.celdaInicial.esIgualA(celdaSemejante));
 
     }
 
@@ -68,11 +75,11 @@ public class PersonajeTests {
         listaDeMovimientos.add(new Izquierda());
         listaDeMovimientos.add(new Abajo());
         //4, 4
-        registroDePasoEstimado.add(new Celda(5, 4));
-        registroDePasoEstimado.add(new Celda(5, 5));
-        registroDePasoEstimado.add(new Celda(5, 6));
-        registroDePasoEstimado.add(new Celda(4, 6));
-        registroDePasoEstimado.add(new Celda(4, 5));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral()));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() + 1));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() + 2));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() + 2));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() + 1));
 
         for(int i = 0; i < listaDeMovimientos.size(); i++){
 
@@ -96,12 +103,12 @@ public class PersonajeTests {
         listaDeMovimientos.add(new Arriba());
         listaDeMovimientos.add(new Izquierda());
 
-        registroDePasoEstimado.add(new Celda(4, 3));
-        registroDePasoEstimado.add(new Celda(5, 3));
-        registroDePasoEstimado.add(new Celda(6, 3));
-        registroDePasoEstimado.add(new Celda(6, 4));
-        registroDePasoEstimado.add(new Celda(6, 5));
-        registroDePasoEstimado.add(new Celda(5, 5));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() - 1));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() - 1));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral() - 1));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral()));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral() + 1));
+        registroDePasoEstimado.add(new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() + 1));
         registroDePasoEstimado.get(0).dibujar();
         registroDePasoEstimado.get(1).dibujar();
         registroDePasoEstimado.get(2).dibujar();
@@ -147,7 +154,7 @@ public class PersonajeTests {
 
         listaDeMovimientos.stream().forEach(direccion -> {this.timmy.moversePorLaPizarraHacia(direccion);});
 
-        Celda celdaFinalEstimada = new Celda(7, 5);
+        Celda celdaFinalEstimada = new Celda(2 * Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() + 1);
         assertTrue(this.timmy.seEncuentraEn(celdaFinalEstimada));
     }
 

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;/* Author: firmapaz ;created on 16/2/21*/
+package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 16/2/21*/
 
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.BeforeEach;

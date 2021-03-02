@@ -78,19 +78,6 @@ public class Personaje {
 
     public ArrayList<String> getRegistroDePaso(){
 
-        /*ArrayList<String> bitacora = new ArrayList<>();
-        bitacora.add("bajaLapiz");
-        bitacora.add("derecha");
-        bitacora.add("arriba");
-        bitacora.add("izquierda");
-        bitacora.add("subeLapiz");
-        bitacora.add("izquierda");
-        bitacora.add("abajo");
-        bitacora.add("bajaLapiz");
-        bitacora.add("izquierda");*
-
-        return bitacora;*/
-
        return this.registroDePaso;
 
     }

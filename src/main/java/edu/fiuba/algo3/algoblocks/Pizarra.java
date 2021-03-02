@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Pizarra {
 
-    private static Pizarra INSTANCIA = new Pizarra(9, 9);
+    private static Pizarra INSTANCIA = new Pizarra(11, 11);
     private ArrayList<Celda> listaDeCeldas;
     private int base;
     private int altura;
@@ -73,5 +73,9 @@ public class Pizarra {
         this.listaDeCeldas.stream().forEach(celda -> {celda.blanquear();});
 
     }
+
+    public int xCentral(){ return this.base / 2; }
+
+    public int yCentral(){ return this.altura / 2; }
 
 }

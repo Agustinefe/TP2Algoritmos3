@@ -3,8 +3,11 @@ package edu.fiuba.algo3;
 import edu.fiuba.algo3.algoblocks.*;
 import edu.fiuba.algo3.vista.*;
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -25,10 +28,11 @@ public class App extends Application {
         this.inicializarModelo(contenedorPrincipal);
 
         contenedorPrincipal.setSpacing(10);
+        contenedorPrincipal.setBackground(new Background(new BackgroundFill(Color.SADDLEBROWN.darker(), CornerRadii.EMPTY, Insets.EMPTY)));
 
         var scene = new Scene(contenedorPrincipal, 1500, 680);
         stage.setScene(scene);
-        stage.setTitle("Hola");
+        stage.setTitle("AlgoBlocks");
         stage.show();
 
     }

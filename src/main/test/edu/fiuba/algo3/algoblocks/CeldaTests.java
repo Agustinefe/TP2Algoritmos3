@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;/* Author: firmapaz ;created on 12/12/20*/
+package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 12/12/20*/
 
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -56,7 +56,7 @@ public class CeldaTests {
 
         Celda celdaActual = this.celdaCentral;
 
-        Celda celdaFinalEstimada = new Celda(4, 6);
+        Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() + 2);
 
         for(int i = 0; i < listaDeMovimientos.size(); i++){
 

@@ -39,13 +39,21 @@ public class Coordenadas {
 
     public boolean seEncuentraDentroDeLoslimites(int limiteX, int limiteY){
 
-        return (this.x < limiteX && this.y < limiteY);
+        return (-1 < this.x &&
+                -1 < this.y &&
+                this.x < limiteX &&
+                this.y < limiteY);
 
     }
+
+    /*Mensajes que rompen principios de POO pero
+    son solo para pruebitas no me peguen
+     */
 
     public void imprimirCoordenadas(){
 
         System.out.println("(" + this.x + ", " + this.y + ")");
+
     }
 
 }

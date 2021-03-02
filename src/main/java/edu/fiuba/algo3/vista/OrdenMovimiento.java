@@ -2,6 +2,7 @@ package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 24/2/21*/
 
 import edu.fiuba.algo3.algoblocks.DireccionDeMovimiento;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.ImageView;
 
 public class OrdenMovimiento implements OrdenDeDibujoParaCanvas{
 
@@ -14,9 +15,9 @@ public class OrdenMovimiento implements OrdenDeDibujoParaCanvas{
     }
 
     @Override
-    public void ejecutarOrden(DibujadorEnCanvas dibujador, GraphicsContext graphicsContext){
+    public void ejecutarOrden(DibujadorEnCanvas dibujador, GraphicsContext graphicsContext, ImageView imagenDibujante){
 
-        dibujador.moverseHacia(graphicsContext, this.direccion);
+        dibujador.moverseHacia(graphicsContext, this.direccion, imagenDibujante);
 
     }
 

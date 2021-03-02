@@ -1,20 +1,21 @@
 package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 25/2/21*/
 
-import javafx.collections.ObservableList;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollBar;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-
-import java.util.*;
 
 public class VistaEspacioDeTrabajo extends HBox {
 
     private VBox contenedorSecuencia;
     private VBox secuenciaDeBloques;
+
 
     public VistaEspacioDeTrabajo(){
 
@@ -22,7 +23,6 @@ public class VistaEspacioDeTrabajo extends HBox {
 
         this.setPrefWidth(1000);
         this.setPrefHeight(600);
-
         this.inicializarSecuencia();
 
     }
@@ -39,6 +39,14 @@ public class VistaEspacioDeTrabajo extends HBox {
         this.contenedorSecuencia.getChildren().addAll(bloque, this.secuenciaDeBloques);
         this.getChildren().addAll(this.contenedorSecuencia);
 
+        ScrollPane scrollPane = new ScrollPane(this.contenedorSecuencia);
+        scrollPane.setFitToHeight(false);
+        scrollPane.setFitToWidth(true);
+
+        BorderPane root = new BorderPane(scrollPane);
+        root.setPadding(new Insets(15));
+        this.getChildren().add(root);
+
 
     }
 
@@ -50,7 +58,7 @@ public class VistaEspacioDeTrabajo extends HBox {
 
     public void agregarNuevoBloque(StackPane nuevoBloque, int posicion){
 
-        this.secuenciaDeBloques.getChildren().add(Math.min(posicion, this.cantidadDeBloques()), nuevoBloque);
+        this.secuenciaDeBloques.getChildren().add(posicion, nuevoBloque);
 
     }
 
@@ -62,7 +70,7 @@ public class VistaEspacioDeTrabajo extends HBox {
 
     public void removerBloque(int posicionDelBloque){
 
-        this.secuenciaDeBloques.getChildren().remove(Math.min(posicionDelBloque, this.cantidadDeBloques()));
+        this.secuenciaDeBloques.getChildren().remove(posicionDelBloque);
 
     }
 

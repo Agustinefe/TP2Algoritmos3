@@ -3,6 +3,7 @@ package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 24/2/21*/
 import edu.fiuba.algo3.algoblocks.DireccionDeMovimiento;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.ImageView;
 
 import java.util.HashMap;
 
@@ -42,10 +43,17 @@ public class DibujadorEnCanvas {
 
     }
 
-    public void moverseHacia(GraphicsContext graphicsContext, DireccionDeMovimiento direccion){
+    public void moverseHacia(GraphicsContext graphicsContext, DireccionDeMovimiento direccion, ImageView imagenDibujante){
 
         this.actualizarPosicion(direccion);
         this.formaDeMovimiento.moverHacia(graphicsContext, this.posicionXActual, this.posicionYActual);
+        imagenDibujante.setTranslateX(this.posicionXActual - 190);
+        imagenDibujante.setTranslateY(this.posicionYActual - 210);
+    }
+
+    private void moverAlDibujante(ImageView imagenDibujante){
+
+
 
     }
 }

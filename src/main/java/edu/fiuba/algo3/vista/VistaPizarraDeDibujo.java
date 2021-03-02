@@ -4,16 +4,21 @@ import edu.fiuba.algo3.algoblocks.Personaje;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.effect.ImageInput;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
 public class VistaPizarraDeDibujo {
 
-    private Group pizarraDeDibujo;
+    private StackPane pizarraDeDibujo;
     private Canvas lienzo;
     private Personaje personajeModelo;
     private GraphicsContext graphicsContext;
+    private ImageView gatitoDibujante;
     private final int base = 400;
     private final int altura = 400;
 
@@ -22,19 +27,22 @@ public class VistaPizarraDeDibujo {
 
         this.personajeModelo = dibujante;
         this.lienzo = new Canvas(this.base, this.altura);
-        this.pizarraDeDibujo = new Group(this.lienzo);
+        this.gatitoDibujante = new ImageView(new Image("file:src/main/java/edu/fiuba/algo3/imagenes/lapiz.png"));
+        this.gatitoDibujante.setFitWidth(25);
+        this.gatitoDibujante.setFitHeight(25);
+        this.pizarraDeDibujo = new StackPane(this.lienzo, gatitoDibujante);
         this.graphicsContext = this.lienzo.getGraphicsContext2D();
-        pintarFondo();
+        this.pintarFondo();
 
     }
 
-    public Group obtenerPizarraDeDibujo(){
+    public StackPane obtenerPizarraDeDibujo(){
 
         return this.pizarraDeDibujo;
 
     }
 
-    private void dibujarCaminoDePersonaje(){
+    private void prepararAreaDeDibujo(){
 
         ArrayList<String> bitacoraDePersonaje = this.personajeModelo.getRegistroDePaso();
 
@@ -61,16 +69,16 @@ public class VistaPizarraDeDibujo {
         for(int i = 0; i < bitacoraDePersonaje.size(); i++){
 
             OrdenDeDibujoParaCanvas orden = conversor.obtenerOrden(bitacoraDePersonaje.get(i));
-            orden.ejecutarOrden(dibujador, this.graphicsContext);
+            orden.ejecutarOrden(dibujador, this.graphicsContext, this.gatitoDibujante);
 
         }
 
         graphicsContext.stroke();
 
     }
-    public void update(){
+    public void dibujarCaminoDelPersonaje(){
 
-        this.dibujarCaminoDePersonaje();
+        this.prepararAreaDeDibujo();
 
     }
 
@@ -78,12 +86,14 @@ public class VistaPizarraDeDibujo {
 
         this.graphicsContext.clearRect(0, 0, this.base, this.altura);
         this.pintarFondo();
+        this.gatitoDibujante.setTranslateX(0);
+        this.gatitoDibujante.setTranslateY(0);
 
     }
 
     private void pintarFondo(){
 
-        this.graphicsContext.setFill(Color.BEIGE);
+        this.graphicsContext.setFill(Color.LIGHTYELLOW);
         this.graphicsContext.fillRect(0, 0, this.base, this.altura);
         this.graphicsContext.fill();
 

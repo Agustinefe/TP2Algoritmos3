@@ -27,7 +27,7 @@ public class ConversorRegistroDePasoAOrdenDeDibujo {
 
         if(!this.listaDeConversiones.containsKey(registroDePaso)){
 
-            //tiraError
+            //TODO manejar el error que surja al haber claves repetidas
 
         }
 

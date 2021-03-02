@@ -29,15 +29,6 @@ public class Celda{
 
     }
 
-
-    //Violadisimo ese encapsulamiento
-    public boolean seEncuentraDibujada(){
-
-        return this.dibujado;
-
-    }
-
-    //DOUBLE DISPAAAAAAAAAAAAAAAAAAAAAAAAAAATCH
     public boolean esIgualA(Celda otraCelda){
 
         boolean mismasCoordenadas = otraCelda.sonLasMismasCoordenadas(this.posicion);
@@ -68,7 +59,7 @@ public class Celda{
 
 
     /*Mensajes que rompen principios de POO pero
-    son solo para pruebitas
+    son solo para pruebitas no me peguen
      */
 
     public void imprimirCoordenadas(){

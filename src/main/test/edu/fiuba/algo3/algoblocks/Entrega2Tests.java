@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;/* Author: firmapaz ;created on 10/2/21*/
+package edu.fiuba.algo3.algoblocks;/* Author: firmapaz ;created on 10/2/21*/
 
 import edu.fiuba.algo3.algoblocks.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -41,7 +41,7 @@ public class Entrega2Tests {
 
         bloqueIterativo.ejecutarComportamientoSobrePizarraEn(jimmy);
 
-        assertTrue(this.jimmy.seEncuentraEn(new Celda(4, 7)));
+        assertTrue(this.jimmy.seEncuentraEn(new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() + 3)));
 
     }
 
@@ -78,22 +78,22 @@ public class Entrega2Tests {
 
         }
 
-        pasoEstimadoDePersonaje.add(new Celda(5, 4));
-        pasoEstimadoDePersonaje.add(new Celda(6, 4));
-        pasoEstimadoDePersonaje.add(new Celda(6, 5));
-        unaCelda = new Celda(7, 5);
+        pasoEstimadoDePersonaje.add(new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral()));
+        pasoEstimadoDePersonaje.add(new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral()));
+        pasoEstimadoDePersonaje.add(new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral() + 1));
+        unaCelda = new Celda(Pizarra.getInstance().xCentral() + 3, Pizarra.getInstance().yCentral() + 1);
         unaCelda.dibujar();
         pasoEstimadoDePersonaje.add(unaCelda);
-        unaCelda = new Celda(7, 6);
+        unaCelda = new Celda(Pizarra.getInstance().xCentral() + 3, Pizarra.getInstance().yCentral() + 2);
         unaCelda.dibujar();
         pasoEstimadoDePersonaje.add(unaCelda);
-        unaCelda = new Celda(4, 3);
+        unaCelda = new Celda(Pizarra.getInstance().xCentral(), Pizarra.getInstance().yCentral() - 1);
         unaCelda.dibujar();
         pasoEstimadoDePersonaje.add(unaCelda);
-        unaCelda = new Celda(5, 3);
+        unaCelda = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() - 1);
         unaCelda.dibujar();
         pasoEstimadoDePersonaje.add(unaCelda);
-        unaCelda = new Celda(5, 2);
+        unaCelda = new Celda(Pizarra.getInstance().xCentral() + 1, Pizarra.getInstance().yCentral() - 2);
         unaCelda.dibujar();
         pasoEstimadoDePersonaje.add(unaCelda);
 
