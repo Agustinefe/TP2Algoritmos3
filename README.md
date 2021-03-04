@@ -11,7 +11,6 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 1** - Agustin Firmapaz (https://github.com/Agustinefe)
 * **Integrante 2** - Federico De Santis (https://github.com/integrante2)
 * **Integrante 3** - Serena Gutierrez (https://github.com/integrante3)
-* **Integrante 4** - Valentina Gutierrez (https://github.com/integrante4)
 
 Corrector: Mariano Baffetti
 
