@@ -46,14 +46,4 @@ public class Coordenadas {
 
     }
 
-    /*Mensajes que rompen principios de POO pero
-    son solo para pruebitas no me peguen
-     */
-
-    public void imprimirCoordenadas(){
-
-        System.out.println("(" + this.x + ", " + this.y + ")");
-
-    }
-
 }

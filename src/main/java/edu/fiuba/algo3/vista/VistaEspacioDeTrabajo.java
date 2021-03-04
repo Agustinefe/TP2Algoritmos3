@@ -1,12 +1,7 @@
 package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 25/2/21*/
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
-import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -97,7 +92,6 @@ public class VistaEspacioDeTrabajo extends HBox {
     public void reiniciar(){
 
         this.secuenciaDeBloques.getChildren().clear();
-        //this.inicializarSecuencia();
 
     }
 

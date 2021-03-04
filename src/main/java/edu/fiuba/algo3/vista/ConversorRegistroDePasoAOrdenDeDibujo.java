@@ -25,12 +25,6 @@ public class ConversorRegistroDePasoAOrdenDeDibujo {
 
     public OrdenDeDibujoParaCanvas obtenerOrden(String registroDePaso){
 
-        if(!this.listaDeConversiones.containsKey(registroDePaso)){
-
-            //TODO manejar el error que surja al haber claves repetidas
-
-        }
-
         return this.listaDeConversiones.get(registroDePaso);
     }
     

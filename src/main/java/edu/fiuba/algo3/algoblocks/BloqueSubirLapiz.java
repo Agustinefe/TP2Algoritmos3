@@ -16,23 +16,6 @@ public class BloqueSubirLapiz implements Bloque{
 
     }
 
-    /*
-    @Override
-    public void insertarSecuenciaEn(SecuenciaDeBloques nuevaSecuencia, int posicion) throws AccesoNoPermitidoException {
-
-        throw new AccesoNoPermitidoException();
-
-    }
-
-    @Override
-    public SecuenciaDeBloques separarLaSecuenciaEn(int posicion) throws AccesoNoPermitidoException{
-
-        throw new AccesoNoPermitidoException();
-
-    }
-
-     */
-
     @Override
     public Bloque duplicar(){return new BloqueSubirLapiz();}
 

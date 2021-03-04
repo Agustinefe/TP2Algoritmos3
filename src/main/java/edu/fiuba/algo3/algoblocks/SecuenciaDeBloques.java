@@ -26,7 +26,6 @@ public class SecuenciaDeBloques implements Bloque{
     public void insertar(Bloque nuevoObjeto){
 
         this.laSecuencia.add(nuevoObjeto);
-        //this.tamanio += nuevoObjeto.tamanio();
 
     }
 
@@ -93,12 +92,6 @@ public class SecuenciaDeBloques implements Bloque{
     public void ejecutarComportamientoInversoSobrePizarraEn(Personaje dibujante){
 
         this.laSecuencia.stream().forEach(bloque -> {bloque.ejecutarComportamientoInversoSobrePizarraEn(dibujante);});
-
-    }
-
-    public int tamanio(){
-
-        return this.laSecuencia.size();
 
     }
 

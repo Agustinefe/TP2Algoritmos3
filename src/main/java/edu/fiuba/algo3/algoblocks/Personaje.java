@@ -52,8 +52,6 @@ public class Personaje {
 
         }
 
-        //this.celdaActual.imprimirCoordenadas();
-
     }
 
     public boolean seEncuentraEn(Celda estaCelda){
@@ -82,15 +80,6 @@ public class Personaje {
 
     }
 
-    /*Mensajes que rompen principios de POO pero
-    son solo para pruebitas no me peguen
-     */
-
-    public void imprimirCoordenadas(){
-
-        this.celdaActual.imprimirCoordenadas();
-
-    }
 
 }
 

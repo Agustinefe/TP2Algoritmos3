@@ -23,14 +23,14 @@ public class Entrega3Tests {
 
         SecuenciaDeBloques secuencia1 = new SecuenciaDeBloques();
 
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("izquierda"), 0, 0);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("arriba"), 0, 1);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("arriba"), 0, 2);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("repeticion x2"), 0, 3);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("repeticion x2"), 0, 4);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("derecha"), 0, 5);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("abajo"), 0, 6);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("izquierda"), 0, 9);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Izquierda"), 0, 0);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Arriba"), 0, 1);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Arriba"), 0, 2);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Repetir 2 veces"), 0, 3);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Repetir 2 veces"), 0, 4);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Derecha"), 0, 5);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Abajo"), 0, 6);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Izquierda"), 0, 9);
 
         this.juego.iniciarSecuenciaDeEjecucion();
         Celda celdaFinalEstimada = new Celda(Pizarra.getInstance().xCentral() - 1, Pizarra.getInstance().yCentral() + 1);
@@ -41,14 +41,14 @@ public class Entrega3Tests {
     @Test
     public void test02CreoUnaSecuenciaLaDividoGuardoUnNuevoAlgoritmoLimpioElEspacioDeTrabajoYEjecutoElAlgoritmoPersonalizado(){
 
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("izquierda"), 0, 0);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("arriba"), 0, 1);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("arriba"), 0, 2);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("repeticion x2"), 0, 3);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("repeticion x2"), 0, 4);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("derecha"), 0, 5);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("abajo"), 0, 6);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("izquierda"), 0, 9);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Izquierda"), 0, 0);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Arriba"), 0, 1);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Arriba"), 0, 2);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Repetir 2 veces"), 0, 3);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Repetir 2 veces"), 0, 4);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Derecha"), 0, 5);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Abajo"), 0, 6);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Izquierda"), 0, 9);
 
         this.juego.separarBloquesEnEspacioDeTrabajo(0, 3);
         this.juego.agregarAlgoritmoPersonalizadoAlSectorDeBloques("personalizado");
@@ -64,11 +64,11 @@ public class Entrega3Tests {
     @Test
     public void test03EjecutoUnaSecuenciaLimpioElSectorDeDibujo(){
 
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("bajar lapiz"), 0, 0);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("arriba"), 0, 1);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("derecha"), 0, 2);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("abajo"), 0, 3);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("derecha"), 0, 4);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Bajar lapiz"), 0, 0);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Arriba"), 0, 1);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Derecha"), 0, 2);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Abajo"), 0, 3);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Derecha"), 0, 4);
 
         this.juego.meterSecuenciaEnContenedor(new BloqueInvertirComportamiento(), 0);
 
@@ -83,10 +83,10 @@ public class Entrega3Tests {
         this.juego.reiniciarSectorDeDibujo();
         this.juego.reiniciarEspacioDeTrabajo();
 
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("izquierda"), 0, 0);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("abajo"), 0, 1);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Izquierda"), 0, 0);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Abajo"), 0, 1);
         this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("cacerola"), 0, 3);
-        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("derecha"), 0, 4);
+        this.juego.insertarBloqueEnEspacioDeTrabajo(this.juego.crearNuevoBloque("Derecha"), 0, 4);
 
         /*
         * izquierda

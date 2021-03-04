@@ -40,12 +40,12 @@ public class VistaBotoneraDeBloques extends VBox {
         this.setAlignment(Pos.TOP_CENTER);
         this.setSpacing(10);
 
-        this.crearBotonDeBloqueSimple("Derecha", "derecha");
-        this.crearBotonDeBloqueSimple("Izquierda", "izquierda");
-        this.crearBotonDeBloqueSimple("Arriba", "arriba");
-        this.crearBotonDeBloqueSimple("Abajo", "abajo");
-        this.crearBotonDeBloqueSimple("Bajar lapiz", "bajar lapiz");
-        this.crearBotonDeBloqueSimple("Subir lapiz", "subir lapiz");
+        this.crearBotonDeBloqueSimple("Derecha", "Derecha");
+        this.crearBotonDeBloqueSimple("Izquierda", "Izquierda");
+        this.crearBotonDeBloqueSimple("Arriba", "Arriba");
+        this.crearBotonDeBloqueSimple("Abajo", "Abajo");
+        this.crearBotonDeBloqueSimple("Bajar lapiz", "Bajar lapiz");
+        this.crearBotonDeBloqueSimple("Subir lapiz", "Subir lapiz");
         this.crearBotonDeBloqueContenedor("Repetir\n2 veces", "x2", new BloqueRepeticionPor2());
         this.crearBotonDeBloqueContenedor("Repetir\n3 veces", "x3", new BloqueRepeticionPor3());
         this.crearBotonDeBloqueContenedor("Invertir\ncomportamiento", "Inv.", new BloqueInvertirComportamiento());

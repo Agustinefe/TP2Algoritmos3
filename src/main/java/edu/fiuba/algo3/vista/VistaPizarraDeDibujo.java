@@ -1,10 +1,8 @@
 package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 24/2/21*/
 
 import edu.fiuba.algo3.algoblocks.Personaje;
-import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.effect.ImageInput;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;

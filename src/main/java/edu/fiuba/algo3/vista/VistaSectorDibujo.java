@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 16/2/21*/
 
 import edu.fiuba.algo3.algoblocks.Personaje;
-import edu.fiuba.algo3.algoblocks.Pizarra;
 import edu.fiuba.algo3.algoblocks.SectorAlgoritmo;
 import edu.fiuba.algo3.eventos.BotonEjecutarEventHandler;
 import javafx.geometry.Insets;

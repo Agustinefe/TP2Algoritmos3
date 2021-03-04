@@ -2,6 +2,7 @@ package edu.fiuba.algo3.eventos;/* Author: firmapaz ;created on 27/2/21*/
 
 import edu.fiuba.algo3.algoblocks.SectorAlgoritmo;
 import edu.fiuba.algo3.algoblocks.SectorBloque;
+import edu.fiuba.algo3.excepciones.NombreDeAlgoritmoPersonalizadoRepetidoException;
 import edu.fiuba.algo3.vista.VistaBotoneraDeBloques;
 import edu.fiuba.algo3.vista.VistaEspacioDeTrabajo;
 import javafx.event.ActionEvent;
@@ -45,10 +46,18 @@ public class BotonGuardarAlgoritmoEventHandler implements EventHandler<ActionEve
 
         } else {
 
-            this.sectorAlgoritmo.crearNuevoAlgoritmoPersonalizado(sectorBloque, this.nombreIngresado.getText());
-            this.vistaBotoneraDeBloques.agregarBloquePersonalizado(this.nombreIngresado.getText());
-            this.nombreIngresado.setText("");
-            this.mensajeDeError.setText("");
+            try {
+
+                this.sectorAlgoritmo.crearNuevoAlgoritmoPersonalizado(sectorBloque, this.nombreIngresado.getText());
+                this.vistaBotoneraDeBloques.agregarBloquePersonalizado(this.nombreIngresado.getText());
+                this.nombreIngresado.setText("");
+                this.mensajeDeError.setText("");
+
+            } catch(NombreDeAlgoritmoPersonalizadoRepetidoException e){
+
+                this.mensajeDeError.setText("El nombre ingresado\nya existe");
+
+            }
 
         }
 

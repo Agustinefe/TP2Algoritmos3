@@ -2,7 +2,6 @@ package edu.fiuba.algo3.vista;/* Author: firmapaz ;created on 26/2/21*/
 
 import edu.fiuba.algo3.algoblocks.SectorAlgoritmo;
 import edu.fiuba.algo3.algoblocks.SectorBloque;
-import edu.fiuba.algo3.eventos.BotonGenerarBloqueSimpleNuevoEventHandler;
 import edu.fiuba.algo3.eventos.BotonGuardarAlgoritmoEventHandler;
 import edu.fiuba.algo3.eventos.BotonRemoverEventHandler;
 import edu.fiuba.algo3.eventos.BotonVolverAEmpezarEventHandler;

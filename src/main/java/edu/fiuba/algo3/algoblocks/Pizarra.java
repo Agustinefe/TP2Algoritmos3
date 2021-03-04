@@ -11,9 +11,6 @@ public class Pizarra {
     private int base;
     private int altura;
 
-    /*
-    * Puedo implementar la listaDeCeldas con una matriz.
-    * */
     private Pizarra(int nuevaBase, int nuevaAltura){
 
         listaDeCeldas = new ArrayList<Celda>();

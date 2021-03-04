@@ -31,7 +31,6 @@ public class BotonMeterSecuenciaEnContenedorEventHandler implements EventHandler
     @Override
     public void handle(ActionEvent actionEvent){
 
-        //TODO este casteo esta raro
         this.sectorAlgoritmo.meterSecuenciaEnContenedor((BloqueContenedor) this.bloqueContenedor.duplicar(), 0);
         this.vistaEspacioDeTrabajo.meterSecuenciaEnContenedor(nombreBloque);
 

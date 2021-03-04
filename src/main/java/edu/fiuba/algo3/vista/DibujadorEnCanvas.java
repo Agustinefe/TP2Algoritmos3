@@ -47,13 +47,14 @@ public class DibujadorEnCanvas {
 
         this.actualizarPosicion(direccion);
         this.formaDeMovimiento.moverHacia(graphicsContext, this.posicionXActual, this.posicionYActual);
+        this.moverImagenDibujante(imagenDibujante);
+    }
+
+    private void moverImagenDibujante(ImageView imagenDibujante){
+
         imagenDibujante.setTranslateX(this.posicionXActual - 190);
         imagenDibujante.setTranslateY(this.posicionYActual - 210);
-    }
-
-    private void moverAlDibujante(ImageView imagenDibujante){
-
-
 
     }
+
 }

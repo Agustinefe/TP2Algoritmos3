@@ -15,15 +15,15 @@ public class GeneradorDeBloques {
     private GeneradorDeBloques(){
 
         this.nombreParaRectangulo = new HashMap<>();
-        this.nombreParaRectangulo.put("derecha", new ConfiguracionDeRectangulo("Derecha", Color.LIGHTBLUE, 50, 75));
-        this.nombreParaRectangulo.put("izquierda", new ConfiguracionDeRectangulo("Izquierda", Color.LIGHTBLUE, 50, 75));
-        this.nombreParaRectangulo.put("arriba", new ConfiguracionDeRectangulo("Arriba", Color.LIGHTBLUE, 50, 75));
-        this.nombreParaRectangulo.put("abajo", new ConfiguracionDeRectangulo("Abajo", Color.LIGHTBLUE, 50, 75));
-        this.nombreParaRectangulo.put("bajar lapiz", new ConfiguracionDeRectangulo("Bajar Lapiz", Color.LIGHTBLUE, 50, 75));
-        this.nombreParaRectangulo.put("subir lapiz", new ConfiguracionDeRectangulo("Subir Lapiz", Color.LIGHTBLUE, 50, 75));
-        this.nombreParaRectangulo.put("repeticion x2", new ConfiguracionDeRectangulo("x2", Color.LIGHTGREEN, 50, 75));
-        this.nombreParaRectangulo.put("repeticion x3", new ConfiguracionDeRectangulo("x3", Color.LIGHTGREEN, 50, 75));
-        this.nombreParaRectangulo.put("inversor", new ConfiguracionDeRectangulo("Invertir", Color.PINK, 50, 75));
+        this.nombreParaRectangulo.put("Derecha", new ConfiguracionDeRectangulo("Derecha", Color.LIGHTBLUE, 50, 75));
+        this.nombreParaRectangulo.put("Izquierda", new ConfiguracionDeRectangulo("Izquierda", Color.LIGHTBLUE, 50, 75));
+        this.nombreParaRectangulo.put("Arriba", new ConfiguracionDeRectangulo("Arriba", Color.LIGHTBLUE, 50, 75));
+        this.nombreParaRectangulo.put("Abajo", new ConfiguracionDeRectangulo("Abajo", Color.LIGHTBLUE, 50, 75));
+        this.nombreParaRectangulo.put("Bajar lapiz", new ConfiguracionDeRectangulo("Bajar Lapiz", Color.LIGHTBLUE, 50, 75));
+        this.nombreParaRectangulo.put("Subir lapiz", new ConfiguracionDeRectangulo("Subir Lapiz", Color.LIGHTBLUE, 50, 75));
+        this.nombreParaRectangulo.put("Repetir 2 veces", new ConfiguracionDeRectangulo("x2", Color.LIGHTGREEN, 50, 75));
+        this.nombreParaRectangulo.put("Repetir 3 veces", new ConfiguracionDeRectangulo("x3", Color.LIGHTGREEN, 50, 75));
+        this.nombreParaRectangulo.put("Invertir comportamiento", new ConfiguracionDeRectangulo("Invertir", Color.PINK, 50, 75));
 
     }
 

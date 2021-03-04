@@ -1,10 +1,12 @@
 package edu.fiuba.algo3.algoblocks;
 
 import edu.fiuba.algo3.algoblocks.*;
+import edu.fiuba.algo3.excepciones.NombreDeAlgoritmoPersonalizadoRepetidoException;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SectorBloqueTests {
@@ -64,6 +66,22 @@ public class SectorBloqueTests {
 
         Celda celdaFinalSecuencia = new Celda(Pizarra.getInstance().xCentral() + 2, Pizarra.getInstance().yCentral() + 2);
         assertTrue(dibujante.seEncuentraEn(celdaFinalSecuencia));
+
+    }
+
+    @Test
+    public void test04CrearDosAlgoritmosPersonalizadosConElMismoNombreArrojaUnaExcepcion(){
+
+        SectorBloque miSectorBloque = new SectorBloque();
+        SectorAlgoritmo miSectorAlgoritmo = new SectorAlgoritmo();
+
+        miSectorAlgoritmo.crearNuevoAlgoritmoPersonalizado(miSectorBloque, "nombre");
+
+        assertThrows(NombreDeAlgoritmoPersonalizadoRepetidoException.class, () -> {
+
+            miSectorAlgoritmo.crearNuevoAlgoritmoPersonalizado(miSectorBloque, "nombre");
+
+        });
 
     }
 
